@@ -1,3 +1,3 @@
-# bdl.maps 1.0.0
+# bdl 0.0.3
 
 * Initial release.
