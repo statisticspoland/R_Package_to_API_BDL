@@ -1,0 +1,73 @@
+#' @title Get data by variable Id forlocalities from BDL API
+#' @description Retrieve data for a given variables for multiple unit localites
+#'  from BDL with specified format.
+#' @details
+#'   Data to retrieve from
+#'   \href{https://bdl.stat.gov.pl}{The
+#'   BDL Web Services} can be filtered with arguments. To get JSON data from specified
+#'   directory with custom filters use \code{\link{get_request}} directly.
+#'
+#'   To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
+#'   passed to \code{\link[httr]{GET}}. For example
+#'   \code{get_request(id, filters,
+#'   config = httr::use_proxy(url, port, username, password))}.
+#'
+#' @param varId A single variable id or vector of multilpe variable id's. If multiple id's are used, some columns
+#'   are not available.. Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variable id code.
+#' @param unitParentId A 12 character NUTS id code of interested unit. Use \code{\link{search_units}} or
+#'   \code{\link{get_units}} to find unit id code. If \code{NULL} (default) and \code{unitLevel} not
+#'   set up, returns all available units for variable.
+#' @param year A vector of years. If \code{NULL} (default) returns data for all available years.
+#' @param lang  A language of returned data, "pl" (default), "en"
+#' @param ... Other arguments passed on to \code{\link[httr]{GET}}. For example
+#'   a proxy parameters, see details.
+#'
+#' @return A dataset as a tibble.
+#' @export
+#' @examples
+#'  \dontrun{
+#'    df <- get_data_by_variable_locality(varId = "415", unitParentId = "070000000000")
+#'    df <- get_data_by_variable_locality("420", year = "2008", unitParentId = "070000000000")
+#' }
+#' @keywords utilities database
+get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
+                                          lang = c("pl","en"), ...) {
+  
+  if(length(unitParentId) > 1 || any(stringi::stri_length(unitParentId) != 12)) {
+    stop("Unit id should be 12 characters NUTS id code.")
+  }
+  if(any(stringi::stri_length(varId) == 0)) {
+    stop("Invalid variable id.")
+  }
+  
+  dir <- "data/Localities/By-Variable"
+  lang <- match.arg(lang)
+  
+  
+  if (length(varId) ==  1) {
+    filters <- list(year = year, "unit-Parent-Id" = unitParentId, lang = lang)
+    
+    df <- page_download(dir, varId, filters, ...)
+    
+  } else {
+    varId <- as.list(varId)
+    
+    df <- lapply(varId, get_data_by_variable_locality, unitParentId = unitParentId, year = year, lang = lang)
+    
+    helper = function(x) dplyr::select(x,-dplyr::one_of(c("attrId")))
+    df <- lapply(df, helper)
+    
+    
+    df <- plyr::join_all(df, by=c("id","name", "year"))
+    
+    helper <- function(x) paste("val_", x, sep = "")
+    varId <- lapply(varId, helper)
+    names(df)[-c(1:3)] <- unlist(varId)
+  }
+  
+  
+  df <- tibble::as_tibble(df)
+  class(df) <- c("bdl", class(df))
+  
+  df
+}

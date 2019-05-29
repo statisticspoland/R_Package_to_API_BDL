@@ -1,0 +1,64 @@
+#' @title Generate quick pie plot 
+#' @description Generate pie plot for varaible/multiple units
+#' @details
+#'   Generate quickly ggplot2 plot, using BDL data.
+#'   
+#'   Pie plot one variable value for multiple units on single year.
+#'   
+#'   
+#'   To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
+#'   passed to \code{\link[httr]{GET}}. For example
+#'   \code{get_request(id, filters,
+#'   config = httr::use_proxy(url, port, username, password))}.
+#' @param data_type A type of data used for generating plot, "variable"(default), "variable","variable.locality"
+#' @param varId A variable Id. Use \code{\link{search_variables}} or
+#'   \code{\link{get_variables}} to find variable id code.
+#' @param year A single year. If \code{NULL} (default) returns data for all available years.
+#' @param unitParentId A 12 character NUTS id code of interested unit. Use \code{\link{search_units}} or
+#'   \code{\link{get_units}} to find unit id code.
+#' @param unitLevel A number from 0 to 6, filters the returned unit by its level. 
+#'   (Used only with data_type equal "variable")
+#'   If \code{NULL} (default) no level filters apply. Use \code{\link{get_levels}} to find more info.
+#' @param aggregateId An aggregate id. Use \code{\link{get_aggregates}} for more info.
+#' @param lang A language of returned data, "pl" (default), "en"
+#' @param ... Other arguments passed on to \code{\link[httr]{GET}}. For example
+#'   a proxy parameters, see details.
+#'
+#' @return A ggplo2 plot.
+#' 
+#' @export
+#'
+#' @examples
+#'    bld_pie_plot <- pie_plot(data_type ="variable" ,"60559", "2006", unitLevel = "2")
+pie_plot <- function(data_type = c("variable","variable.locality"), 
+                     varId, year, unitParentId = NULL, unitLevel = NULL, 
+                     aggregateId = NULL, lang = c("pl","en"), ...) {
+  data_type <- match.arg(data_type)
+  df <- NULL
+  if (length(varId) == 1 && length(year) == 1) {
+    if (data_type == "variable") {
+      
+    df <- get_data_by_variable(varId = varId, unitParentId = unitParentId, unitLevel = unitLevel, 
+                               year = year, aggregateId = aggregateId, lang = lang, ...)
+    } else if (data_type == "variable.locality") {
+      
+      df <- get_data_by_variable_locality(varId = varId, unitParentId = unitParentId, 
+                                          year = year, lang = lang, ...)
+      
+    }  
+  } else {
+    stop("You can pie plot only 1 variable with multiple units on 1 year.")
+  }
+  
+  title <- get_var_label(varId)
+  
+  plot <- ggpubr::ggpie(df, "val", fill = "name", label = "val", 
+                        color = "black", title = title, palette = randomcoloR::distinctColorPalette(nrow(df)))
+  plot <- plot + ggplot2::aes("", val, fill = "name", label = val)
+  plot <- ggpubr::ggpar(plot, legend = "right", legend.title = "", ticks = F)
+  
+  if(nrow(df) > 20) {
+    plot <- ggpubr::ggpar(plot, legend = "none", tickslab = F)
+  }
+  print(plot)
+}

@@ -1,0 +1,24 @@
+Package: bdl
+Type: Package
+Date: 2018-07-13
+Title: Interface and Tools for BDL API
+Version: 0.0.3.0000
+Authors@R: person("Krzysztof", "Kania", email = "K.Kania@stat.gov.pl",
+                  role = c("aut", "cre"))
+Description: The 'bdl' package is an interface to Local Data Bank(Bank Danych Lokalnych - bdl) API 
+    with set of useful tools like quick plotting and map generating using data from data bank. 
+License: GPL-3
+Depends: R (>= 3.5.0)
+Imports: methods, magrittr, tibble, jsonlite, httr, stringi,
+        data.table, dplyr, tidyr, utils, stats, ggplot2,
+        ggpubr, randomcoloR, tmap, plyr
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr, rmarkdown, testthat, roxygen2
+VignetteBuilder: knitr
+NeedsCompilation: no
+Repository: CRAN
+RoxygenNote: 6.1.1
+Packaged: 2018-12-27 12:42:28 UTC; KaniaK
+Author: Krzysztof Kania [aut, cre]
+Maintainer: Krzysztof Kania <K.Kania@stat.gov.pl>
