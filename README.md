@@ -1,4 +1,4 @@
-# bdl
+# bdl 0.0.3
 
 ## Overview
 The 'bdl' package is an interface to Local Data Bank(Bank Danych Lokalnych - bdl) 
