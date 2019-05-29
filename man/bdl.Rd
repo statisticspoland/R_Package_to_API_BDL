@@ -9,6 +9,14 @@
 The 'bdl' package is an interface to Local Data Bank(Bank Danych Lokalnych - bdl) API 
     with set of useful tools like quick plotting and map generating using data from data bank.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/kaniakrzysztof/bdl}
+  \item Report bugs at \url{https://github.com/kaniakrzysztof/bdl/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Krzysztof Kania \email{K.Kania@stat.gov.pl}
 
