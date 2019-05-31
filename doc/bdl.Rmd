@@ -1,0 +1,209 @@
+---
+title: "Downloading and using data from bdl"
+author: "Krzysztof Kania"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Downloading and using data from bdl}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(bdl)
+options(tibble.print_min = 4L, tibble.print_max = 4L)
+```
+
+The `bdl` package is an interface to Local Data Bank(Bank Danych Lokalnych - bdl) [API](https://bdl.stat.gov.pl/api/v1/home) with set of useful tools like quick 
+plotting using data from data bank.
+
+## Intro
+
+Working with `bdl` is based on id codes. Most of data downloading functions requires secifing one or vector of multiple unit or variable ids as a string.
+
+It is recommended to use private API key which u can get by registrating [here](https://bdl.stat.gov.pl/api/v1/client).
+To apply use: `options(bdl.api_private_key ="your_key")`
+
+Also every function returns data by default in Polish. If you would like get data in English just add `lang = "en"` to any function.
+
+Any metadata information (unit levels, aggregates, NUTS code explanation etc.) can be found [here](https://bdl.stat.gov.pl/BDL/metadane).
+
+
+## Searching unit id
+
+When searching for unit id we can use two methods:
+
+- Direct search `search_units()`
+- Tree listing by `get_units()`
+
+Units consist of 6 levels:
+```{r  }
+get_levels()
+```
+
+Lowest - seventh level has own separate functions with suffix `localities`. Warning - localities functions have diffrent set of arguments. Chceck package or API documentation for more info.
+
+### Direct search
+
+Direct searching `search_units()` takes couple diffrent arguments like:
+
+- `name` - required search phrase (can be empty string)
+- `level` - narrows returned units to given level
+
+and more. To look for more arguments on any given function check package or API documentation.
+
+```{r  }
+search_units(name = "wro")
+search_units(name = "", level = 3)
+```
+
+
+### Tree listing
+To get all units available in local data bank run `get_units()` without any argument(warning - it can eat data limit very fast around 4.5k rows):
+
+```{r  }
+get_units()
+```
+
+To narrow the list add `unitParentId`. Function will return all children units for a given parent at all levels. Add `level` argument to filter units even further.
+
+```{r  }
+get_units(parentId = "000000000000", level = 5)
+```
+
+
+## Searching subject and varaible id
+
+Subjects are themed directories of variables. 
+
+We have two searching methods for both subjects and varaibles:
+
+- Direct search `search_variables()` and `search_subjects()`
+- Subject tree listing by `get_subjects()` and `get_variables()`
+
+
+### Subjects
+
+To directly search for subject we just provide search phrase:
+
+```{r  }
+search_subjects("lud")
+```
+
+Subjects cosist of 3 levels (categories, groups, subgroups) - `K`, `G` and `P` respectively. The fourth level of subject (childrens of subgroup) would be variables.
+
+To list all top level subjects use `get_subjects()`:
+```{r  }
+get_subjects()
+```
+
+To list sub-subjects to given category or group use `get_subjects()` with `parentId` argument:
+```{r  }
+get_subjects(parentId = "K3")
+get_subjects(parentId = "G7")
+```
+
+
+### Variables
+
+Firstly you can list variables for given subject (subgroup):
+```{r  }
+get_variables("P2425")
+```
+
+Secondly you can direct search variables with `search_variables()`. You can use empty string as `name` to list all variables but I strongly advise against as it has around 40 000 rows and you will probably hit data limit.
+```{r  }
+search_variables("samochod")
+```
+You can narrow search to given subject - subgroup:
+```{r  }
+search_variables("lud", subjectId = "P2425")
+```
+
+## Downloading data
+If you picked unit and variable codes you are ready to download data. You can do this two ways:
+- Download data of multiple variables on single unit `get_data_by_unit()`
+- Download data of single variable on multiple units `get_data_by_variable()`
+
+
+### Single unit, multiple variables
+
+We will use `get_data_by_unit()`. We specify our single unit as `unitId` string argument and variables by vector of strings. Optionaly we can specify interested years of data. If not all available years.
+
+```{r  }
+get_data_by_unit(unitId = "023200000000", varId =  "3643")
+get_data_by_unit(unitId = "023200000000", varId =  c("3643", "2137", "148190"))
+```
+
+To get more information about data we can add `type` argument and set it to `"label"` to add additional column with variable info.
+
+```{r  }
+df <- get_data_by_unit(unitId = "023200000000", varId =  "3643", type = "label")
+```
+
+
+### Multiple units, single variable
+
+We will use `get_data_by_variable()`. We specify our single variable as `varId` string argument. If no `unitParentId` is provided function will return all available units for given variable. Setting `unitParentId` will return all available children units (on all levels). To narrow units level set `unitLevel`. Optionaly we can specify interested years of data. If not all available years.
+
+```{r  }
+get_data_by_variable("420", unitParentId = "011210000000")
+get_data_by_variable("420", unitLevel = "4")
+```
+
+
+## Useful tools
+
+The `bdl` package provide couple of additional functions for summarizing and visualizing data.
+
+
+### Summary
+
+Data downloaded via `get_data_by_unit()` and `get_data_by_variable()` van be easily summarized by `summary()`:
+```{r  }
+df <- get_data_by_variable(varId = "3643", unitParentId = "010000000000")
+summary(df)
+```
+
+
+### Plotting
+
+Plotting functions in this package are interfaces to data downloading fucntions Some of them require specifing `data_type` - method for downloading data and rest of arguments will be relevant to specified `data_type` function. Check documentation for more details.
+
+```{r fig.height=5, fig.width=10 }
+line_plot(data_type = "unit", unitId = "000000000000", varId = c("415","420"))
+```
+```{r fig.height=5, fig.width=10  }
+pie_plot(data_type ="variable" ,"60559", "2006", unitLevel = "2")
+```
+
+Scatter plot is unique - requires vector of only 2 variables.
+```{r fig.height=5, fig.width=10  }
+scatter_2var_plot(data_type ="variable" ,c("60559","415"), unitLevel = "2")
+```
+
+### Map generation
+
+With `bdl` package comes `bdl.maps` dataset conatining spatial maps for each Poland's level. `generate_map()` use them to generate maps filled with bdl data. Use `unitLevel` to change type of map. The lower level is chosen the slower map will generate as it has more spatial data to process.
+```{r fig.height=5, fig.width=8}
+generate_map(varId = "60559", year = "2017", unitLevel = 3)
+```
+
+### Multi download
+
+Downloading functions `get_data_by_unit()` and `get_data_by_variable()` have alternative "multi" downloading mode. Function that would work for example single unit, if provided a vector will make additional column with values for each unit provided:
+```{r  }
+get_data_by_unit(unitId = c("023200000000", "020800000000"), varId =  c("3643", "2137", "148190"))
+```
+Or multiple variables for `get_data_by_variable()`:
+```{r  }
+get_data_by_variable(varId =c("3643","420"), unitParentId = "010000000000")
+```
+
+This type of downloading is removing some of columns from original "single" data download.
+
+This mode works for locality version aswell.
