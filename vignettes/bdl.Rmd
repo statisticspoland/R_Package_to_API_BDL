@@ -189,9 +189,6 @@ scatter_2var_plot(data_type ="variable" ,c("60559","415"), unitLevel = "2")
 ### Map generation
 
 With `bdl` package comes `bdl.maps` dataset conatining spatial maps for each Poland's level. `generate_map()` use them to generate maps filled with bdl data. Use `unitLevel` to change type of map. The lower level is chosen the slower map will generate as it has more spatial data to process.
-```{r echo=FALSE, fig.height=5, fig.width=10, include=FALSE}
-try(generate_map(varId = "60559", year = "2017", unitLevel = 3), silent = T)
-```
 ```{r fig.height=5, fig.width=8}
 generate_map(varId = "60559", year = "2017", unitLevel = 3)
 ```
