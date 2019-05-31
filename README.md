@@ -16,5 +16,5 @@ To install this package run these commands:
 
 ```
 install.packages("devtools")
-devtools::install_github("kaniakrzysztof/bdl", build_vignettes = TRUE)
+devtools::install_github("kaniakrzysztof/bdl", build_vignettes = TRUE, upgrade = "always")
 ```
