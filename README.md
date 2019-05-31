@@ -8,6 +8,8 @@ and generating maps using data from data bank.
 Information about how to use this tool is included in built in R help documentation
 and vignettes.
 
+More info about metadata can be found at:
+* https://bdl.stat.gov.pl/BDL/start
 
 ## Installation
 To install this package run these commands:
