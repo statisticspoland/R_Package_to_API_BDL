@@ -14,7 +14,7 @@
 level3_map
 }
 \description{
-A `sf` map from `shp` with NUTS level 3 units of Poland 2016 with its
+A `sf` map from `shp` with NUTS level 3 units of Poland 2010-2018 with its
 name and NUTS id's.
 }
 \keyword{datasets}

@@ -11,7 +11,7 @@ generate_map(varId, year, unitLevel = 2, unitParentId = NULL,
 \item{varId}{A single variable Id.
 Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variable id code.}
 
-\item{year}{A single year.}
+\item{year}{A single year from 2010-2018 range.}
 
 \item{unitLevel}{A map and data NUTS level - number from 0 to 6. Use \code{\link{get_levels}} to find more info.}
 
@@ -29,10 +29,13 @@ a proxy parameters, see details.}
 A tmap map.
 }
 \description{
-Generate given  NUTS level map with data from given variable
+Generate given NUTS level map with data from given variable
 }
 \details{
 Generate quickly map for given NUTS level, using BDL data. Default level is 2.
+  
+  Maps available for year: 2010-2018
+  
   Provide unit parent id to narrow the map for specific regions.
   
   Generating lower (leves 5 and 6) level maps can take some time.
