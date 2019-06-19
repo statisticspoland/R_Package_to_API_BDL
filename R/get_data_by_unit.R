@@ -28,8 +28,7 @@
 #' @examples
 #'  \dontrun{
 #'    df <- get_data_by_unit(unitId = "023200000000", varId =  "3643")
-#'    df <- get_data_by_unit(unitId = "023200000000", 
-#'    varId =  c("3643", "2137", "148190"), type = "label")
+#'    df <- get_data_by_unit(unitId = "023200000000", varId =  c("3643", "2137", "148190"), type = "label")
 #' }
 #' @keywords utilities database
 get_data_by_unit <- function(unitId, varId, year = NULL,
