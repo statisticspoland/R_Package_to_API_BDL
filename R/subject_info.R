@@ -1,4 +1,4 @@
-#' @title Inforamtion about subject
+#' @title Information about subject
 #' @description Retrieve information about subject
 #' @details
 #'
