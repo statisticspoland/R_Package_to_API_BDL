@@ -13,7 +13,7 @@ The 'bdl' package is an interface to Local Data Bank(Bank Danych Lokalnych - bdl
 
 \describe{
 \item{`bdl.api_private_key`}{String with BDL API key which you can get
-\link{https://bdl.stat.gov.pl/api/v1/client?theme=Default} 
+\url{https://bdl.stat.gov.pl/api/v1/client?theme=Default} 
 Example: \code{options(bdl.api_private_key = "3sd1dea1-f89d-488c-c441-08d64fbd20e9")}}
 
 }
