@@ -1,8 +1,8 @@
 Package: bdl
 Type: Package
-Date: 2018-07-13
+Date: 2019-06-21
 Title: Interface and Tools for BDL API
-Version: 0.0.3
+Version: 1.0.0
 Authors@R: person("Krzysztof", "Kania", email = "K.Kania@stat.gov.pl",
                   role = c("aut", "cre"))
 Description: The 'bdl' package is an interface to Local Data Bank(Bank Danych Lokalnych - bdl) API 
@@ -19,7 +19,6 @@ VignetteBuilder: knitr
 NeedsCompilation: no
 Repository: CRAN
 RoxygenNote: 6.1.1
-Packaged: 2018-12-27 12:42:28 UTC; KaniaK
 Author: Krzysztof Kania [aut, cre]
 Maintainer: Krzysztof Kania <K.Kania@stat.gov.pl>
 URL: https://github.com/kaniakrzysztof/bdl

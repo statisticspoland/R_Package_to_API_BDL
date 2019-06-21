@@ -2,7 +2,7 @@
 % Please edit documentation in R/subject_info.R
 \name{subject_info}
 \alias{subject_info}
-\title{Inforamtion about subject}
+\title{Information about subject}
 \usage{
 subject_info(subjectId, lang = c("pl", "en"), ...)
 }
