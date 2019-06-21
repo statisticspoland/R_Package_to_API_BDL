@@ -80,8 +80,8 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       sf::st_geometry(geo) <- sf::st_sfc(geo$geometry)
       sf::st_geometry(shape) <- sf::st_geometry(geo)
       
-      shape <- suppressWarnings(tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(level5_map_units)), 
-                                                 current.projection = tmaptools::get_proj4(tmaptools::get_projection(level5_map_units))))
+      shape <- suppressWarnings(tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(bdl::level5_map_units)), 
+                                                 current.projection = tmaptools::get_proj4(tmaptools::get_projection(bdl::level5_map_units))))
      
 
     }
@@ -105,8 +105,8 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       sf::st_geometry(shape) <- sf::st_geometry(geo)
       
       
-      shape <- suppressWarnings(tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(level6_map_units)), 
-                                                          current.projection = tmaptools::get_proj4(tmaptools::get_projection(level6_map_units))))
+      shape <- suppressWarnings(tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(bdl::level6_map_units)), 
+                                                          current.projection = tmaptools::get_proj4(tmaptools::get_projection(bdl::level6_map_units))))
       
       
     } 
