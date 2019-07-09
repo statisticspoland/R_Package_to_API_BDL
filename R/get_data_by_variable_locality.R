@@ -1,5 +1,5 @@
 #' @title Get data by variable Id forlocalities from BDL API
-#' @description Retrieve data for a given variables for multiple unit localites
+#' @description Retrieve data for a given variables for multiple unit localities
 #'  from BDL with specified format.
 #' @details
 #'   Data to retrieve from

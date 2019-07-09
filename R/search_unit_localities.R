@@ -1,4 +1,4 @@
-#' @title Search for unit localites
+#' @title Search for unit localities
 #' @description Search for a given phrase in unit locality names.
 #' @details
 #'
