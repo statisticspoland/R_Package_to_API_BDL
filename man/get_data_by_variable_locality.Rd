@@ -26,7 +26,7 @@ a proxy parameters, see details.}
 A dataset as a tibble.
 }
 \description{
-Retrieve data for a given variables for multiple unit localites
+Retrieve data for a given variables for multiple unit localities
  from BDL with specified format.
 }
 \details{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/search_unit_localities.R
 \name{search_unit_localities}
 \alias{search_unit_localities}
-\title{Search for unit localites}
+\title{Search for unit localities}
 \usage{
 search_unit_localities(name, year = NULL, sort = c("id", "-id", "name",
   "-name"), lang = c("pl", "en"), ...)

@@ -14,12 +14,11 @@ Imports: methods, magrittr, tibble, jsonlite, httr, stringi,
         randomcoloR, sf, tmaptools, tmap, purrr
 Encoding: UTF-8
 LazyData: true
-Suggests: knitr, rmarkdown, testthat, roxygen2
+Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 NeedsCompilation: no
 Repository: CRAN
 RoxygenNote: 6.1.1
-Author: Krzysztof Kania [aut, cre]
 Maintainer: Krzysztof Kania <K.Kania@stat.gov.pl>
 URL: https://github.com/kaniakrzysztof/bdl
 BugReports: https://github.com/kaniakrzysztof/bdl/issues
