@@ -58,7 +58,7 @@ get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
     df <- lapply(df, helper)
     
     
-    df <- plyr::join_all(df, by=c("id","name", "year"))
+    df <- purrr::reduce(df, dplyr::left_join)
     
     helper <- function(x) paste("val_", x, sep = "")
     varId <- lapply(varId, helper)

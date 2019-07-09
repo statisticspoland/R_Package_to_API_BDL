@@ -10,8 +10,8 @@ Description: The 'bdl' package is an interface to Local Data Bank(Bank Danych Lo
 License: GPL-3
 Depends: R (>= 3.5.0)
 Imports: methods, magrittr, tibble, jsonlite, httr, stringi,
-        dplyr, tidyr, utils, stats, ggplot2,
-        ggpubr, randomcoloR, sf, tmaptools, tmap, plyr
+        dplyr, tidyr, utils, stats, ggplot2, ggpubr, 
+        randomcoloR, sf, tmaptools, tmap, purrr
 Encoding: UTF-8
 LazyData: true
 Suggests: knitr, rmarkdown, testthat, roxygen2

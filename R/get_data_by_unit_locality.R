@@ -69,7 +69,7 @@ get_data_by_unit_locality <- function(unitId, varId, year = NULL,
    helper = function(x) dplyr::select(x,-dplyr::one_of(c("attrId","measureUnitId","lastUpdate")))
    df <- lapply(df, helper)
    
-   df <- plyr::join_all(df, by=c("id", "year"))
+   df <- purrr::reduce(df, dplyr::left_join)
    
    helper <- function(x) paste("val_", x, sep = "")
    unitId <- lapply(unitId, helper)
