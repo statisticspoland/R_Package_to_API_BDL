@@ -20,5 +20,5 @@ NeedsCompilation: no
 Repository: CRAN
 RoxygenNote: 6.1.1
 Maintainer: Krzysztof Kania <K.Kania@stat.gov.pl>
-URL: https://github.com/kaniakrzysztof/bdl
-BugReports: https://github.com/kaniakrzysztof/bdl/issues
+URL: https://github.com/statisticspoland/R_Package_to_API_BDL
+BugReports: https://github.com/statisticspoland/R_Package_to_API_BDL/issues
