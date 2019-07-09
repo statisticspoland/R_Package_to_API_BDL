@@ -15,7 +15,7 @@ To install this package run these commands:
 
 ```
 install.packages("remotes", type = "binary")
-remotes::install_github("kaniakrzysztof/bdl", upgrade = "always", type = "binary")
+remotes::install_github("statisticspoland/R_Package_to_API_BDL", upgrade = "always", type = "binary")
 ```
 
 If installation through remotes didnt work try to install package manually by 
