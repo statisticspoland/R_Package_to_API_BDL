@@ -37,8 +37,8 @@ get_data_by_unit <- function(unitId, varId, year = NULL,
   if (any(nchar_length(unitId) != 12)) {
     stop("Unit id should be length of 12.")
   }
-  if(any(nchar_length(varId) == 0)) {
-    stop("Invalid variable id")
+  if(any(is.na(varId)) || any(nchar_length(varId) == 0)){
+    stop("Variable id should be non-zero length string.")
   }
 
   dir <- "data/By-Unit"

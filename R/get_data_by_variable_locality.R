@@ -36,8 +36,8 @@ get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
   if(length(unitParentId) > 1 || any(nchar_length(unitParentId) != 12)) {
     stop("Unit id should be 12 characters NUTS id code.")
   }
-  if(any(nchar_length(varId) == 0)) {
-    stop("Invalid variable id.")
+  if(any(is.na(varId)) || any(nchar_length(varId) == 0)){
+    stop("Variable id should be non-zero length string.")
   }
   
   dir <- "data/Localities/By-Variable"

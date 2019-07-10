@@ -35,6 +35,9 @@ get_data_by_unit_locality <- function(unitId, varId, year = NULL,
  if (nchar_length(unitId) != 20 || substr(unitId, 13, 13) != "-") {
     stop("Unit id should be 12 characters NUTS id code with 7 characters locality individual id, separated by dash.")
  }
+   if(any(is.na(varId)) || any(nchar_length(varId) == 0)){
+      stop("Variable id should be non-zero length string.")
+   }
  dir <- "data/Localities/By-Unit"
  type <- match.arg(type)
  lang <- match.arg(lang)

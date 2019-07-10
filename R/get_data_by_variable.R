@@ -40,7 +40,7 @@ get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
                                 year = NULL, aggregateId = NULL, lang = c("pl","en"), 
                                 ...) {
 
-  if(any(is.na(varId)) || any(nchar_length(varId)) == 0){
+  if(any(is.na(varId)) || any(nchar_length(varId) == 0)){
     stop("Variable id should be non-zero length string.")
   }
   
