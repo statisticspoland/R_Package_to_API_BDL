@@ -3,4 +3,4 @@
 ^\.Rproj\.user$
 ^docs$
 ^NEWS\.md$
-^README\.Rmd$       # An Rmarkdown file used to generate README.md
+^README\.md$
