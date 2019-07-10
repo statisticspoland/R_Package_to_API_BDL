@@ -64,16 +64,19 @@ get_data_by_unit_locality <- function(unitId, varId, year = NULL,
  } else {
    unitId <- as.list(unitId)
    
-   df <- lapply(unitId, get_data_by_unit_locality, varId = varId, year = year, lang = lang)
+   helper <- function(x) {
+      temp <- get_data_by_unit_locality(x, varId = varId, year = year, lang = lang)
+      colname <- paste0("val_", x, sep = "")
+      names(temp)[names(temp) == "val"] <- colname
+      temp
+   }
+   
+   df <- lapply(unitId, helper)
    
    helper = function(x) dplyr::select(x,-dplyr::one_of(c("attrId","measureUnitId","lastUpdate")))
    df <- lapply(df, helper)
    
    df <- purrr::reduce(df, dplyr::left_join)
-   
-   helper <- function(x) paste("val_", x, sep = "")
-   unitId <- lapply(unitId, helper)
-   names(df)[-c(1:2)] <- unlist(unitId)
  }
  
  

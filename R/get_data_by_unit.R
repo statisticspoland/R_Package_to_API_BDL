@@ -54,16 +54,24 @@ get_data_by_unit <- function(unitId, varId, year = NULL,
   } else {
     unitId <- as.list(unitId)
     
-    df <- lapply(unitId, get_data_by_unit, varId = varId, aggregateId = aggregateId, year = year, lang = lang)
+    helper <- function(x) {
+      temp <- get_data_by_unit(x, varId = varId, aggregateId = aggregateId, year = year, lang = lang)
+      colname <- paste0("val_", x, sep = "")
+      names(temp)[names(temp) == "val"] <- colname
+      temp
+    }
     
-    helper = function(x) dplyr::select(x,-dplyr::one_of(c("attrId","measureUnitId","lastUpdate")))
+    # df <- lapply(unitId, get_data_by_unit, varId = varId, aggregateId = aggregateId, year = year, lang = lang)
+    df <- lapply(unitId, helper)
+    
+    helper = function(x) dplyr::select(x,-dplyr::one_of(c("attrId", "measureUnitId", "lastUpdate")))
     df <- lapply(df, helper)
-
+    
     df <- purrr::reduce(df, dplyr::left_join)
-
-    helper <- function(x) paste("val_", x, sep = "")
-    unitId <- lapply(unitId, helper)
-    names(df)[-c(1:2)] <- unlist(unitId)
+    
+    # helper <- function(x) paste("val_", x, sep = "")
+    # unitId <- lapply(unitId, helper)
+    # names(df)[-c(1:2)] <- unlist(unitId)
   }
 
   
@@ -71,7 +79,6 @@ get_data_by_unit <- function(unitId, varId, year = NULL,
   
   if (type == "label") {
     variables <- unique(df$id)
-    attributes <- unique(df$attrId)
 
     variable_labels <- lapply(variables, get_var_label, lang = lang)
     names(variable_labels) <- variables
@@ -79,10 +86,12 @@ get_data_by_unit <- function(unitId, varId, year = NULL,
     measure_labels <- lapply(variables, get_measure_label, lang = lang)
     names(measure_labels) <- variables
 
-    attribute_labels <- lapply(attributes, get_attr_label, lang = lang)
-    names(attribute_labels) <- attributes
-
     if(length(unitId) == 1){
+      attributes <- unique(df$attrId)
+      
+      attribute_labels <- lapply(attributes, get_attr_label, lang = lang)
+      names(attribute_labels) <- attributes
+      
       df <- df %>%
         dplyr::mutate(variableName = as.character(variable_labels[as.character(df$id)])) %>%
         dplyr::mutate(measureName = as.character(measure_labels[as.character(df$id)]))  %>%

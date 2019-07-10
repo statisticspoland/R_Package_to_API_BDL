@@ -52,17 +52,20 @@ get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
   } else {
     varId <- as.list(varId)
     
-    df <- lapply(varId, get_data_by_variable_locality, unitParentId = unitParentId, year = year, lang = lang)
+    helper <- function(x) {
+      temp <- get_data_by_variable_locality(x, unitParentId = unitParentId, year = year, lang = lang)
+      colname <- paste0("val_", x, sep = "")
+      names(temp)[names(temp) == "val"] <- colname
+      temp
+    }
+    
+    df <- lapply(varId, helper)
     
     helper = function(x) dplyr::select(x,-dplyr::one_of(c("attrId")))
     df <- lapply(df, helper)
     
     
     df <- purrr::reduce(df, dplyr::left_join)
-    
-    helper <- function(x) paste("val_", x, sep = "")
-    varId <- lapply(varId, helper)
-    names(df)[-c(1:3)] <- unlist(varId)
   }
   
   
