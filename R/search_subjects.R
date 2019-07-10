@@ -22,7 +22,7 @@
 #' }
 #' @keywords utilities seach subjects
 search_subjects <- function(name, sort = c("id","-id","name", "-name"), lang = c("pl","en"), ...) {
-  if(is.null(name) || stringi::stri_length(name) <= 0){
+  if(is.null(name) || nchar_length(name) <= 0){
     stop("Name cannot be empty.")
   }
 

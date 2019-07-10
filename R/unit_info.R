@@ -22,7 +22,7 @@
 #' @keywords info units
 unit_info <- function(unitId, lang = c("pl","en"), ...) {
 
-  if (!is.null(unitId) && stringi::stri_length(unitId) != 12) {
+  if (!is.null(unitId) &&nchar_length(unitId) != 12) {
     stop("Unit id should be length of 12.")
   }
 

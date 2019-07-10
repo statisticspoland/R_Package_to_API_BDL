@@ -22,7 +22,7 @@
 #' @keywords info units localities
 unit_locality_info <- function(unitId, lang = c("pl","en"), ...) {
 
-  if (!is.null(unitId) && stringi::stri_length(unitId) != 20 && substr(unitId, 7, 7) != "-") {
+  if (!is.null(unitId) && nchar_length(unitId) != 20 && substr(unitId, 7, 7) != "-") {
     stop("Unit id should be 12 characters NUTS id code with 7 characters locality individual id, separated by dash.")
   }
 

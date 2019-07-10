@@ -39,7 +39,7 @@ get_request <- function(dir, id, filters = NULL, ...) {
   url <- build_url(dir = dir, id = id, filters = filters)
   key <- getOption("bdl.api_private_key")
 
-  if (!is.null(key) && stringi::stri_length(key) != 0) {
+  if (!is.null(key) && nchar_length(key) != 0) {
       h <- c(key)
     names(h) <- "X-ClientId"
     resp <- httr::GET(url, httr::add_headers(.headers = h), httr::content_type_json(), ...)

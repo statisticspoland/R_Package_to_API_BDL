@@ -32,7 +32,7 @@ get_variables <- function(subjectId, level = NULL, year = NULL, sort = c("id","-
     stop("subjectId has to be string value.")
   }
 
-  if (stringi::stri_length(subjectId) == 0 || is.null(subjectId)) {
+  if (nchar_length(subjectId) == 0 || is.null(subjectId)) {
     stop("subjectId cannot be empty.")
   }
 

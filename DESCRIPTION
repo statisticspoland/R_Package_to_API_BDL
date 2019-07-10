@@ -9,7 +9,7 @@ Description: The 'bdl' package is an interface to Local Data Bank(Bank Danych Lo
     with set of useful tools like quick plotting and map generating using data from data bank. 
 License: GPL-3
 Depends: R (>= 3.5.0)
-Imports: methods, magrittr, tibble, jsonlite, httr, stringi,
+Imports: methods, magrittr, tibble, jsonlite, httr, 
         dplyr, tidyr, utils, stats, ggplot2, ggpubr, 
         randomcoloR, sf, tmaptools, tmap, purrr
 Encoding: UTF-8

@@ -29,4 +29,6 @@ get_attr_label <- function(attrId, lang = "pl") {
   attr_label <- toString(attr_suffix$description)
   attr_label
 }
+#' @keywords internal
+nchar_length <- function(x) {`if`(any(is.na(x)), 0, nchar(x)) }
 

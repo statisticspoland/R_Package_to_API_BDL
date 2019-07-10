@@ -33,10 +33,10 @@
 get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
                                           lang = c("pl","en"), ...) {
   
-  if(length(unitParentId) > 1 || any(stringi::stri_length(unitParentId) != 12)) {
+  if(length(unitParentId) > 1 || any(nchar_length(unitParentId) != 12)) {
     stop("Unit id should be 12 characters NUTS id code.")
   }
-  if(any(stringi::stri_length(varId) == 0)) {
+  if(any(nchar_length(varId) == 0)) {
     stop("Invalid variable id.")
   }
   

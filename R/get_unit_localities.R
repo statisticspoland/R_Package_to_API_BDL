@@ -23,7 +23,7 @@
 #' @keywords utilities search units localities
 get_unit_localities <- function(parentId, sort = c("id","-id","name", "-name"),
                                 lang = c("pl","en"), ...) {
-  if (!is.null(parentId) && (stringi::stri_length(parentId) != 12 && stringi::stri_length(parentId) != 0)) {
+  if (!is.null(parentId) && (nchar_length(parentId) != 12 && nchar_length(parentId) != 0)) {
     stop("Unit id should be length of 12.")
   }
 

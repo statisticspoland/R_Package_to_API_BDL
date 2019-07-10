@@ -37,7 +37,7 @@ get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
                                 year = NULL, aggregateId = NULL, lang = c("pl","en"), 
                                 ...) {
 
-  if (!is.null(unitParentId) && stringi::stri_length(unitParentId) != 12) {
+  if (!is.null(unitParentId) && nchar_length(unitParentId) != 12) {
     stop("Unit id should be 12 characters NUTS id code.")
   }
 

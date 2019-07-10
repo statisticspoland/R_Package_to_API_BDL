@@ -34,10 +34,10 @@
 get_data_by_unit <- function(unitId, varId, year = NULL,
   type = c("code", "label"), aggregateId = NULL, lang = c("pl","en"), ...) {
   
-  if (any(stringi::stri_length(unitId) != 12)) {
+  if (any(nchar_length(unitId) != 12)) {
     stop("Unit id should be length of 12.")
   }
-  if(any(stringi::stri_length(varId) == 0)) {
+  if(any(nchar_length(varId) == 0)) {
     stop("Invalid variable id")
   }
 
