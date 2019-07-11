@@ -32,7 +32,7 @@
 get_data_by_unit_locality <- function(unitId, varId, year = NULL,
                              type = c("code", "label"), lang = c("pl","en"), ...) {
 
- if (nchar_length(unitId) != 20 || substr(unitId, 13, 13) != "-") {
+ if (any(nchar_length(unitId) != 20) || any(substr(unitId, 13, 13) != "-")) {
     stop("Unit id should be 12 characters NUTS id code with 7 characters locality individual id, separated by dash.")
  }
    if(any(is.na(varId)) || any(nchar_length(varId) == 0)){
