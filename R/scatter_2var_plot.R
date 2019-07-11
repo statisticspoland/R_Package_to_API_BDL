@@ -51,6 +51,7 @@ scatter_2var_plot <- function(data_type = c("variable","variable.locality"),
   } else {
     stop("You can scatter plot only 2 variables.")
   }
+  df <- tidyr::drop_na(df)
   x_name <- paste0("val_", varId[1])
   x_label <- get_var_label(varId[1])
   
