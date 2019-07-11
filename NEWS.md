@@ -6,7 +6,7 @@
 
 * Various fixes to documentation
 
-* New vignette available at [https://kaniakrzysztof.github.io/bdl/](https://kaniakrzysztof.github.io/bdl/)
+* New site available at [https://kaniakrzysztof.github.io/bdl/](https://kaniakrzysztof.github.io/bdl/)
 
 # bdl 0.0.3
 
