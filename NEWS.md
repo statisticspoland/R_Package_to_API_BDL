@@ -6,7 +6,7 @@
 
 * Various fixes to documentation
 
-* New site available at [https://kaniakrzysztof.github.io/bdl/](https://kaniakrzysztof.github.io/bdl/)
+* New package site available at [https://statisticspoland.github.io/R_Package_to_API_BDL/](https://statisticspoland.github.io/R_Package_to_API_BDL/)
 
 # bdl 0.0.3
 
