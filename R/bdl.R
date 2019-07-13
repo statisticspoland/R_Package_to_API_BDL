@@ -13,7 +13,8 @@
 #' @docType package
 #' @import methods
 #' @import utils
-#' @import stats
+#' @importFrom  stats sd
+#' @importFrom  stats var
 #' @import dplyr
 #' @importFrom purrr reduce
 #' @import tibble
@@ -25,7 +26,6 @@
 #' @import ggplot2
 #' @import ggpubr
 #' @importFrom randomcoloR distinctColorPalette
-#' Map related packages
 #' @import sf
 #' @import tmaptools
 #' @import tmap
