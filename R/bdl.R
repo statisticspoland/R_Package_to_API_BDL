@@ -12,6 +12,11 @@
 "_PACKAGE"
 #' @docType package
 #' @import methods
+#' @import dplyr
+#' @importFrom purrr reduce
+#' @import tibble
+#' @importFrom jsonlite fromJSON
+#' 
 NULL
 # global var note fix
 if(getRversion() >= "2.15.1") utils::globalVariables(c("val"))
