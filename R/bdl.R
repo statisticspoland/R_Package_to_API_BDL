@@ -12,11 +12,23 @@
 "_PACKAGE"
 #' @docType package
 #' @import methods
+#' @import utils
+#' @import stats
 #' @import dplyr
 #' @importFrom purrr reduce
 #' @import tibble
 #' @importFrom jsonlite fromJSON
-#' 
+#' @importFrom magrittr %>%
+#' @import httr
+#' @importFrom tidyr unnest
+#' @importFrom tidyr drop_na
+#' @import ggplot2
+#' @import ggpubr
+#' @importFrom randomcoloR distinctColorPalette
+#' Map related packages
+#' @import sf
+#' @import tmaptools
+#' @import tmap
 NULL
 # global var note fix
 if(getRversion() >= "2.15.1") utils::globalVariables(c("val"))
