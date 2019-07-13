@@ -5,7 +5,7 @@
 [API](https://bdl.stat.gov.pl/BDL). It is a set of tools that includes: quick plotting 
 and maps generation, with the usage of the data from the data bank. 
 
-The information about how to use this tool is included in the built in R help documentation and on package webpage [https://kaniakrzysztof.github.io/bdl/](https://kaniakrzysztof.github.io/bdl/). 
+The information about how to use this tool is included in the built in R help documentation and on package webpage [https://statisticspoland.github.io/R_Package_to_API_BDL/](https://statisticspoland.github.io/R_Package_to_API_BDL/). 
 
 Try
 ```{R}
