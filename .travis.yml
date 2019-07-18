@@ -5,3 +5,5 @@ cache: packages
 apt_packages:
   - libv8-dev
   - libudunits2-dev
+  - libgdal-dev
+  - libproj-dev
