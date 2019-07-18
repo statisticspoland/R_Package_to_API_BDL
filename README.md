@@ -1,5 +1,9 @@
 # bdl 1.0.0
 
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.org/statisticspoland/R_Package_to_API_BDL.svg?branch=master)](https://travis-ci.org/statisticspoland/R_Package_to_API_BDL)
+<!-- badges: end -->
+
 ## Overview
 'bdl' package is an interface to Local Data Bank (Bank Danych Lokalnych - bdl) 
 [API](https://bdl.stat.gov.pl/BDL). It is a set of tools that includes: quick plotting 
