@@ -74,6 +74,10 @@ get_request <- function(dir, id, filters = NULL, ...) {
 }
 
 build_url <- function (dir, id, filters) {
+  # fix weird bug with path building on travis
+  if(nchar_length(id) == 0){
+    path <- file.path("api/v1", dir)
+  }
   path <- file.path("api/v1", dir, id)
 
   # prepare filters for query
