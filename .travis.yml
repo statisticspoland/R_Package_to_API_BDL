@@ -4,3 +4,4 @@ language: R
 cache: packages
 apt_packages:
   - libv8-dev
+  - libudunits2-dev
