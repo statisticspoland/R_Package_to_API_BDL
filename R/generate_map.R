@@ -31,7 +31,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #'  bdl_map <- generate_map(varId = "60559", year = "2017")
+#'  }
 generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggregateId = NULL, lang = c("pl","en"), ...) {
   if (length(varId) == 1 && length(year) == 1 && (year >= 2010 && year <=2018)) {
     if(is.null(unitLevel) || !(unitLevel >= 1 && unitLevel <=6)){
