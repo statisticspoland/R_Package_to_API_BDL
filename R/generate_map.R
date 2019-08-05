@@ -17,7 +17,7 @@
 #' @param varId A single variable Id.
 #'   Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variable id code.
 #' @param year A single year from 2010-2018 range.
-#' @param unitLevel A map and data NUTS level - number from 0 to 6. Use \code{\link{get_levels}} to find more info.
+#' @param unitLevel A map and data NUTS level - number from 1 to 6. Use \code{\link{get_levels}} to find more info.
 #' @param unitParentId A 12 character NUTS id code of interested unit. Use \code{\link{search_units}} or
 #'   \code{\link{get_units}} to find unit id code.
 #' @param aggregateId An aggregate id. Use \code{\link{get_aggregates}} for more info.
