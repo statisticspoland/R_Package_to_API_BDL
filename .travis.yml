@@ -7,3 +7,8 @@ apt_packages:
   - libudunits2-dev
   - libgdal-dev
   - libproj-dev
+jobs:
+  include:
+  - r: devel
+  - os: osx
+  - r: release
