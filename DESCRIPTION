@@ -15,7 +15,6 @@ Imports: methods, magrittr, tibble, jsonlite, httr,
 Encoding: UTF-8
 LazyData: true
 Suggests: knitr, rmarkdown, testthat
-OS_type: windows                    
 VignetteBuilder: knitr
 NeedsCompilation: no
 Repository: CRAN
