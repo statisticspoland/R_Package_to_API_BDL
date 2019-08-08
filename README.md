@@ -26,9 +26,10 @@ To install this package run these commands:
 install.packages("remotes", type = "binary")
 remotes::install_github("statisticspoland/R_Package_to_API_BDL", upgrade = "always", type = "binary")
 ```
+To use ```{R}generate_map()``` function, you have to download and load maps to global environment. Maps can be downloaded here: [https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData](https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData)
 
 If installation through remotes didn't work, try installing the package manually by 
-downloading source package: https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl_1.0.0.zip and executing
+downloading source package: [https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl_1.0.0.zip](https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl_1.0.0.zip) and executing
 
 ```{R}
 install.packages('path_to_file/bdl_1.0.0.zip', repos = NULL, type="source")
