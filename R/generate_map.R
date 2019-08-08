@@ -35,6 +35,10 @@
 #'  bdl_map <- generate_map(varId = "60559", year = "2017")
 #'  }
 generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggregateId = NULL, lang = c("pl","en"), ...) {
+  if(!exists("bdl.maps") || !is.list(bdl.maps)){
+    stop("This function requires external map data \"bdl.maps\" loaded to global environment. \n test")
+  }
+  
   if (length(varId) == 1 && length(year) == 1 && (year >= 2010 && year <=2018)) {
     if(is.null(unitLevel) || !(unitLevel >= 1 && unitLevel <=6)){
       stop("Wrong unitLevel selected.")
@@ -48,27 +52,27 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
     
     
     if(unitLevel == 1){
-      selected_map <- bdl::level1_map
+      selected_map <- bdl.maps$level1_map
       shape <- dplyr::inner_join(selected_map, df, by = "id")
     }
     if(unitLevel == 2){
-      selected_map <- bdl::level2_map
+      selected_map <- bdl.maps$level2_map
       shape <- dplyr::inner_join(selected_map, df, by = "id")
     }
     if(unitLevel == 3){
-      selected_map <- bdl::level3_map
+      selected_map <- bdl.maps$level3_map
       shape <- dplyr::inner_join(selected_map, df, by = "id")
     }
     if(unitLevel == 4){
-      selected_map <- bdl::level4_map
+      selected_map <- bdl.maps$level4_map
       shape <- dplyr::inner_join(selected_map, df, by = "id")
     }
     if(unitLevel == 5){
       tempyear<- year
-      shape <- dplyr::inner_join(bdl::level5_map_units, df, by = "id")
+      shape <- dplyr::inner_join(bdl.maps$level5_map_units, df, by = "id")
       geo <- as.data.frame(shape) 
       
-      tempchanges <- bdl::level5_map_changes
+      tempchanges <- bdl.maps$level5_map_changes
       tempchanges <- as.data.frame(dplyr::filter(tempchanges, year <= tempyear))
       
       for(val in 1:nrow(geo)) {
@@ -82,17 +86,17 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       sf::st_geometry(geo) <- sf::st_sfc(geo$geometry)
       sf::st_geometry(shape) <- sf::st_geometry(geo)
       
-      shape <- suppressWarnings(tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(bdl::level5_map_units)), 
-                                                 current.projection = tmaptools::get_proj4(tmaptools::get_projection(bdl::level5_map_units))))
+      shape <- suppressWarnings(tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level5_map_units)), 
+                                                 current.projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level5_map_units))))
      
 
     }
     if(unitLevel == 6){
       tempyear<- year
-      shape <- dplyr::inner_join(bdl::level6_map_units, df, by = "id")
+      shape <- dplyr::inner_join(bdl.maps$level6_map_units, df, by = "id")
       geo <- as.data.frame(shape) 
       
-      tempchanges <- bdl::level6_map_changes
+      tempchanges <- bdl.maps$level6_map_changes
       tempchanges <- as.data.frame(dplyr::filter(tempchanges, year <= tempyear))
       
       
@@ -107,8 +111,8 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       sf::st_geometry(shape) <- sf::st_geometry(geo)
       
       
-      shape <- suppressWarnings(tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(bdl::level6_map_units)), 
-                                                          current.projection = tmaptools::get_proj4(tmaptools::get_projection(bdl::level6_map_units))))
+      shape <- suppressWarnings(tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level6_map_units)), 
+                                                          current.projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level6_map_units))))
       
       
     } 
