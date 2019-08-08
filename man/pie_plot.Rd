@@ -48,5 +48,8 @@ Generate quickly ggplot2 plot, using BDL data.
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
+\dontrun{
    bld_pie_plot <- pie_plot(data_type ="variable" ,"60559", "2006", unitLevel = "2")
+}
+   
 }

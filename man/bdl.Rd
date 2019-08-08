@@ -4,9 +4,9 @@
 \name{bdl}
 \alias{bdl}
 \alias{bdl-package}
-\title{bdl: Interface and Tools for BDL API}
+\title{bdl: Interface and Tools for 'BDL' API}
 \description{
-The 'bdl' package is an interface to Local Data Bank(Bank Danych Lokalnych - bdl) API 
+The 'bdl' package is an interface to Local Data Bank('Bank Danych Lokalnych' - 'bdl') API 
     with set of useful tools like quick plotting and map generating using data from data bank.
 }
 \section{Package options}{

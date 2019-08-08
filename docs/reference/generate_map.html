@@ -137,7 +137,7 @@ Use <code><a href='search_variables.html'>search_variables</a></code> or <code><
     </tr>
     <tr>
       <th>unitLevel</th>
-      <td><p>A map and data NUTS level - number from 0 to 6. Use <code><a href='get_levels.html'>get_levels</a></code> to find more info.</p></td>
+      <td><p>A map and data NUTS level - number from 1 to 6. Use <code><a href='get_levels.html'>get_levels</a></code> to find more info.</p></td>
     </tr>
     <tr>
       <th>unitParentId</th>
@@ -154,7 +154,7 @@ Use <code><a href='search_variables.html'>search_variables</a></code> or <code><
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Other arguments passed on to <code><a href='https://rdrr.io/pkg/httr/man/GET.html'>GET</a></code>. For example
+      <td><p>Other arguments passed on to <code><a href='https://httr.r-lib.org/reference/GET.html'>GET</a></code>. For example
 a proxy parameters, see details.</p></td>
     </tr>
     </table>
@@ -169,14 +169,17 @@ a proxy parameters, see details.</p></td>
 <p>Maps available for year: 2010-2018</p>  
 <p>Provide unit parent id to narrow the map for specific regions.</p>  
 <p>Generating lower (leves 5 and 6) level maps can take some time.</p>  
-<p>To use a proxy to connect, a <code><a href='https://rdrr.io/pkg/httr/man/use_proxy.html'>use_proxy</a></code> can be
-  passed to <code><a href='https://rdrr.io/pkg/httr/man/GET.html'>GET</a></code>. For example
+<p>To use a proxy to connect, a <code><a href='https://httr.r-lib.org/reference/use_proxy.html'>use_proxy</a></code> can be
+  passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>GET</a></code>. For example
   <code><a href='get_request.html'>get_request(id, filters,
   config = httr::use_proxy(url, port, username, password))</a></code>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> <span class='no'>bdl_map</span> <span class='kw'>&lt;-</span> <span class='fu'>generate_map</span>(<span class='kw'>varId</span> <span class='kw'>=</span> <span class='st'>"60559"</span>, <span class='kw'>year</span> <span class='kw'>=</span> <span class='st'>"2017"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: pakiet 'sf' został zbudowany w wersji R 3.6.1</span></div><div class='output co'>#&gt; <span class='message'>Linking to GEOS 3.6.1, GDAL 2.2.3, PROJ 4.9.3</span></div></pre>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+ <span class='no'>bdl_map</span> <span class='kw'>&lt;-</span> <span class='fu'>generate_map</span>(<span class='kw'>varId</span> <span class='kw'>=</span> <span class='st'>"60559"</span>, <span class='kw'>year</span> <span class='kw'>=</span> <span class='st'>"2017"</span>)
+
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

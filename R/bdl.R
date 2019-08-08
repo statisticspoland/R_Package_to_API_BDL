@@ -26,9 +26,9 @@
 #' @import ggplot2
 #' @import ggpubr
 #' @importFrom randomcoloR distinctColorPalette
-#' @import sf
-#' @import tmaptools
 #' @import tmap
+#' @import tmaptools
+#' @import sf
 NULL
 # global var note fix
-if(getRversion() >= "2.15.1") utils::globalVariables(c("val"))
+if(getRversion() >= "2.15.1") utils::globalVariables(c("val","bdl.maps"))

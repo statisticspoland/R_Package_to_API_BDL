@@ -161,7 +161,7 @@ If <code>NULL</code> (default) no level filters apply. Use <code><a href='get_le
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Other arguments passed on to <code><a href='https://rdrr.io/pkg/httr/man/GET.html'>GET</a></code>. For example
+      <td><p>Other arguments passed on to <code><a href='https://httr.r-lib.org/reference/GET.html'>GET</a></code>. For example
 a proxy parameters, see details.</p></td>
     </tr>
     </table>
@@ -175,14 +175,17 @@ a proxy parameters, see details.</p></td>
     <p>Generate quickly ggplot2 plot, using BDL data.</p>  
 <p>Pie plot one variable value for multiple units on single year.</p>  
   
-<p>To use a proxy to connect, a <code><a href='https://rdrr.io/pkg/httr/man/use_proxy.html'>use_proxy</a></code> can be
-  passed to <code><a href='https://rdrr.io/pkg/httr/man/GET.html'>GET</a></code>. For example
+<p>To use a proxy to connect, a <code><a href='https://httr.r-lib.org/reference/use_proxy.html'>use_proxy</a></code> can be
+  passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>GET</a></code>. For example
   <code><a href='get_request.html'>get_request(id, filters,
   config = httr::use_proxy(url, port, username, password))</a></code>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>   <span class='no'>bld_pie_plot</span> <span class='kw'>&lt;-</span> <span class='fu'>pie_plot</span>(<span class='kw'>data_type</span> <span class='kw'>=</span><span class='st'>"variable"</span> ,<span class='st'>"60559"</span>, <span class='st'>"2006"</span>, <span class='kw'>unitLevel</span> <span class='kw'>=</span> <span class='st'>"2"</span>)</div><div class='img'><img src='pie_plot-1.png' alt='' width='700' height='433' /></div></pre>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+   <span class='no'>bld_pie_plot</span> <span class='kw'>&lt;-</span> <span class='fu'>pie_plot</span>(<span class='kw'>data_type</span> <span class='kw'>=</span><span class='st'>"variable"</span> ,<span class='st'>"60559"</span>, <span class='st'>"2006"</span>, <span class='kw'>unitLevel</span> <span class='kw'>=</span> <span class='st'>"2"</span>)
+<span class='co'># }</span><div class='input'>   
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

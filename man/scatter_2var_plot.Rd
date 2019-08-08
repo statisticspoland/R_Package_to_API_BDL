@@ -49,5 +49,7 @@ Generate quickly ggplot2 scatter correlation plot, using BDL data.
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
+\dontrun{
    bld_scatter <- scatter_2var_plot(data_type ="variable" ,c("60559","415"), unitLevel = "2")
+ }
 }

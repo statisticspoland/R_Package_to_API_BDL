@@ -143,7 +143,7 @@ and limitations per query.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Other arguments passed on to <code><a href='https://rdrr.io/pkg/httr/man/GET.html'>GET</a></code>. For example
+      <td><p>Other arguments passed on to <code><a href='https://httr.r-lib.org/reference/GET.html'>GET</a></code>. For example
 a proxy parameters, see details.</p></td>
     </tr>
     </table>
@@ -159,8 +159,8 @@ a proxy parameters, see details.</p></td>
   BDL Web Services</a> can be specified with filters. If no specific filters
   required, it's recommended to use data query like <code><a href='get_data_by_unit_locality.html'>get_data_by_unit_locality</a></code>,
   than to use <code>get_request</code> directly.</p>
-<p>To use a proxy to connect, a <code><a href='https://rdrr.io/pkg/httr/man/use_proxy.html'>use_proxy</a></code> can be
-  passed to <code><a href='https://rdrr.io/pkg/httr/man/GET.html'>GET</a></code>. For example
+<p>To use a proxy to connect, a <code><a href='https://httr.r-lib.org/reference/use_proxy.html'>use_proxy</a></code> can be
+  passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>GET</a></code>. For example
   <code>get_request(id, filters,
   config = httr::use_proxy(url, port, username, password))</code>.</p>
     

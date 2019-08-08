@@ -76,7 +76,7 @@
       <h1>Downloading and using data from bdl</h1>
                         <h4 class="author">Krzysztof Kania</h4>
             
-            <h4 class="date">2019-07-13</h4>
+            <h4 class="date">2019-08-08</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/statisticspoland/R_Package_to_API_BDL/blob/master/vignettes/bdl.Rmd"><code>vignettes/bdl.Rmd</code></a></small>
       <div class="hidden name"><code>bdl.Rmd</code></div>
@@ -177,14 +177,14 @@
 <a href="#subjects" class="anchor"></a>Subjects</h3>
 <p>To directly search for subject we just provide search phrase:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="../reference/search_subjects.html">search_subjects</a></span>(<span class="st">"lud"</span>)</a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="co">#&gt; # A tibble: 124 x 6</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="co">#&gt; # A tibble: 125 x 6</span></a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="co">#&gt;   id    name                  hasVariables children   levels    parentId</span></a>
 <a class="sourceLine" id="cb4-4" title="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;                 &lt;lgl&gt;        &lt;list&gt;     &lt;list&gt;    &lt;chr&gt;   </span></a>
 <a class="sourceLine" id="cb4-5" title="5"><span class="co">#&gt; 1 K3    LUDNOŚĆ               FALSE        &lt;chr [7]&gt;  &lt;int [5]&gt; &lt;NA&gt;    </span></a>
 <a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt; 2 G7    STAN LUDNOŚCI         FALSE        &lt;chr [18]&gt; &lt;int [4]&gt; K3      </span></a>
 <a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt; 3 G260  STAN ZDROWIA LUDNOŚCI FALSE        &lt;chr [5]&gt;  &lt;int [1]&gt; K22     </span></a>
 <a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; 4 G299  NSP 2002 - LUDNOŚĆ    FALSE        &lt;chr [29]&gt; &lt;int [4]&gt; K31     </span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; # ... with 120 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; # ... with 121 more rows</span></a></code></pre></div>
 <p>Subjects cosist of 3 levels (categories, groups, subgroups) - <code>K</code>, <code>G</code> and <code>P</code> respectively. The fourth level of subject (childrens of subgroup) would be variables.</p>
 <p>To list all top level subjects use <code><a href="../reference/get_subjects.html">get_subjects()</a></code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="../reference/get_subjects.html">get_subjects</a></span>()</a>

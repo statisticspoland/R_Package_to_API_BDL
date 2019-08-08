@@ -146,7 +146,7 @@ If <code>NULL</code> (default) no level filters apply. Use <code><a href='get_le
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Other arguments passed on to <code><a href='https://rdrr.io/pkg/httr/man/GET.html'>GET</a></code>. For example
+      <td><p>Other arguments passed on to <code><a href='https://httr.r-lib.org/reference/GET.html'>GET</a></code>. For example
 a proxy parameters, see details.</p></td>
     </tr>
     </table>
@@ -159,8 +159,8 @@ a proxy parameters, see details.</p></td>
 
     <p>To get all units skip the <code>parentId</code> parameter. <em>Warining!</em> Downloading
   all unit can take around 1 minute.</p>
-<p>To use a proxy to connect, a <code><a href='https://rdrr.io/pkg/httr/man/use_proxy.html'>use_proxy</a></code> can be
-  passed to <code><a href='https://rdrr.io/pkg/httr/man/GET.html'>GET</a></code>. For example
+<p>To use a proxy to connect, a <code><a href='https://httr.r-lib.org/reference/use_proxy.html'>use_proxy</a></code> can be
+  passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>GET</a></code>. For example
   <code><a href='get_request.html'>get_request(id, filters,
   config = httr::use_proxy(url, port, username, password))</a></code>.</p>
     

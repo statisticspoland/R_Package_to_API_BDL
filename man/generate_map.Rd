@@ -13,7 +13,7 @@ Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variab
 
 \item{year}{A single year from 2010-2018 range.}
 
-\item{unitLevel}{A map and data NUTS level - number from 0 to 6. Use \code{\link{get_levels}} to find more info.}
+\item{unitLevel}{A map and data NUTS level - number from 1 to 6. Use \code{\link{get_levels}} to find more info.}
 
 \item{unitParentId}{A 12 character NUTS id code of interested unit. Use \code{\link{search_units}} or
 \code{\link{get_units}} to find unit id code.}
@@ -46,5 +46,7 @@ Generate quickly map for given NUTS level, using BDL data. Default level is 2.
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
+\dontrun{
  bdl_map <- generate_map(varId = "60559", year = "2017")
+ }
 }
