@@ -1,4 +1,4 @@
-#' @title Get data by variable Id forlocalities from BDL API
+#' @title Get data by variable Id for localities from BDL API
 #' @description Retrieve data for a given variables for multiple unit localities
 #'  from BDL with specified format.
 #' @details
@@ -12,7 +12,7 @@
 #'   \code{get_request(id, filters,
 #'   config = httr::use_proxy(url, port, username, password))}.
 #'
-#' @param varId A single variable id or vector of multilpe variable id's. If multiple id's are used, some columns
+#' @param varId A single variable id or vector of multiple variable id's. If multiple id's are used, some columns
 #'   are not available.. Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variable id code.
 #' @param unitParentId A 12 character NUTS id code of interested unit. Use \code{\link{search_units}} or
 #'   \code{\link{get_units}} to find unit id code. If \code{NULL} (default) and \code{unitLevel} not

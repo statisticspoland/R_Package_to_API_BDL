@@ -1,5 +1,5 @@
 #' @title Get all attributes
-#' @description Retrieve allattributes with information.
+#' @description Retrieve all attributes with information.
 #' @details
 #'
 #'   To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be

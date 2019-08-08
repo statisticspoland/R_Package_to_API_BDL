@@ -1,4 +1,4 @@
-#' @title Inforamtion about variable
+#' @title Information about variable
 #' @description Retrieve information about variable.
 #' @details
 #'

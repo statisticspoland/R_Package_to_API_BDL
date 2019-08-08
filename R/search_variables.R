@@ -1,5 +1,5 @@
-#' @title Serach for varaible codes.
-#' @description Search for given phrase in variable names.
+#' @title Search for variable codes
+#' @description Search for given phrase in variable names
 #' @details
 #'
 #'   To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be

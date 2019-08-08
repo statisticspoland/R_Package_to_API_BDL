@@ -2,13 +2,13 @@
 % Please edit documentation in R/get_data_by_variable_locality.R
 \name{get_data_by_variable_locality}
 \alias{get_data_by_variable_locality}
-\title{Get data by variable Id forlocalities from BDL API}
+\title{Get data by variable Id for localities from BDL API}
 \usage{
 get_data_by_variable_locality(varId, unitParentId, year = NULL,
   lang = c("pl", "en"), ...)
 }
 \arguments{
-\item{varId}{A single variable id or vector of multilpe variable id's. If multiple id's are used, some columns
+\item{varId}{A single variable id or vector of multiple variable id's. If multiple id's are used, some columns
 are not available.. Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variable id code.}
 
 \item{unitParentId}{A 12 character NUTS id code of interested unit. Use \code{\link{search_units}} or

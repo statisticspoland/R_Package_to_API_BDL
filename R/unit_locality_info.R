@@ -1,4 +1,4 @@
-#' @title Inforamtion about unit locality
+#' @title Information about unit locality
 #' @description Retrieve information about unit locality
 #' @details
 #'

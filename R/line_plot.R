@@ -1,7 +1,7 @@
 #' @title Generate quick line plot 
-#' @description Generate line plot for one unit/multiple variables or varaible/multiple units
+#' @description Generate line plot for one unit/multiple variables or variable/multiple units
 #' @details
-#'   Generate quickly ggplot2 plot, using BDL data.
+#'   Generate quickly `ggplot2` plot, using BDL data.
 #'   
 #'   Plot multiple variable values for one unit or one variable value for multiple units.
 #'   
@@ -13,7 +13,7 @@
 #' @param data_type A type of data used for generating plot, "unit"(default), "unit.locality","variable","variable.locality"
 #' @param unitId A 12 character NUTS unit id or locality  12 character id with 7 characters locality individual id, separated by dash.
 #' @param varId A vector of variable Id's (data_type equal "unit" or "unit.locality) 
-#'   or single variable (data_type equal "variable" or "varaible.locality"). Use \code{\link{search_variables}} or
+#'   or single variable (data_type equal "variable" or "variable.locality"). Use \code{\link{search_variables}} or
 #'   \code{\link{get_variables}} to find variable id code.
 #' @param year A vector of years. If \code{NULL} (default) returns data for all available years.
 #' @param aggregateId An aggregate id. Use \code{\link{get_aggregates}} for more info.

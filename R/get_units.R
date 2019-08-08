@@ -1,7 +1,7 @@
 #' @title Get unit NUTS codes.
 #' @description Retrieve all unit codes or sub to given unit,
 #' @details
-#'   To get all units skip the \code{parentId} parameter. \emph{Warining!} Downloading
+#'   To get all units skip the \code{parentId} parameter. \emph{Warning!} Downloading
 #'   all unit can take around 1 minute.
 #'
 #'   To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be

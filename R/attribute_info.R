@@ -1,4 +1,4 @@
-#' @title Inforamtion about attribute
+#' @title Information about attribute
 #' @description Retrieve information about attribute.
 #' @details
 #'

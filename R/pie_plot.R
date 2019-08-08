@@ -1,7 +1,7 @@
 #' @title Generate quick pie plot 
-#' @description Generate pie plot for varaible/multiple units
+#' @description Generate pie plot for variable/multiple units
 #' @details
-#'   Generate quickly ggplot2 plot, using BDL data.
+#'   Generate quickly `ggplot2` plot, using BDL data.
 #'   
 #'   Pie plot one variable value for multiple units on single year.
 #'   
@@ -24,7 +24,7 @@
 #' @param ... Other arguments passed on to \code{\link[httr]{GET}}. For example
 #'   a proxy parameters, see details.
 #'
-#' @return A ggplo2 plot.
+#' @return A ggplot2 plot.
 #' 
 #' @export
 #'

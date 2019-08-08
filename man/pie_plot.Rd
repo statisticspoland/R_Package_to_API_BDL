@@ -31,13 +31,13 @@ If \code{NULL} (default) no level filters apply. Use \code{\link{get_levels}} to
 a proxy parameters, see details.}
 }
 \value{
-A ggplo2 plot.
+A ggplot2 plot.
 }
 \description{
-Generate pie plot for varaible/multiple units
+Generate pie plot for variable/multiple units
 }
 \details{
-Generate quickly ggplot2 plot, using BDL data.
+Generate quickly `ggplot2` plot, using BDL data.
   
   Pie plot one variable value for multiple units on single year.
   

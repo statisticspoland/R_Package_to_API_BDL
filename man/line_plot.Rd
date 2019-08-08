@@ -15,7 +15,7 @@ line_plot(data_type = c("unit", "unit.locality", "variable",
 \item{unitId}{A 12 character NUTS unit id or locality  12 character id with 7 characters locality individual id, separated by dash.}
 
 \item{varId}{A vector of variable Id's (data_type equal "unit" or "unit.locality) 
-or single variable (data_type equal "variable" or "varaible.locality"). Use \code{\link{search_variables}} or
+or single variable (data_type equal "variable" or "variable.locality"). Use \code{\link{search_variables}} or
 \code{\link{get_variables}} to find variable id code.}
 
 \item{year}{A vector of years. If \code{NULL} (default) returns data for all available years.}
@@ -38,10 +38,10 @@ a proxy parameters, see details.}
 A ggplot2 plot.
 }
 \description{
-Generate line plot for one unit/multiple variables or varaible/multiple units
+Generate line plot for one unit/multiple variables or variable/multiple units
 }
 \details{
-Generate quickly ggplot2 plot, using BDL data.
+Generate quickly `ggplot2` plot, using BDL data.
   
   Plot multiple variable values for one unit or one variable value for multiple units.
   

@@ -2,7 +2,7 @@
 % Please edit documentation in R/attribute_info.R
 \name{attribute_info}
 \alias{attribute_info}
-\title{Inforamtion about attribute}
+\title{Information about attribute}
 \usage{
 attribute_info(attrId, lang = c("pl", "en"), ...)
 }

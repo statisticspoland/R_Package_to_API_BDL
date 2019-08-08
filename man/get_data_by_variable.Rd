@@ -8,7 +8,7 @@ get_data_by_variable(varId, unitParentId = NULL, unitLevel = NULL,
   year = NULL, aggregateId = NULL, lang = c("pl", "en"), ...)
 }
 \arguments{
-\item{varId}{A single variable Id or vector of multilpe variable id's. If multiple id's are used, some columns
+\item{varId}{A single variable Id or vector of multiple variable id's. If multiple id's are used, some columns
 are not available. Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variable id code.}
 
 \item{unitParentId}{A 12 character NUTS id code of parent unit. Use \code{\link{search_units}} or

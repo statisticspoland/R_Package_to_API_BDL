@@ -89,8 +89,8 @@
 <div id="intro" class="section level2">
 <h2 class="hasAnchor">
 <a href="#intro" class="anchor"></a>Intro</h2>
-<p>Working with <code>bdl</code> is based on id codes. Most of data downloading functions requires secifing one or vector of multiple unit or variable ids as a string.</p>
-<p>It is recommended to use private API key which u can get by registrating <a href="https://bdl.stat.gov.pl/api/v1/client">here</a>. To apply use: <code><a href="https://rdrr.io/r/base/options.html">options(bdl.api_private_key ="your_key")</a></code></p>
+<p>Working with <code>bdl</code> is based on id codes. Most of data downloading functions requires specifying one or vector of multiple unit or variable ids as a string.</p>
+<p>It is recommended to use private API key which u can get <a href="https://bdl.stat.gov.pl/api/v1/client">here</a>. To apply use: <code><a href="https://rdrr.io/r/base/options.html">options(bdl.api_private_key ="your_key")</a></code></p>
 <p>Also every function returns data by default in Polish. If you would like get data in English just add <code>lang = "en"</code> to any function.</p>
 <p>Any metadata information (unit levels, aggregates, NUTS code explanation etc.) can be found <a href="https://bdl.stat.gov.pl/BDL/metadane">here</a>.</p>
 </div>
@@ -114,11 +114,11 @@
 <a class="sourceLine" id="cb1-7" title="7"><span class="co">#&gt; 3     2 Poziom Województw   </span></a>
 <a class="sourceLine" id="cb1-8" title="8"><span class="co">#&gt; 4     3 Poziom Regionów     </span></a>
 <a class="sourceLine" id="cb1-9" title="9"><span class="co">#&gt; # ... with 4 more rows</span></a></code></pre></div>
-<p>Lowest - seventh level has own separate functions with suffix <code>localities</code>. Warning - localities functions have diffrent set of arguments. Chceck package or API documentation for more info.</p>
+<p>Lowest - seventh level has own separate functions with suffix <code>localities</code>. Warning - localities functions have different set of arguments. Check package or API documentation for more info.</p>
 <div id="direct-search" class="section level3">
 <h3 class="hasAnchor">
 <a href="#direct-search" class="anchor"></a>Direct search</h3>
-<p>Direct searching <code><a href="../reference/search_units.html">search_units()</a></code> takes couple diffrent arguments like:</p>
+<p>Direct searching <code><a href="../reference/search_units.html">search_units()</a></code> takes couple different arguments like:</p>
 <ul>
 <li>
 <code>name</code> - required search phrase (can be empty string)</li>
@@ -161,11 +161,11 @@
 <a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; # ... with 378 more rows</span></a></code></pre></div>
 </div>
 </div>
-<div id="searching-subject-and-varaible-id" class="section level2">
+<div id="searching-subject-and-variable-id" class="section level2">
 <h2 class="hasAnchor">
-<a href="#searching-subject-and-varaible-id" class="anchor"></a>Searching subject and varaible id</h2>
+<a href="#searching-subject-and-variable-id" class="anchor"></a>Searching subject and variable id</h2>
 <p>Subjects are themed directories of variables.</p>
-<p>We have two searching methods for both subjects and varaibles:</p>
+<p>We have two searching methods for both subjects and variables:</p>
 <ul>
 <li>Direct search <code><a href="../reference/search_variables.html">search_variables()</a></code> and <code><a href="../reference/search_subjects.html">search_subjects()</a></code>
 </li>
@@ -185,7 +185,7 @@
 <a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt; 3 G260  STAN ZDROWIA LUDNOŚCI FALSE        &lt;chr [5]&gt;  &lt;int [1]&gt; K22     </span></a>
 <a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; 4 G299  NSP 2002 - LUDNOŚĆ    FALSE        &lt;chr [29]&gt; &lt;int [4]&gt; K31     </span></a>
 <a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; # ... with 121 more rows</span></a></code></pre></div>
-<p>Subjects cosist of 3 levels (categories, groups, subgroups) - <code>K</code>, <code>G</code> and <code>P</code> respectively. The fourth level of subject (childrens of subgroup) would be variables.</p>
+<p>Subjects consist of 3 levels (categories, groups, subgroups) - <code>K</code>, <code>G</code> and <code>P</code> respectively. The fourth level of subject (child of subgroup) would be variables.</p>
 <p>To list all top level subjects use <code><a href="../reference/get_subjects.html">get_subjects()</a></code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="../reference/get_subjects.html">get_subjects</a></span>()</a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="co">#&gt; # A tibble: 32 x 5</span></a>
@@ -254,7 +254,7 @@
 <div id="single-unit-multiple-variables" class="section level3">
 <h3 class="hasAnchor">
 <a href="#single-unit-multiple-variables" class="anchor"></a>Single unit, multiple variables</h3>
-<p>We will use <code><a href="../reference/get_data_by_unit.html">get_data_by_unit()</a></code>. We specify our single unit as <code>unitId</code> string argument and variables by vector of strings. Optionaly we can specify interested years of data. If not all available years.</p>
+<p>We will use <code><a href="../reference/get_data_by_unit.html">get_data_by_unit()</a></code>. We specify our single unit as <code>unitId</code> string argument and variables by vector of strings. Optionally we can specify interested years of data. If not all available years.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw"><a href="../reference/get_data_by_unit.html">get_data_by_unit</a></span>(<span class="dt">unitId =</span> <span class="st">"023200000000"</span>, <span class="dt">varId =</span>  <span class="st">"3643"</span>)</a>
 <a class="sourceLine" id="cb10-2" title="2"><span class="co">#&gt; # A tibble: 20 x 6</span></a>
 <a class="sourceLine" id="cb10-3" title="3"><span class="co">#&gt;   id    measureUnitId lastUpdate              year    val attrId</span></a>
@@ -279,7 +279,7 @@
 <div id="multiple-units-single-variable" class="section level3">
 <h3 class="hasAnchor">
 <a href="#multiple-units-single-variable" class="anchor"></a>Multiple units, single variable</h3>
-<p>We will use <code><a href="../reference/get_data_by_variable.html">get_data_by_variable()</a></code>. We specify our single variable as <code>varId</code> string argument. If no <code>unitParentId</code> is provided function will return all available units for given variable. Setting <code>unitParentId</code> will return all available children units (on all levels). To narrow units level set <code>unitLevel</code>. Optionaly we can specify interested years of data. If not all available years.</p>
+<p>We will use <code><a href="../reference/get_data_by_variable.html">get_data_by_variable()</a></code>. We specify our single variable as <code>varId</code> string argument. If no <code>unitParentId</code> is provided function will return all available units for given variable. Setting <code>unitParentId</code> will return all available children units (on all levels). To narrow units level set <code>unitLevel</code>. Optionally we can specify interested years of data. If not all available years.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw"><a href="../reference/get_data_by_variable.html">get_data_by_variable</a></span>(<span class="st">"420"</span>, <span class="dt">unitParentId =</span> <span class="st">"011210000000"</span>)</a>
 <a class="sourceLine" id="cb12-2" title="2"><span class="co">#&gt; # A tibble: 294 x 5</span></a>
 <a class="sourceLine" id="cb12-3" title="3"><span class="co">#&gt;   id           name               year     val attrId</span></a>
@@ -323,7 +323,7 @@
 <div id="plotting" class="section level3">
 <h3 class="hasAnchor">
 <a href="#plotting" class="anchor"></a>Plotting</h3>
-<p>Plotting functions in this package are interfaces to data downloading fucntions Some of them require specifing <code>data_type</code> - method for downloading data and rest of arguments will be relevant to specified <code>data_type</code> function. Check documentation for more details.</p>
+<p>Plotting functions in this package are interfaces to data downloading functions. Some of them require specifying <code>data_type</code> - method for downloading data and rest of arguments will be relevant to specified <code>data_type</code> function. Check documentation for more details.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw"><a href="../reference/line_plot.html">line_plot</a></span>(<span class="dt">data_type =</span> <span class="st">"unit"</span>, <span class="dt">unitId =</span> <span class="st">"000000000000"</span>, <span class="dt">varId =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"415"</span>,<span class="st">"420"</span>))</a></code></pre></div>
 <p><img src="bdl_files/figure-html/unnamed-chunk-14-1.png" width="960"></p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw"><a href="../reference/pie_plot.html">pie_plot</a></span>(<span class="dt">data_type =</span><span class="st">"variable"</span> ,<span class="st">"60559"</span>, <span class="st">"2006"</span>, <span class="dt">unitLevel =</span> <span class="st">"2"</span>)</a></code></pre></div>
@@ -336,7 +336,7 @@
 <div id="map-generation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#map-generation" class="anchor"></a>Map generation</h3>
-<p>With <code>bdl</code> package comes <code>bdl.maps</code> dataset conatining spatial maps for each Poland’s level. <code><a href="../reference/generate_map.html">generate_map()</a></code> use them to generate maps filled with bdl data. Use <code>unitLevel</code> to change type of map. The lower level is chosen the slower map will generate as it has more spatial data to process.</p>
+<p>With <code>bdl</code> package comes <code>bdl.maps</code> dataset containing spatial maps for each Poland’s level. <code><a href="../reference/generate_map.html">generate_map()</a></code> use them to generate maps filled with bdl data. Use <code>unitLevel</code> to change type of map. The lower level is chosen the slower map will generate as it has more spatial data to process.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw"><a href="../reference/generate_map.html">generate_map</a></span>(<span class="dt">varId =</span> <span class="st">"60559"</span>, <span class="dt">year =</span> <span class="st">"2017"</span>, <span class="dt">unitLevel =</span> <span class="dv">3</span>)</a></code></pre></div>
 </div>
 <div id="multi-download" class="section level3">
@@ -365,7 +365,7 @@
 <a class="sourceLine" id="cb19-9" title="9"><span class="co">#&gt; 4 010000000000 MAKROREGION POŁUDNIOWY 2002         8   78668</span></a>
 <a class="sourceLine" id="cb19-10" title="10"><span class="co">#&gt; # ... with 96 more rows</span></a></code></pre></div>
 <p>This type of downloading is removing some of columns from original “single” data download.</p>
-<p>This mode works for locality version aswell.</p>
+<p>This mode works for locality version as well.</p>
 </div>
 </div>
   </div>
@@ -377,7 +377,7 @@
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#intro">Intro</a></li>
       <li><a href="#searching-unit-id">Searching unit id</a></li>
-      <li><a href="#searching-subject-and-varaible-id">Searching subject and varaible id</a></li>
+      <li><a href="#searching-subject-and-variable-id">Searching subject and variable id</a></li>
       <li><a href="#downloading-data">Downloading data</a></li>
       <li><a href="#useful-tools">Useful tools</a></li>
       </ul>

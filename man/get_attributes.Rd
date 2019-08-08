@@ -19,7 +19,7 @@ a proxy parameters, see details.}
 A dataset as a tibble.
 }
 \description{
-Retrieve allattributes with information.
+Retrieve all attributes with information.
 }
 \details{
 To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be

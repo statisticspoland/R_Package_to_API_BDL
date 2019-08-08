@@ -2,7 +2,7 @@
 % Please edit documentation in R/unit_info.R
 \name{unit_info}
 \alias{unit_info}
-\title{Inforamtion about unit}
+\title{Information about unit}
 \usage{
 unit_info(unitId, lang = c("pl", "en"), ...)
 }

@@ -7,7 +7,7 @@
 #'   
 #'   Provide unit parent id to narrow the map for specific regions.
 #'   
-#'   Generating lower (leves 5 and 6) level maps can take some time.
+#'   Generating lower (levels 5 and 6) level maps can take some time.
 #'   
 #'   To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
 #'   passed to \code{\link[httr]{GET}}. For example

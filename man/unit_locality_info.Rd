@@ -2,7 +2,7 @@
 % Please edit documentation in R/unit_locality_info.R
 \name{unit_locality_info}
 \alias{unit_locality_info}
-\title{Inforamtion about unit locality}
+\title{Information about unit locality}
 \usage{
 unit_locality_info(unitId, lang = c("pl", "en"), ...)
 }

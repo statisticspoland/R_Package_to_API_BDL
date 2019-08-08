@@ -2,7 +2,7 @@
 % Please edit documentation in R/search_variables.R
 \name{search_variables}
 \alias{search_variables}
-\title{Serach for varaible codes.}
+\title{Search for variable codes}
 \usage{
 search_variables(name, subjectId = NULL, level = NULL, year = NULL,
   sort = c("id", "-id", "subjectId", "-subjectId"), lang = c("pl",
@@ -30,7 +30,7 @@ a proxy parameters, see details.}
 A dataset as a tibble.
 }
 \description{
-Search for given phrase in variable names.
+Search for given phrase in variable names
 }
 \details{
 To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be

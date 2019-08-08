@@ -2,7 +2,7 @@
 % Please edit documentation in R/variable_info.R
 \name{variable_info}
 \alias{variable_info}
-\title{Inforamtion about variable}
+\title{Information about variable}
 \usage{
 variable_info(varId, lang = c("pl", "en"), ...)
 }

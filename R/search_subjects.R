@@ -1,5 +1,5 @@
-#' @title Serach for subject codes.
-#' @description Search for given phrase in subject names.
+#' @title Search for subject codes
+#' @description Search for given phrase in subject names
 #' @details
 #'
 #'   To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be

@@ -35,12 +35,12 @@ a proxy parameters, see details.}
 A ggplot2 plot.
 }
 \description{
-Generate scatter correlation plot for 2 varaibles
+Generate scatter correlation plot for 2 variables
 }
 \details{
-Generate quickly ggplot2 scatter correlation plot, using BDL data.
+Generate quickly `ggplot2` scatter correlation plot, using BDL data.
   
-  Scatter plot 2 variables for given units with regresion line, confidence interval and
+  Scatter plot 2 variables for given units with regression line, confidence interval and
   correlation coefficient.
   
   To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be

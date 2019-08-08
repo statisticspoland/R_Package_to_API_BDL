@@ -2,7 +2,7 @@
 % Please edit documentation in R/search_subjects.R
 \name{search_subjects}
 \alias{search_subjects}
-\title{Serach for subject codes.}
+\title{Search for subject codes}
 \usage{
 search_subjects(name, sort = c("id", "-id", "name", "-name"),
   lang = c("pl", "en"), ...)
@@ -21,7 +21,7 @@ a proxy parameters, see details.}
 A dataset as a tibble.
 }
 \description{
-Search for given phrase in subject names.
+Search for given phrase in subject names
 }
 \details{
 To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be

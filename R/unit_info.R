@@ -1,4 +1,4 @@
-#' @title Inforamtion about unit
+#' @title Information about unit
 #' @description Retrieve information about unit
 #' @details
 #'

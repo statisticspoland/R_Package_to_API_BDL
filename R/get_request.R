@@ -12,17 +12,16 @@
 #'   \code{get_request(id, filters,
 #'   config = httr::use_proxy(url, port, username, password))}.
 #' @param dir A directory of the dataset.
-#' @param id A code name for the dataset of interested. See the table of
-#'   contents of eurostat datasets for more details.
+#' @param id A name for the dataset of interested.
 #' @param filters A named list of filters. Names of list objects are bdl
 #'   filter names and values are vectors with specified filter values. If \code{NULL}
-#'   (default) the whole dataset is returned. See details for more on filters
+#'   (default) the whole dataset is returned. See API documentation for more on filters
 #'   and limitations per query.
 
 #' @param ... Other arguments passed on to \code{\link[httr]{GET}}. For example
 #'   a proxy parameters, see details.
 #'
-#' @return A json raw data.
+#' @return A JSON raw data.
 #' @export
 #' @examples
 #'  \dontrun{
