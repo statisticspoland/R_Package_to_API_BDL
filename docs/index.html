@@ -82,7 +82,7 @@
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
-<p>‘bdl’ package is an interface to Local Data Bank (Bank Danych Lokalnych - bdl) <a href="https://bdl.stat.gov.pl/BDL">API</a>. It is a set of tools that includes: quick plotting and maps generation, with the usage of the data from the data bank.</p>
+<p>‘bdl’ package is an interface to Local Data Bank (Bank Danych Lokalnych - bdl) <a href="https://api.stat.gov.pl/Home/BdlApi">API</a>. It is a set of tools that includes: quick plotting and maps generation, with the usage of the data from the data bank.</p>
 <p>The information about how to use this tool is included in the built in R help documentation and on package webpage <a href="https://statisticspoland.github.io/R_Package_to_API_BDL/">https://statisticspoland.github.io/R_Package_to_API_BDL/</a>.</p>
 <p>Try</p>
 <pre class="{r}"><code><a href="https://rdrr.io/r/utils/help.html">help(p='bdl')</a></code></pre>
@@ -95,8 +95,12 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install this package run these commands:</p>
+<p>Windows and Mac</p>
 <pre class="{r}"><code>install.packages("remotes", type = "binary")
 remotes::install_github("statisticspoland/R_Package_to_API_BDL", upgrade = "always", type = "binary")</code></pre>
+<p>Linux</p>
+<pre class="{r}"><code>install.packages("remotes")
+remotes::install_github("statisticspoland/R_Package_to_API_BDL")</code></pre>
 <p>To use <code><a href="reference/generate_map.html">generate_map()</a></code> function, you have to download and load maps to global environment. Maps can be downloaded here: <a href="https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData">https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData</a></p>
 <p>If installation through remotes didn’t work, try installing the package manually by downloading source package: <a href="https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl_1.0.0.zip">https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl_1.0.0.zip</a> and executing</p>
 <pre class="{r}"><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages('path_to_file/bdl_1.0.0.zip', repos = NULL, type="source")</a></code></pre>
