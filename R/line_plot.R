@@ -31,7 +31,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   bdl_plot <- line_plot(data_type = "unit", unitId = "000000000000", varId = c("415","420"))
 #' }
 line_plot <- function(data_type = c("unit","unit.locality","variable","variable.locality"), 

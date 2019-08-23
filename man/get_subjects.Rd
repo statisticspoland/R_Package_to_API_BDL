@@ -35,7 +35,7 @@ To get all top level subjects skip the \code{parentId} parameter or list
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \dontrun{
+ \donttest{
    subjects <- get_subjects()
    subjects <- get_subjects("K3")
    subjects <- get_subjects("G7")

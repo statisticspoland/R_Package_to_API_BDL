@@ -24,7 +24,7 @@
 #' @return A JSON raw data.
 #' @export
 #' @examples
-#'  \dontrun{
+#'  \donttest{
 #'    json <- get_request(dir = "data/ByVariable", id = "3643")
 #'    json <- get_request(dir = "data/ByUnit", id = "023200000000",
 #'                        filters = list(year  = c("2000","2010"),

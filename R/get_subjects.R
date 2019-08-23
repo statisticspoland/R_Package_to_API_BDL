@@ -20,7 +20,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
+#'  \donttest{
 #'    subjects <- get_subjects()
 #'    subjects <- get_subjects("K3")
 #'    subjects <- get_subjects("G7")

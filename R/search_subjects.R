@@ -16,7 +16,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
+#'  \donttest{
 #'     subjects <- search_subjects("samochody")
 #'     subjects <- search_subjects("cars", lang  = "en")
 #' }

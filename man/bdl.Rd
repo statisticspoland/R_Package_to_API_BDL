@@ -6,8 +6,9 @@
 \alias{bdl-package}
 \title{bdl: Interface and Tools for 'BDL' API}
 \description{
-The 'bdl' package is an interface to Local Data Bank('Bank Danych Lokalnych' - 'bdl') API 
-    with set of useful tools like quick plotting and map generating using data from data bank.
+Interface to Local Data Bank ('Bank Danych Lokalnych' - 'bdl') API 
+    <https://api.stat.gov.pl/Home/BdlApi?lang=en> with set of useful tools like 
+    quick plotting and map generating using data from bank.
 }
 \section{Package options}{
 
@@ -29,5 +30,10 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Krzysztof Kania \email{K.Kania@stat.gov.pl}
+
+Other contributors:
+\itemize{
+  \item Statistics Poland [copyright holder, funder]
+}
 
 }

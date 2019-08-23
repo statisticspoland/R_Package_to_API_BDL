@@ -25,7 +25,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
+#'  \donttest{
 #'    df <- get_data_by_unit_locality(unitId = "030210106062-0189782", varId =  "415", type = "label")
 #' }
 #' @keywords utilities database

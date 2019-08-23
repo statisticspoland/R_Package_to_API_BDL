@@ -1,12 +1,15 @@
 Package: bdl
 Type: Package
-Date: 2019-08-05
+Date: 2019-08-21
 Title: Interface and Tools for 'BDL' API
 Version: 1.0.0
-Authors@R: person("Krzysztof", "Kania", email = "K.Kania@stat.gov.pl",
-                  role = c("aut", "cre"))
-Description: The 'bdl' package is an interface to Local Data Bank('Bank Danych Lokalnych' - 'bdl') API 
-    with set of useful tools like quick plotting and map generating using data from data bank. 
+Authors@R: c(person("Krzysztof", "Kania", email = "K.Kania@stat.gov.pl",
+                  role = c("aut", "cre")),
+             person(given = "Statistics Poland",
+                  role = c("cph", "fnd")))
+Description: Interface to Local Data Bank ('Bank Danych Lokalnych' - 'bdl') API 
+    <https://api.stat.gov.pl/Home/BdlApi?lang=en> with set of useful tools like 
+    quick plotting and map generating using data from bank. 
 License: GPL-3
 Depends: R (>= 3.5.0)
 Imports: methods, magrittr, tibble, jsonlite, httr, 

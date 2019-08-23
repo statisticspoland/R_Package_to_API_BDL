@@ -21,7 +21,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
+#'  \donttest{
 #'     vars <- get_variables("P2425")
 #' }
 #' @keywords utilities search variables

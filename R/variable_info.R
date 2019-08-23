@@ -16,7 +16,7 @@
 #' @return A named list.
 #' @export
 #' @examples
-#'  \dontrun{
+#'  \donttest{
 #'    variable <- variable_info("420")
 #' }
 #' @keywords info variables

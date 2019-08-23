@@ -16,7 +16,7 @@
 #' @return A named list.
 #' @export
 #' @examples
-#'  \dontrun{
+#'  \donttest{
 #'    unit <- unit_info("030210106062")
 #' }
 #' @keywords info units

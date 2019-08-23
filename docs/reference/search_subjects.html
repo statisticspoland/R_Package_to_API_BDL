@@ -158,10 +158,8 @@ a proxy parameters, see details.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> </div><span class='co'># NOT RUN {</span>
-    <span class='no'>subjects</span> <span class='kw'>&lt;-</span> <span class='fu'>search_subjects</span>(<span class='st'>"samochody"</span>)
-    <span class='no'>subjects</span> <span class='kw'>&lt;-</span> <span class='fu'>search_subjects</span>(<span class='st'>"cars"</span>, <span class='kw'>lang</span>  <span class='kw'>=</span> <span class='st'>"en"</span>)
-<span class='co'># }</span></pre>
+    <pre class="examples"><div class='input'> </div><div class='input'>    <span class='no'>subjects</span> <span class='kw'>&lt;-</span> <span class='fu'>search_subjects</span>(<span class='st'>"samochody"</span>)
+    <span class='no'>subjects</span> <span class='kw'>&lt;-</span> <span class='fu'>search_subjects</span>(<span class='st'>"cars"</span>, <span class='kw'>lang</span>  <span class='kw'>=</span> <span class='st'>"en"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in page_download(dir, id = "", filters, ...): Filters returned empty set.</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -181,7 +179,7 @@ a proxy parameters, see details.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Krzysztof Kania.</p>
+  <p>Developed by Krzysztof Kania, Statistics Poland.</p>
 </div>
 
 <div class="pkgdown">

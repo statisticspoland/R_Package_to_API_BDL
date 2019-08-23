@@ -28,7 +28,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
+#'  \donttest{
 #'    df <- get_data_by_variable(varId = "3643", unitParentId = "010000000000")
 #'    df <- get_data_by_variable("420", year = "2000", unitLevel = 6)
 #'    

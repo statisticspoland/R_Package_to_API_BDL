@@ -17,7 +17,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
+#'  \donttest{
 #'    units <- search_units("wro")
 #' }
 #' @keywords utilities search units localities

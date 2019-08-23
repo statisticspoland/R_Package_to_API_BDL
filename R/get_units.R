@@ -21,7 +21,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
+#'  \donttest{
 #'     units <- get_units()
 #'     units <- get_units("010000000000")
 #' }

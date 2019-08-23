@@ -37,7 +37,7 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \dontrun{
+ \donttest{
    units <- search_units("wro")
    units <- search_units("pol", type = "5")
 }

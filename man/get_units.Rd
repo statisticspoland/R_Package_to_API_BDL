@@ -37,7 +37,7 @@ To get all units skip the \code{parentId} parameter. \emph{Warning!} Downloading
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \dontrun{
+ \donttest{
     units <- get_units()
     units <- get_units("010000000000")
 }
