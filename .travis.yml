@@ -2,11 +2,16 @@
 
 language: R
 cache: packages
-apt_packages:
-  - libv8-dev
-  - libudunits2-dev
-  - libgdal-dev
-  - libproj-dev
+addons:
+  apt:
+    packages:
+    - libv8-dev
+    - libudunits2-dev
+    - libgdal-dev
+    - libproj-dev
+  homebrew:
+    packages:
+    - udunits
 jobs:
   include:
   - r: devel
