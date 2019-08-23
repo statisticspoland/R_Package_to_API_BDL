@@ -6,7 +6,7 @@
 
 ## Overview
 'bdl' package is an interface to Local Data Bank (Bank Danych Lokalnych - bdl) 
-[API](https://bdl.stat.gov.pl/BDL). It is a set of tools that includes: quick plotting 
+[API](https://api.stat.gov.pl/Home/BdlApi). It is a set of tools that includes: quick plotting 
 and maps generation, with the usage of the data from the data bank. 
 
 The information about how to use this tool is included in the built in R help documentation and on package webpage [https://statisticspoland.github.io/R_Package_to_API_BDL/](https://statisticspoland.github.io/R_Package_to_API_BDL/). 
@@ -22,10 +22,18 @@ More info about the metadata can be found at:
 ## Installation
 To install this package run these commands:
 
+Windows and Mac
 ```{R}
 install.packages("remotes", type = "binary")
 remotes::install_github("statisticspoland/R_Package_to_API_BDL", upgrade = "always", type = "binary")
 ```
+
+Linux
+```{R}
+install.packages("remotes")
+remotes::install_github("statisticspoland/R_Package_to_API_BDL")
+```
+
 To use ```generate_map()``` function, you have to download and load maps to global environment. Maps can be downloaded here: [https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData](https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData)
 
 If installation through remotes didn't work, try installing the package manually by 
