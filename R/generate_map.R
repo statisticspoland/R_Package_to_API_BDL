@@ -36,7 +36,11 @@
 #'  }
 generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggregateId = NULL, lang = c("pl","en"), ...) {
   if(!exists("bdl.maps") || !is.list(bdl.maps)){
-    stop("This function requires external map data \"bdl.maps\" loaded to global environment. \n test")
+    stop(paste0("This function requires external map data \"bdl.maps\" loaded to global environment. \n\n",
+                "You can get data here: \n",
+                "https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData \n\n",
+                "Download data and double-click to load it to environment."))
+      
   }
   
   if (length(varId) == 1 && length(year) == 1 && (year >= 2010 && year <=2018)) {
