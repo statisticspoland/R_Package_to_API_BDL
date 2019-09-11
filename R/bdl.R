@@ -31,4 +31,4 @@
 #' @import sf
 NULL
 # global var note fix
-if(getRversion() >= "2.15.1") utils::globalVariables(c("val","bdl.maps"))
+if(getRversion() >= "2.15.1") utils::globalVariables(c("val","bdl.maps","values"))

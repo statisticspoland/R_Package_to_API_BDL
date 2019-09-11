@@ -13,7 +13,8 @@ page_download <- function(dir, id, filters, ...) {
 
     if ("values" %in% colnames(df_t)) {
       df_t <- df_t %>%
-        tidyr::unnest(df_t$values)
+        # tidyr::unnest(df_t$values)
+        tidyr::unnest(`values`)
     }
 
     df <- dplyr::bind_rows(df, df_t)

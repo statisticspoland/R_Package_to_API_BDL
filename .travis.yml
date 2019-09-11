@@ -15,5 +15,5 @@ addons:
 jobs:
   include:
   - r: devel
-  - os: osx
   - r: release
+  - os: osx
