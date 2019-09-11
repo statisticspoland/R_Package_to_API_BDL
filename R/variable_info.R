@@ -17,7 +17,7 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'    variable <- variable_info("420")
+#'    ariable_info("420")
 #' }
 #' @keywords info variables
 variable_info <- function(varId, lang = c("pl","en"), ...) {

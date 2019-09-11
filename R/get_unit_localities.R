@@ -18,7 +18,7 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'     units <- get_unit_localities("030210106062")
+#'     get_unit_localities("030210106062")
 #' }
 #' @keywords utilities search units localities
 get_unit_localities <- function(parentId, sort = c("id","-id","name", "-name"),

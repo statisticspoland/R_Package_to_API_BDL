@@ -166,8 +166,38 @@ a proxy parameters, see details.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> </div><div class='input'>    <span class='no'>units</span> <span class='kw'>&lt;-</span> <span class='fu'>get_units</span>()
-    <span class='no'>units</span> <span class='kw'>&lt;-</span> <span class='fu'>get_units</span>(<span class='st'>"010000000000"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in get_request(dir, id, filters, ...): Failure to get data. Probably query reached data limits. Status code: 429.</span></div></pre>
+    <pre class="examples"><div class='input'> </div><div class='input'>    <span class='fu'>get_units</span>(<span class='kw'>level</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 16 x 5</span><span>
+#&gt;    id           name                parentId     level hasDescription
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>               </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>         
+#&gt; </span><span style='color: #555555;'> 1</span><span> 011200000000 MAŁOPOLSKIE         010000000000     2 TRUE          
+#&gt; </span><span style='color: #555555;'> 2</span><span> 012400000000 ŚLĄSKIE             010000000000     2 TRUE          
+#&gt; </span><span style='color: #555555;'> 3</span><span> 020800000000 LUBUSKIE            020000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'> 4</span><span> 023000000000 WIELKOPOLSKIE       020000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'> 5</span><span> 023200000000 ZACHODNIOPOMORSKIE  020000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'> 6</span><span> 030200000000 DOLNOŚLĄSKIE        030000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'> 7</span><span> 031600000000 OPOLSKIE            030000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'> 8</span><span> 040400000000 KUJAWSKO-POMORSKIE  040000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'> 9</span><span> 042200000000 POMORSKIE           040000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'>10</span><span> 042800000000 WARMIŃSKO-MAZURSKIE 040000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'>11</span><span> 051000000000 ŁÓDZKIE             050000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'>12</span><span> 052600000000 ŚWIĘTOKRZYSKIE      050000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'>13</span><span> 060600000000 LUBELSKIE           060000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'>14</span><span> 061800000000 PODKARPACKIE        060000000000     2 TRUE          
+#&gt; </span><span style='color: #555555;'>15</span><span> 062000000000 PODLASKIE           060000000000     2 FALSE         
+#&gt; </span><span style='color: #555555;'>16</span><span> 071400000000 MAZOWIECKIE         070000000000     2 FALSE         </div><div class='input'>    <span class='fu'>get_units</span>(<span class='st'>"010000000000"</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 581 x 6</span><span>
+#&gt;    id           name                parentId     level hasDescription kind 
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>               </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>          </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> 011200000000 MAŁOPOLSKIE         010000000000     2 TRUE           </span><span style='color: #BB0000;'>NA</span><span>   
+#&gt; </span><span style='color: #555555;'> 2</span><span> 011210000000 REGION MAŁOPOLSKIE  011200000000     3 FALSE          </span><span style='color: #BB0000;'>NA</span><span>   
+#&gt; </span><span style='color: #555555;'> 3</span><span> 011212000000 PODREGION KRAKOWSKI 011210000000     4 FALSE          </span><span style='color: #BB0000;'>NA</span><span>   
+#&gt; </span><span style='color: #555555;'> 4</span><span> 011212001000 Powiat bocheński    011212000000     5 FALSE          1    
+#&gt; </span><span style='color: #555555;'> 5</span><span> 011212001011 Bochnia             011212001000     6 FALSE          1    
+#&gt; </span><span style='color: #555555;'> 6</span><span> 011212001022 Bochnia             011212001000     6 FALSE          2    
+#&gt; </span><span style='color: #555555;'> 7</span><span> 011212001032 Drwinia             011212001000     6 FALSE          2    
+#&gt; </span><span style='color: #555555;'> 8</span><span> 011212001042 Lipnica Murowana    011212001000     6 FALSE          2    
+#&gt; </span><span style='color: #555555;'> 9</span><span> 011212001052 Łapanów             011212001000     6 FALSE          2    
+#&gt; </span><span style='color: #555555;'>10</span><span> 011212001063 Nowy Wiśnicz        011212001000     6 FALSE          3    
+#&gt; </span><span style='color: #555555;'># ... with 571 more rows</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -45,12 +45,12 @@ Data to retrieve from
 }
 \examples{
  \donttest{
-   df <- get_data_by_unit(unitId = "023200000000", varId =  "3643")
-   df <- get_data_by_unit(unitId = "023200000000", varId =  c("3643", "2137", "148190"),
+   get_data_by_unit(unitId = "023200000000", varId =  "3643")
+   get_data_by_unit(unitId = "023200000000", varId =  c("3643", "2137", "148190"),
                           type = "label")
    
    # Multi variable download
-   df <- get_data_by_unit(unitId = c("023200000000", "020800000000"), 
+   get_data_by_unit(unitId = c("023200000000", "020800000000"), 
                           varId =  c("3643", "2137", "148190"))
 }
 }

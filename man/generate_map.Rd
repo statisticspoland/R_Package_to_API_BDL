@@ -40,6 +40,12 @@ Generate quickly map for given NUTS level, using BDL data. Default level is 2.
   
   Generating lower (levels 5 and 6) level maps can take some time.
   
+  This function requires external map data "bdl.maps" loaded to global environment. 
+  You can get data here:
+  \href{https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData}{Map 
+  download}.
+  Download data and double-click to load it to environment.
+
   To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
   passed to \code{\link[httr]{GET}}. For example
   \code{get_request(id, filters,
@@ -47,6 +53,6 @@ Generate quickly map for given NUTS level, using BDL data. Default level is 2.
 }
 \examples{
 \donttest{
- bdl_map <- generate_map(varId = "60559", year = "2017")
+ generate_map(varId = "60559", year = "2017")
  }
 }

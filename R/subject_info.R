@@ -17,7 +17,7 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'    subjects <- subject_info("G7")
+#'    subject_info("G7")
 #' }
 #' @keywords info subjects
 subject_info <- function(subjectId, lang = c("pl","en"), ...) {

@@ -76,7 +76,7 @@
       <h1>Downloading and using data from bdl</h1>
                         <h4 class="author">Krzysztof Kania</h4>
             
-            <h4 class="date">2019-08-23</h4>
+            <h4 class="date">2019-09-11</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/statisticspoland/R_Package_to_API_BDL/blob/master/vignettes/bdl.Rmd"><code>vignettes/bdl.Rmd</code></a></small>
       <div class="hidden name"><code>bdl.Rmd</code></div>
@@ -289,15 +289,15 @@
 <a class="sourceLine" id="cb12-7" title="7"><span class="co">#&gt; 3 011210000000 REGION MAŁOPOLSKIE 1997  127267      1</span></a>
 <a class="sourceLine" id="cb12-8" title="8"><span class="co">#&gt; 4 011210000000 REGION MAŁOPOLSKIE 1998  148881      1</span></a>
 <a class="sourceLine" id="cb12-9" title="9"><span class="co">#&gt; # ... with 290 more rows</span></a>
-<a class="sourceLine" id="cb12-10" title="10"><span class="kw"><a href="../reference/get_data_by_variable.html">get_data_by_variable</a></span>(<span class="st">"420"</span>, <span class="dt">unitLevel =</span> <span class="st">"4"</span>)</a>
-<a class="sourceLine" id="cb12-11" title="11"><span class="co">#&gt; # A tibble: 1,246 x 5</span></a>
-<a class="sourceLine" id="cb12-12" title="12"><span class="co">#&gt;   id           name                year    val attrId</span></a>
-<a class="sourceLine" id="cb12-13" title="13"><span class="co">#&gt;   &lt;chr&gt;        &lt;chr&gt;               &lt;chr&gt; &lt;dbl&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb12-14" title="14"><span class="co">#&gt; 1 011212000000 PODREGION KRAKOWSKI 1995   3063      1</span></a>
-<a class="sourceLine" id="cb12-15" title="15"><span class="co">#&gt; 2 011212000000 PODREGION KRAKOWSKI 1996   1193      1</span></a>
-<a class="sourceLine" id="cb12-16" title="16"><span class="co">#&gt; 3 011212000000 PODREGION KRAKOWSKI 1997   1704      1</span></a>
-<a class="sourceLine" id="cb12-17" title="17"><span class="co">#&gt; 4 011212000000 PODREGION KRAKOWSKI 2000    117      1</span></a>
-<a class="sourceLine" id="cb12-18" title="18"><span class="co">#&gt; # ... with 1,242 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb12-10" title="10"><span class="kw"><a href="../reference/get_data_by_variable.html">get_data_by_variable</a></span>(<span class="st">"420"</span>, <span class="dt">unitLevel =</span> <span class="st">"3"</span>)</a>
+<a class="sourceLine" id="cb12-11" title="11"><span class="co">#&gt; # A tibble: 369 x 5</span></a>
+<a class="sourceLine" id="cb12-12" title="12"><span class="co">#&gt;   id           name               year     val attrId</span></a>
+<a class="sourceLine" id="cb12-13" title="13"><span class="co">#&gt;   &lt;chr&gt;        &lt;chr&gt;              &lt;chr&gt;  &lt;dbl&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb12-14" title="14"><span class="co">#&gt; 1 011210000000 REGION MAŁOPOLSKIE 1995   75956      1</span></a>
+<a class="sourceLine" id="cb12-15" title="15"><span class="co">#&gt; 2 011210000000 REGION MAŁOPOLSKIE 1996   98534      1</span></a>
+<a class="sourceLine" id="cb12-16" title="16"><span class="co">#&gt; 3 011210000000 REGION MAŁOPOLSKIE 1997  127267      1</span></a>
+<a class="sourceLine" id="cb12-17" title="17"><span class="co">#&gt; 4 011210000000 REGION MAŁOPOLSKIE 1998  148881      1</span></a>
+<a class="sourceLine" id="cb12-18" title="18"><span class="co">#&gt; # ... with 365 more rows</span></a></code></pre></div>
 </div>
 </div>
 <div id="useful-tools" class="section level2">
@@ -307,7 +307,7 @@
 <div id="summary" class="section level3">
 <h3 class="hasAnchor">
 <a href="#summary" class="anchor"></a>Summary</h3>
-<p>Data downloaded via <code><a href="../reference/get_data_by_unit.html">get_data_by_unit()</a></code> and <code><a href="../reference/get_data_by_variable.html">get_data_by_variable()</a></code> van be easily summarized by <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>:</p>
+<p>Data downloaded via <code><a href="../reference/get_data_by_unit.html">get_data_by_unit()</a></code> or <code><a href="../reference/get_data_by_variable.html">get_data_by_variable()</a></code> and their locality versions can be easily summarized by <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">df &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_data_by_variable.html">get_data_by_variable</a></span>(<span class="dt">varId =</span> <span class="st">"3643"</span>, <span class="dt">unitParentId =</span> <span class="st">"010000000000"</span>)</a>
 <a class="sourceLine" id="cb13-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(df)</a>
 <a class="sourceLine" id="cb13-3" title="3"><span class="co">#&gt; # A tibble: 5 x 7</span></a>
@@ -325,18 +325,20 @@
 <a href="#plotting" class="anchor"></a>Plotting</h3>
 <p>Plotting functions in this package are interfaces to data downloading functions. Some of them require specifying <code>data_type</code> - method for downloading data and rest of arguments will be relevant to specified <code>data_type</code> function. Check documentation for more details.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw"><a href="../reference/line_plot.html">line_plot</a></span>(<span class="dt">data_type =</span> <span class="st">"unit"</span>, <span class="dt">unitId =</span> <span class="st">"000000000000"</span>, <span class="dt">varId =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"415"</span>,<span class="st">"420"</span>))</a></code></pre></div>
-<p><img src="bdl_files/figure-html/unnamed-chunk-14-1.png" width="960"></p>
+<p><img src="bdl_files/figure-html/unnamed-chunk-14-1.png" width="768"></p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw"><a href="../reference/pie_plot.html">pie_plot</a></span>(<span class="dt">data_type =</span><span class="st">"variable"</span> ,<span class="st">"60559"</span>, <span class="st">"2006"</span>, <span class="dt">unitLevel =</span> <span class="st">"2"</span>)</a></code></pre></div>
-<p><img src="bdl_files/figure-html/unnamed-chunk-15-1.png" width="960"></p>
+<p><img src="bdl_files/figure-html/unnamed-chunk-15-1.png" width="768"></p>
 <p>Scatter plot is unique - requires vector of only 2 variables.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw"><a href="../reference/scatter_2var_plot.html">scatter_2var_plot</a></span>(<span class="dt">data_type =</span><span class="st">"variable"</span> ,<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"60559"</span>,<span class="st">"415"</span>), <span class="dt">unitLevel =</span> <span class="st">"2"</span>)</a>
 <a class="sourceLine" id="cb16-2" title="2"><span class="co">#&gt; Joining, by = c("id", "name", "year")</span></a></code></pre></div>
-<p><img src="bdl_files/figure-html/unnamed-chunk-16-1.png" width="960"></p>
+<p><img src="bdl_files/figure-html/unnamed-chunk-16-1.png" width="768"></p>
 </div>
 <div id="map-generation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#map-generation" class="anchor"></a>Map generation</h3>
-<p>With <code>bdl</code> package comes <code>bdl.maps</code> dataset containing spatial maps for each Poland’s level. <code><a href="../reference/generate_map.html">generate_map()</a></code> use them to generate maps filled with bdl data. Use <code>unitLevel</code> to change type of map. The lower level is chosen the slower map will generate as it has more spatial data to process.</p>
+<p>With <code>bdl</code> package comes <code>bdl.maps</code> dataset containing spatial maps for each Poland’s level. <code><a href="../reference/generate_map.html">generate_map()</a></code> use them to generate maps filled with bdl data. Use <code>unitLevel</code> to change type of map. The lower level is chosen the slower map will generate as it has more spatial data to process. This function requires external map data “bdl.maps” loaded to global environment. You can get data here:</p>
+<p><a href="https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData">Map download</a>.</p>
+<p>Download data file and double-click to load it to environment.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw"><a href="../reference/generate_map.html">generate_map</a></span>(<span class="dt">varId =</span> <span class="st">"60559"</span>, <span class="dt">year =</span> <span class="st">"2017"</span>, <span class="dt">unitLevel =</span> <span class="dv">3</span>)</a></code></pre></div>
 </div>
 <div id="multi-download" class="section level3">

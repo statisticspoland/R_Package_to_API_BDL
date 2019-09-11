@@ -29,7 +29,7 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
 }
 \examples{
  \donttest{
-   unit <- unit_locality_info("030210106062-0189782")
+   unit_locality_info("030210106062-0189782")
 }
 }
 \keyword{info}

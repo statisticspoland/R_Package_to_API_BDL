@@ -33,7 +33,7 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
 }
 \examples{
  \donttest{
-   units <- search_units("wro")
+   search_unit_localities("wro")
 }
 }
 \keyword{localities}

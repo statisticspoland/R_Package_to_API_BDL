@@ -150,7 +150,7 @@ We will use `get_data_by_variable()`. We specify our single variable as `varId` 
 
 ```{r  }
 get_data_by_variable("420", unitParentId = "011210000000")
-get_data_by_variable("420", unitLevel = "4")
+get_data_by_variable("420", unitLevel = "3")
 ```
 
 
@@ -161,7 +161,7 @@ The `bdl` package provide couple of additional functions for summarizing and vis
 
 ### Summary
 
-Data downloaded via `get_data_by_unit()` and `get_data_by_variable()` van be easily summarized by `summary()`:
+Data downloaded via `get_data_by_unit()` or `get_data_by_variable()` and their locality versions can be easily summarized by `summary()`:
 ```{r  }
 df <- get_data_by_variable(varId = "3643", unitParentId = "010000000000")
 summary(df)
@@ -172,21 +172,26 @@ summary(df)
 
 Plotting functions in this package are interfaces to data downloading functions. Some of them require specifying `data_type` - method for downloading data and rest of arguments will be relevant to specified `data_type` function. Check documentation for more details.
 
-```{r fig.height=5, fig.width=10}
+```{r fig.height=5, fig.width=8}
 line_plot(data_type = "unit", unitId = "000000000000", varId = c("415","420"))
 ```
-```{r fig.height=5, fig.width=10}
+```{r fig.height=5, fig.width=8}
 pie_plot(data_type ="variable" ,"60559", "2006", unitLevel = "2")
 ```
 
 Scatter plot is unique - requires vector of only 2 variables.
-```{r fig.height=5, fig.width=10}
+```{r fig.height=5, fig.width=8}
 scatter_2var_plot(data_type ="variable" ,c("60559","415"), unitLevel = "2")
 ```
 
 ### Map generation
 
 With `bdl` package comes `bdl.maps` dataset containing spatial maps for each Poland's level. `generate_map()` use them to generate maps filled with bdl data. Use `unitLevel` to change type of map. The lower level is chosen the slower map will generate as it has more spatial data to process.
+This function requires external map data "bdl.maps" loaded to global environment. You can get data here:
+
+[Map download](https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData).
+
+Download data file and double-click to load it to environment.
 ```{r fig.height=5, fig.width=8, eval=FALSE}
 generate_map(varId = "60559", year = "2017", unitLevel = 3)
 ```

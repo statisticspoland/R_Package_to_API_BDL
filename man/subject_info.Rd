@@ -29,7 +29,7 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
 }
 \examples{
  \donttest{
-   subjects <- subject_info("G7")
+   subject_info("G7")
 }
 }
 \keyword{info}

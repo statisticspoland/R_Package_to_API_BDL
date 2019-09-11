@@ -8,9 +8,10 @@ get_data_by_unit_locality(unitId, varId, year = NULL, type = c("code",
   "label"), lang = c("pl", "en"), ...)
 }
 \arguments{
-\item{unitId}{A 12 character NUTS unit locality id with 7 characters locality individual id, separated by dash 
-or vector of  multiple unit id codes. If multiple unit codes are used, some columns are not available.
-Use \code{\link{search_unit_localities}} or \code{\link{get_unit_localities}} to find unit id code.}
+\item{unitId}{A 12 character NUTS unit locality id with 7 characters locality individual id, 
+separated by dash or vector of  multiple unit id codes. If multiple unit codes are used, 
+some columns are not available. Use \code{\link{search_unit_localities}} 
+or \code{\link{get_unit_localities}} to find unit id code.}
 
 \item{varId}{A vector of variable Id's.Use \code{\link{search_variables}} or
 \code{\link{get_variables}} to find variable id code.}
@@ -43,7 +44,11 @@ Data to retrieve from
 }
 \examples{
  \donttest{
-   df <- get_data_by_unit_locality(unitId = "030210106062-0189782", varId =  "415", type = "label")
+   get_data_by_unit_locality(unitId = "030210106062-0189782", varId =  "415", type = "label")
+   
+   # Multi variable download
+   get_data_by_unit_locality(unitId = c("030210106062-0189782", "030210106062-0189753"), 
+                             varId = "415")
 }
 }
 \keyword{database}

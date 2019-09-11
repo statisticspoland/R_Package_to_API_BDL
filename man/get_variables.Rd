@@ -39,7 +39,7 @@ Variables for specified subject optionally filtered by \code{level} and \code{ye
 }
 \examples{
  \donttest{
-    vars <- get_variables("P2425")
+    get_variables("P2425")
 }
 }
 \keyword{search}

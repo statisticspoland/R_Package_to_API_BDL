@@ -36,9 +36,9 @@ To get all top level subjects skip the \code{parentId} parameter or list
 }
 \examples{
  \donttest{
-   subjects <- get_subjects()
-   subjects <- get_subjects("K3")
-   subjects <- get_subjects("G7")
+   get_subjects()
+   get_subjects("K3")
+   get_subjects("G7")
 }
 }
 \keyword{search}

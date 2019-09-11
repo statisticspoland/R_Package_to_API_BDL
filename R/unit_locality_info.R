@@ -17,7 +17,7 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'    unit <- unit_locality_info("030210106062-0189782")
+#'    unit_locality_info("030210106062-0189782")
 #' }
 #' @keywords info units localities
 unit_locality_info <- function(unitId, lang = c("pl","en"), ...) {

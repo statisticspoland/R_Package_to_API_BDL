@@ -31,8 +31,8 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
 }
 \examples{
  \donttest{
-    subjects <- search_subjects("samochody")
-    subjects <- search_subjects("cars", lang  = "en")
+    earch_subjects("samochody")
+    search_subjects("cars", lang  = "en")
 }
 }
 \keyword{seach}

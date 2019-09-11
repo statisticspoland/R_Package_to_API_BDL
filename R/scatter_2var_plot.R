@@ -32,7 +32,7 @@
 #'
 #' @examples
 #' \donttest{
-#'    bld_scatter <- scatter_2var_plot(data_type ="variable" ,c("60559","415"), unitLevel = "2")
+#'    scatter_2var_plot(data_type ="variable" ,c("60559","415"), unitLevel = "2")
 #'  }
 scatter_2var_plot <- function(data_type = c("variable","variable.locality"), 
                               varId, year = NULL, unitParentId = NULL, unitLevel = NULL, 

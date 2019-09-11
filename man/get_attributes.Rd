@@ -29,7 +29,7 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
 }
 \examples{
  \donttest{
-   attributes <- get_attributes()
+   get_attributes()
 }
 }
 \keyword{levels}

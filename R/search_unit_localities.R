@@ -18,7 +18,7 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'    units <- search_units("wro")
+#'    search_unit_localities("wro")
 #' }
 #' @keywords utilities search units localities
 search_unit_localities <- function(name, year = NULL, sort = c("id","-id","name", "-name"),

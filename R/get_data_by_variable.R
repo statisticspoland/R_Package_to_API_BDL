@@ -29,11 +29,11 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'    df <- get_data_by_variable(varId = "3643", unitParentId = "010000000000")
-#'    df <- get_data_by_variable("420", year = "2000", unitLevel = 6)
+#'    get_data_by_variable(varId = "3643", unitParentId = "030200000000")
+#'    get_data_by_variable("420", year = "2000", unitLevel = 6)
 #'    
 #'    # Multi variable download
-#'    df <- get_data_by_variable(varId =c("3643","420"), unitParentId = "010000000000")
+#'    get_data_by_variable(varId =c("3643","420"), unitParentId = "010000000000")
 #' }
 #' @keywords utilities database
 get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,

@@ -38,8 +38,8 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
 }
 \examples{
  \donttest{
-   units <- search_units("wro")
-   units <- search_units("pol", type = "5")
+   search_units("wro")
+   search_units("pol", type = "5")
 }
 }
 \keyword{search}

@@ -40,8 +40,8 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
 }
 \examples{
  \donttest{
-    variables <- search_variables("samochody")
-    variables <- search_variables("cars", lang  = "en")
+    search_variables("samochody")
+    search_variables("cars", lang  = "en")
 }
 }
 \keyword{search}

@@ -38,8 +38,8 @@ To get all units skip the \code{parentId} parameter. \emph{Warning!} Downloading
 }
 \examples{
  \donttest{
-    units <- get_units()
-    units <- get_units("010000000000")
+    get_units(level = 2)
+    get_units("010000000000")
 }
 }
 \keyword{search}

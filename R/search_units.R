@@ -21,8 +21,8 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'    units <- search_units("wro")
-#'    units <- search_units("pol", type = "5")
+#'    search_units("wro")
+#'    search_units("pol", type = "5")
 #' }
 #' @keywords utilities search units
 search_units <- function(name, level = NULL, year = NULL, kind = NULL,

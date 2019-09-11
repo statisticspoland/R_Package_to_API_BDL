@@ -21,9 +21,9 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'    subjects <- get_subjects()
-#'    subjects <- get_subjects("K3")
-#'    subjects <- get_subjects("G7")
+#'    get_subjects()
+#'    get_subjects("K3")
+#'    get_subjects("G7")
 #' }
 #' @keywords utilities search subjects
 get_subjects <- function(parentId = "", sort = c("id","-id","name", "-name"),

@@ -49,7 +49,7 @@ Generate quickly `ggplot2` plot, using BDL data.
 }
 \examples{
 \donttest{
-   bld_pie_plot <- pie_plot(data_type ="variable" ,"60559", "2006", unitLevel = "2")
+   pie_plot(data_type ="variable" ,"60559", "2006", unitLevel = "2")
 }
    
 }

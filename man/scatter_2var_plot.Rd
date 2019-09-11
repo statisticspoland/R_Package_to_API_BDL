@@ -50,6 +50,6 @@ Generate quickly `ggplot2` scatter correlation plot, using BDL data.
 }
 \examples{
 \donttest{
-   bld_scatter <- scatter_2var_plot(data_type ="variable" ,c("60559","415"), unitLevel = "2")
+   scatter_2var_plot(data_type ="variable" ,c("60559","415"), unitLevel = "2")
  }
 }

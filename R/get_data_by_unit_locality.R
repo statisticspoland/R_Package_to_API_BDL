@@ -11,9 +11,10 @@
 #'   \code{get_request(id, filters,
 #'   config = httr::use_proxy(url, port, username, password))}.
 #'
-#' @param unitId A 12 character NUTS unit locality id with 7 characters locality individual id, separated by dash 
-#'   or vector of  multiple unit id codes. If multiple unit codes are used, some columns are not available.
-#'   Use \code{\link{search_unit_localities}} or \code{\link{get_unit_localities}} to find unit id code.
+#' @param unitId A 12 character NUTS unit locality id with 7 characters locality individual id, 
+#'   separated by dash or vector of  multiple unit id codes. If multiple unit codes are used, 
+#'   some columns are not available. Use \code{\link{search_unit_localities}} 
+#'   or \code{\link{get_unit_localities}} to find unit id code.
 #' @param varId A vector of variable Id's.Use \code{\link{search_variables}} or
 #'   \code{\link{get_variables}} to find variable id code.
 #' @param year A vector of years. If \code{NULL} (default) returns data for all available years.
@@ -26,7 +27,11 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'    df <- get_data_by_unit_locality(unitId = "030210106062-0189782", varId =  "415", type = "label")
+#'    get_data_by_unit_locality(unitId = "030210106062-0189782", varId =  "415", type = "label")
+#'    
+#'    # Multi variable download
+#'    get_data_by_unit_locality(unitId = c("030210106062-0189782", "030210106062-0189753"), 
+#'                              varId = "415")
 #' }
 #' @keywords utilities database
 get_data_by_unit_locality <- function(unitId, varId, year = NULL,

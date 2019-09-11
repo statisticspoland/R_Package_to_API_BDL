@@ -16,7 +16,7 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'    levels <- get_levels()
+#'    get_levels()
 #' }
 #' @keywords utilities levels
 get_levels <- function(sort = c("id","-id","name", "-name"),

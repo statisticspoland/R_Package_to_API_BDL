@@ -25,11 +25,11 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'    json <- get_request(dir = "data/ByVariable", id = "3643")
-#'    json <- get_request(dir = "data/ByUnit", id = "023200000000",
+#'    json <- get_request(dir = "data/By-Variable", id = "3643")
+#'    json <- get_request(dir = "data/By-Unit", id = "023200000000",
 #'                        filters = list(year  = c("2000","2010"),
 #'                        varId = c("2137","148190")))
-#'    json <- get_request(dir = "data/ByVariable", id = "3643",
+#'    json <- get_request(dir = "data/By-Variable", id = "3643",
 #'                        filters = list(year = c("2000","2010"),
 #'                        lang = "en"))
 #' }

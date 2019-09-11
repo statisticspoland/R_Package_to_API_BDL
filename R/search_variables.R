@@ -22,8 +22,8 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'     variables <- search_variables("samochody")
-#'     variables <- search_variables("cars", lang  = "en")
+#'     search_variables("samochody")
+#'     search_variables("cars", lang  = "en")
 #' }
 #' @keywords utilities search subjects
 search_variables <- function(name, subjectId = NULL, level = NULL, year = NULL,
