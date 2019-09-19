@@ -2,7 +2,7 @@ Package: bdl
 Type: Package
 Date: 2019-08-21
 Title: Interface and Tools for 'BDL' API
-Version: 1.0.0
+Version: 1.0.9000
 Authors@R: c(person("Krzysztof", "Kania", email = "K.Kania@stat.gov.pl",
                   role = c("aut", "cre")),
              person(given = "Statistics Poland",
