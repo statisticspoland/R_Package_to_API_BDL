@@ -7,8 +7,13 @@ get_var_label <- function(varId, lang = "pl") {
   var_suffix <- var_suffix %>%
     utils::head(1) %>%
     dplyr::select(dplyr::starts_with("n"))
-
-  var_suffix <- paste(var_suffix, collapse = " - ")
+  
+  temp <- list()
+  for(val in 1:length(var_prefix$dimensions)){
+    temp[val] <- paste(var_prefix$dimensions[val], var_suffix[val], sep = ": ")
+  }
+  
+  var_suffix <- paste(temp, collapse = ", ")
   variable_label <- paste(var_prefix$name, var_suffix, sep = " - ")
   variable_label
 }
