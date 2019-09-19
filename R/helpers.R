@@ -10,7 +10,7 @@ get_var_label <- function(varId, lang = "pl") {
   
   temp <- list()
   for(val in 1:length(var_prefix$dimensions)){
-    temp[val] <- paste(var_prefix$dimensions[val], var_suffix[val], sep = ": ")
+    temp[val] <- paste(var_prefix$dimensions[val], var_suffix[val], sep = ":")
   }
   
   var_suffix <- paste(temp, collapse = ", ")
