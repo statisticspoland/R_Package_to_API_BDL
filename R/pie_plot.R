@@ -53,7 +53,7 @@ pie_plot <- function(data_type = c("variable","variable.locality"),
     stop("You can pie plot only 1 variable with multiple units on 1 year.")
   }
   
-  title <- get_var_label(varId)
+  title <- get_var_label(varId, lang = lang)
   
   plot <- ggpubr::ggpie(df, "val", fill = "name", label = "val", 
                         color = "black", title = title, palette = randomcoloR::distinctColorPalette(nrow(df)))

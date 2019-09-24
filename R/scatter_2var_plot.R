@@ -55,10 +55,10 @@ scatter_2var_plot <- function(data_type = c("variable","variable.locality"),
   }
   df <- tidyr::drop_na(df)
   x_name <- paste0("val_", varId[1])
-  x_label <- get_var_label(varId[1])
+  x_label <- get_var_label(varId[1], lang = lang)
   
   y_name <- paste0("val_", varId[2])
-  y_label <- get_var_label(varId[2])
+  y_label <- get_var_label(varId[2], lang = lang)
 
   plot <- ggpubr::ggscatter(df, x = x_name, y = y_name, xlab = x_label, ylab = y_label,
             color = "name", size = 3, # Points color, shape and size

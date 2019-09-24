@@ -133,7 +133,7 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
     if(!inherits(shape, "sf")) class(shape) <- c("sf")
     
     
-    label <- paste0(get_var_label(varId)," - ",year)
+    label <- paste0(get_var_label(varId, lang = lang)," - ",year)
 
     map <- try(tmap::tmap_leaflet(tmap::tm_shape(shape) +
                     tmap::tm_polygons(col = "val", id = "name", style ="cont", palette="Blues", n=10, title = "", contrast = c(-0.1, 1)) +
