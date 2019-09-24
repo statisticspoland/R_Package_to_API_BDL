@@ -1,3 +1,10 @@
+# bdl 1.0.0.9000
+
+* Improved variable label function to be more informative
+
+* Fixed no lang parameter pass in visualisation functions
+
+
 # bdl 1.0.0
 
 * Increased map year range to 2010-2018
