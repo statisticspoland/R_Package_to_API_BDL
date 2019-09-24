@@ -62,7 +62,7 @@ test_that("Error codes", {
 })
 
 test_that("Proper labels", {
-  expect_match(toString(test_df$variableName), "Gospodarka wodna - uzdatnianie wody - wydajność na dobę")
+  expect_match(toString(test_df$variableName), "Gospodarka wodna - Gospodarka wodna:uzdatnianie wody - wydajność na dobę")
   expect_match(toString(test_df$measureName), "m3")
 })
 
@@ -224,7 +224,7 @@ test_that("Error codes", {
 })
 
 test_that("Proper labels", {
-  expect_match(toString(test_df$variableName), "Licea ogólnokształcące specjalne dla młodzieży - licea ogólnokształcące specjalne dla młodzieży - uczniowie - mężczyźni - prowadzone przez samorząd powiatowy - miasta na prawach powiatu")
+  expect_match(toString(test_df$variableName), "Licea ogólnokształcące specjalne dla młodzieży - Typy szkół:licea ogólnokształcące specjalne dla młodzieży, Wykaz:uczniowie - mężczyźni, Gestor:prowadzone przez samorząd powiatowy - miasta na prawach powiatu")
   expect_match(toString(test_df$measureName), "osoba")
 })
 
