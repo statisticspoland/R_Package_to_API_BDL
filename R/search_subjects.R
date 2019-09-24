@@ -17,7 +17,7 @@
 #' @export
 #' @examples
 #'  \donttest{
-#'     earch_subjects("samochody")
+#'     search_subjects("samochody")
 #'     search_subjects("cars", lang  = "en")
 #' }
 #' @keywords utilities seach subjects
