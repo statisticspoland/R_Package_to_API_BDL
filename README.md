@@ -28,14 +28,14 @@ To install this package run these commands:
 **Windows and Mac**
 
 ```r
-install.packages("remotes", type = "binary")
+# install.packages("remotes", type = "binary")
 remotes::install_github("statisticspoland/R_Package_to_API_BDL", upgrade = "always", type = "binary")
 ```
 
 **Linux**
 
 ```r
-install.packages("remotes")
+# install.packages("remotes")
 remotes::install_github("statisticspoland/R_Package_to_API_BDL")
 ```
 
