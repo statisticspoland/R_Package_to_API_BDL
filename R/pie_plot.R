@@ -30,7 +30,7 @@
 #'
 #' @examples
 #' \donttest{
-#'    pie_plot(data_type ="variable" ,"60559", "2006", unitLevel = "2")
+#'    pie_plot(data_type ="variable" ,"1", "2018",unitParentId="042214300000", unitLevel = "6")
 #' }
 #'    
 pie_plot <- function(data_type = c("variable","variable.locality"), 
