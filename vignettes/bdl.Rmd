@@ -182,7 +182,7 @@ line_plot(data_type = "unit", unitId = "000000000000", varId = c("415","420"))
 ```
 
 ```{r fig.height=5, fig.width=8}
-pie_plot(data_type ="variable" ,"60559", "2006", unitLevel = "2")
+pie_plot(data_type ="variable" ,"1", "2018",unitParentId="042214300000", unitLevel = "6")
 ```
 
 Scatter plot is unique - requires vector of only 2 variables.
