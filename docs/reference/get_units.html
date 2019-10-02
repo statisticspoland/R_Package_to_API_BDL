@@ -8,11 +8,13 @@
 
 <title>Get unit NUTS codes. — get_units • bdl</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -32,10 +34,11 @@
 
 
 
-<meta property="og:title" content="Get unit NUTS codes. — get_units" />
 
+<meta property="og:title" content="Get unit NUTS codes. — get_units" />
 <meta property="og:description" content="Retrieve all unit codes or sub to given unit," />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -66,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bdl</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.9000</span>
       </span>
     </div>
 
@@ -88,7 +91,6 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/statisticspoland/R_Package_to_API_BDL">
@@ -115,14 +117,12 @@
     </div>
 
     <div class="ref-description">
-    
     <p>Retrieve all unit codes or sub to given unit,</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>get_units</span>(<span class='kw'>parentId</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>level</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sort</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"id"</span>, <span class='st'>"-id"</span>, <span class='st'>"name"</span>,
   <span class='st'>"-name"</span>), <span class='kw'>lang</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"pl"</span>, <span class='st'>"en"</span>), <span class='no'>...</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -150,11 +150,10 @@ If <code>NULL</code> (default) no level filters apply. Use <code><a href='get_le
 a proxy parameters, see details.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A dataset as a tibble.</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>To get all units skip the <code>parentId</code> parameter. <em>Warning!</em> Downloading
@@ -163,10 +162,10 @@ a proxy parameters, see details.</p></td>
   passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>GET</a></code>. For example
   <code><a href='get_request.html'>get_request(id, filters,
   config = httr::use_proxy(url, port, username, password))</a></code>.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> </div><div class='input'>    <span class='fu'>get_units</span>(<span class='kw'>level</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 16 x 5</span><span>
+    <pre class="examples"><div class='input'> <span class='co'># \donttest{</span>
+    <span class='fu'>get_units</span>(<span class='kw'>level</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 16 x 5</span><span>
 #&gt;    id           name                parentId     level hasDescription
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>               </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>         
 #&gt; </span><span style='color: #555555;'> 1</span><span> 011200000000 MAŁOPOLSKIE         010000000000     2 TRUE          
@@ -197,17 +196,15 @@ a proxy parameters, see details.</p></td>
 #&gt; </span><span style='color: #555555;'> 8</span><span> 011212001042 Lipnica Murowana    011212001000     6 FALSE          2    
 #&gt; </span><span style='color: #555555;'> 9</span><span> 011212001052 Łapanów             011212001000     6 FALSE          2    
 #&gt; </span><span style='color: #555555;'>10</span><span> 011212001063 Nowy Wiśnicz        011212001000     6 FALSE          3    
-#&gt; </span><span style='color: #555555;'># ... with 571 more rows</span><span></div></span></pre>
+#&gt; </span><span style='color: #555555;'># ... with 571 more rows</span><span></div><div class='input'># }
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
@@ -221,7 +218,7 @@ a proxy parameters, see details.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
 
       </footer>
