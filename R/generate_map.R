@@ -139,26 +139,6 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
                     tmap::tm_polygons(col = "val", id = "name", style ="cont", palette="Blues", n=10, title = "", contrast = c(-0.1, 1)) +
                     tmap::tm_layout(title = label)), silent = T)
 
-    if(is.error(map)) {
-      return(generate_map(varId, year, unitLevel, unitParentId, aggregateId, lang, ...))
-    }else {
-      return(map)
-    }
-    
-    
-    # tmap::tmap_mode("view")
-
-    # error <- try(print(map), silent = T)
-    
-    # if(is.error(error)) {
-    #   print("error trigg")
-    #   return(generate_map(varId, year, unitLevel, unitParentId, aggregateId, lang, ...))
-    # }else{
-    #   print("non error")
-    #   return(map)
-    # }
-
-    
     
   } else {
     stop("You can generate map for single variable on single year within 2010-2018.")
