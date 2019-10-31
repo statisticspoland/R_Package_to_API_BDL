@@ -96,9 +96,9 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       sf::st_geometry(geo) <- sf::st_sfc(geo$geometry)
       sf::st_geometry(shape) <- sf::st_geometry(geo)
       
-      shape <- suppressWarnings(tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level5_map_units)), 
-                                                 current.projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level5_map_units))))
-     
+      # shape <- suppressWarnings(tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level5_map_units)), 
+      #                                            current.projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level5_map_units))))
+      # 
 
     }
     if(unitLevel == 6){
@@ -121,24 +121,24 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       sf::st_geometry(shape) <- sf::st_geometry(geo)
       
       
-      shape <- suppressWarnings(tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level6_map_units)), 
-                                                          current.projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level6_map_units))))
-      
+      # shape <- tmaptools::set_projection(shape, projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level6_map_units)), 
+      #                                                     current.projection = tmaptools::get_proj4(tmaptools::get_projection(bdl.maps$level6_map_units)))
+      # 
       
     } 
-    
+    shape <- lwgeom::st_make_valid(shape)
     is.error <- function(x) inherits(x, "try-error")
     
-    
+
     if(!inherits(shape, "sf")) class(shape) <- c("sf")
     
     
     label <- paste0(get_var_label(varId, lang = lang)," - ",year)
 
-    map <- try(tmap::tmap_leaflet(tmap::tm_shape(shape) +
+    map <- tmap::tmap_leaflet(tmap::tm_shape(shape) +
                     tmap::tm_polygons(col = "val", id = "name", style ="cont", palette="Blues", n=10, title = "", contrast = c(-0.1, 1)) +
-                    tmap::tm_layout(title = label)), silent = T)
-
+                    tmap::tm_layout(title = label))
+    map
     
   } else {
     stop("You can generate map for single variable on single year within 2010-2018.")
