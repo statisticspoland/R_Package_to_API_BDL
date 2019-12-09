@@ -1,7 +1,6 @@
 #' @keywords internal
 page_download <- function(dir, id, filters, ...) {
   df <- tibble::tibble()
-
   repeat {
     json <- get_request(dir, id, filters, ...)
 
@@ -24,10 +23,11 @@ page_download <- function(dir, id, filters, ...) {
     } else {
       filters$page <- filters$page + 1
     }
-
+    Sys.sleep(0.65)
     if (is.null(json$links) || json$links$self == json$links$last) {
       break
     }
+    
   }
   if ("values" %in% colnames(df)) {
     df <- df %>%

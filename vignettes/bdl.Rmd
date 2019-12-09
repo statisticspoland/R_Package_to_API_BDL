@@ -58,7 +58,7 @@ Direct searching `search_units()` takes couple different arguments like:
 
 and more. To look for more arguments on any given function check package or API documentation.
 
-```{r  }
+```{r  , eval=FALSE}
 search_units(name = "wro")
 search_units(name = "", level = 3)
 ```
@@ -70,7 +70,7 @@ To get all units available in local data bank run `get_units()` without any argu
 
 To narrow the list add `unitParentId`.  The function will return all children units for a given parent at all levels. Add `level` argument to filter units even further.
 
-```{r  }
+```{r  , eval=FALSE}
 get_units(parentId = "000000000000", level = 5)
 ```
 
@@ -88,7 +88,7 @@ We have two searching methods for both subjects and variables:
 
 To directly search for subject we just provide search phrase:
 
-```{r  }
+```{r , eval=FALSE }
 search_subjects("lud")
 ```
 
@@ -96,13 +96,13 @@ Subjects consist of 3 levels (categories, groups, subgroups) - `K`, `G` and `P` 
 
 To list all top level subjects use `get_subjects()`:
 
-```{r  }
+```{r , eval=FALSE }
 get_subjects()
 ```
 
 To list sub-subjects to given category or group use `get_subjects()` with `parentId` argument:
 
-```{r  }
+```{r , eval=FALSE }
 get_subjects(parentId = "K3")
 get_subjects(parentId = "G7")
 ```
@@ -111,19 +111,19 @@ get_subjects(parentId = "G7")
 
 Firstly you can list variables for given subject (subgroup):
 
-```{r  }
+```{r  , eval=FALSE}
 get_variables("P2425")
 ```
 
 Secondly, you can direct search variables with `search_variables()`. You can use an empty string as `name` to list all variables but I strongly advise against as it has around 40 000 rows and you will probably hit data limit.
 
-```{r  }
+```{r  , eval=FALSE}
 search_variables("samochod")
 ```
 
 You can narrow the search to the given subject - subgroup:
 
-```{r  }
+```{r  , eval=FALSE}
 search_variables("lud", subjectId = "P2425")
 ```
 
@@ -139,24 +139,24 @@ If you picked unit and variable codes, you are ready to download data. You can d
 
 We will use `get_data_by_unit()`. We specify our single unit as `unitId` string argument and variables by a vector of strings. Optionally we can specify years of data. If not all available years are used.
 
-```{r  }
+```{r  , eval=FALSE}
 get_data_by_unit(unitId = "023200000000", varId =  "3643")
 get_data_by_unit(unitId = "023200000000", varId =  c("3643", "2137", "148190"))
 ```
 
 To get more information about data we can add `type` argument and set it to `"label"` to add an additional column with the variable info.
 
-```{r  }
-df <- get_data_by_unit(unitId = "023200000000", varId = "3643", type = "label")
+```{r  , eval=FALSE}
+get_data_by_unit(unitId = "023200000000", varId = "3643", type = "label")
 ```
 
 ### Multiple units, single variable
 
 We will use `get_data_by_variable()`. We specify our single variable as `varId` string argument. If no `unitParentId` is provided, the function will return all available units for a given variable. Setting `unitParentId` will return all available children units (on all levels). To narrow unit level set `unitLevel`. Optionally we can specify years of data. If not all available years are used.
 
-```{r  }
-get_data_by_variable("420", unitParentId = "011210000000")
-get_data_by_variable("420", unitLevel = "3")
+```{r  , eval=FALSE}
+get_data_by_variable("420", unitParentId = "011210000000", year = 2013:2016)
+get_data_by_variable("420", unitLevel = "2", year = 2013:2016)
 ```
 
 
@@ -168,7 +168,7 @@ The `bdl` package provides a couple of additional functions for summarizing and 
 
 Data downloaded via `get_data_by_unit()` or `get_data_by_variable()` and their locality versions can be easily summarized by `summary()`:
 
-```{r  }
+```{r  , eval=FALSE}
 df <- get_data_by_variable(varId = "3643", unitParentId = "010000000000")
 summary(df)
 ```
@@ -177,16 +177,16 @@ summary(df)
 
 Plotting functions in this package are interfaces to the data downloading functions. Some of them require specifying `data_type` - a method for downloading data, and the rest of the arguments will be relevant to specify `data_type` function. Check documentation for more details.
 
-```{r fig.height=5, fig.width=8}
+```{r fig.height=5, fig.width=8, eval=FALSE}
 line_plot(data_type = "unit", unitId = "000000000000", varId = c("415","420"))
 ```
 
-```{r fig.height=5, fig.width=8}
+```{r fig.height=5, fig.width=8, eval=FALSE}
 pie_plot(data_type ="variable" ,"1", "2018",unitParentId="042214300000", unitLevel = "6")
 ```
 
 Scatter plot is unique - requires vector of only 2 variables.
-```{r fig.height=5, fig.width=8}
+```{r fig.height=5, fig.width=8, eval=FALSE}
 scatter_2var_plot(data_type ="variable" ,c("60559","415"), unitLevel = "2")
 ```
 
@@ -206,13 +206,13 @@ generate_map(varId = "60559", year = "2017", unitLevel = 3)
 
 Downloading functions `get_data_by_unit()` and `get_data_by_variable()` have alternative "multi" downloading mode. Function that would work for example single unit, if provided a vector will make additional column with values for each unit provided:
 
-```{r  }
+```{r  , eval=FALSE}
 get_data_by_unit(unitId = c("023200000000", "020800000000"), varId =  c("3643", "2137", "148190"))
 ```
 
 Or multiple variables for `get_data_by_variable()`:
 
-```{r  }
+```{r  , eval=FALSE}
 get_data_by_variable(varId =c("3643","420"), unitParentId = "010000000000")
 ```
 
