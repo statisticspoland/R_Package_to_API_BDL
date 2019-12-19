@@ -4,8 +4,13 @@
 \alias{get_data_by_variable_locality}
 \title{Get data by variable Id for localities from BDL API}
 \usage{
-get_data_by_variable_locality(varId, unitParentId, year = NULL,
-  lang = c("pl", "en"), ...)
+get_data_by_variable_locality(
+  varId,
+  unitParentId,
+  year = NULL,
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{varId}{A single variable id or vector of multiple variable id's. If multiple id's are used, some columns

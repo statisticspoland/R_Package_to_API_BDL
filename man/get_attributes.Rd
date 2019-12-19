@@ -4,8 +4,11 @@
 \alias{get_attributes}
 \title{Get all attributes}
 \usage{
-get_attributes(sort = c("id", "-id", "Display", "-Display"),
-  lang = c("pl", "en"), ...)
+get_attributes(
+  sort = c("id", "-id", "Display", "-Display"),
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{sort}{A type of sorting, "id" (default), "-id", "Display", "-Display"}

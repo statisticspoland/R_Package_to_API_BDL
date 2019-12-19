@@ -27,6 +27,10 @@
 #' @param unitParentId A 12 character NUTS id code of interested unit. Use \code{\link{search_units}} or
 #'   \code{\link{get_units}} to find unit id code.
 #' @param aggregateId An aggregate id. Use \code{\link{get_aggregates}} for more info.
+#' @param palette A palette name or a vector of colors. See tmaptools::palette_explorer() for the named palettes.
+#'  Use a "-" as prefix to reverse the palette.
+#' @param borderLevel Adds contours of units on specified level - number from 1 to 6. 
+#' Use \code{\link{get_levels}} to find more info.
 #' @param lang  A language of returned data, "pl" (default), "en"
 #' @param ... Other arguments passed on to \code{\link[httr]{GET}}. For example
 #'   a proxy parameters, see details.
@@ -40,7 +44,7 @@
 #' \donttest{
 #'  generate_map(varId = "60559", year = "2017")
 #'  }
-generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggregateId = NULL, lang = c("pl","en"), ...) {
+generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggregateId = NULL, palette = "Blues", borderLevel = NULL, lang = c("pl","en"), ...) {
   if(!exists("bdl.maps") || !is.list(bdl.maps)){
     stop(paste0("This function requires external map data \"bdl.maps\" loaded to global environment. \n\n",
                 "You can get data here: \n",
@@ -132,12 +136,33 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
 
     if(!inherits(shape, "sf")) class(shape) <- c("sf")
     
+      label <- paste0(get_var_label(varId, lang = lang)," - ",year)
+      
+    map <- tmap::tm_shape(shape) +
+        tmap::tm_polygons(col = "val", id = "val", style ="cont", palette = palette, 
+                          # contrast = c(-0.1, 1),
+                          title = get_measure_label(varId = varId), 
+                          popup.vars = c(" " = "name")) +
+      tmap::tm_layout(title = label)
     
-    label <- paste0(get_var_label(varId, lang = lang)," - ",year)
+    border_shape <- NULL
+    
+    if(!is.null(borderLevel) && borderLevel == 1) border_shape <- bdl.maps$level1_map
+    if(!is.null(borderLevel) && borderLevel == 2) border_shape <- bdl.maps$level2_map
+    if(!is.null(borderLevel) && borderLevel == 3) border_shape <- bdl.maps$level3_map
+    if(!is.null(borderLevel) && borderLevel == 4) border_shape <- bdl.maps$level4_map
+    if(!is.null(borderLevel) && borderLevel == 5) border_shape <- bdl.maps$level5_map_units
+    if(!is.null(borderLevel) && borderLevel == 6) border_shape <- bdl.maps$level6_map_units
+    
+      
 
-    map <- tmap::tmap_leaflet(tmap::tm_shape(shape) +
-                    tmap::tm_polygons(col = "val", id = "name", style ="cont", palette="Blues", n=10, title = "", contrast = c(-0.1, 1)) +
-                    tmap::tm_layout(title = label))
+    if(!is.null(borderLevel) & !is.null(border_shape)){
+      border_shape <- lwgeom::st_make_valid(border_shape)
+      map <- map + (tmap::tm_shape(border_shape) +
+        tmap::tm_borders(lwd = 1.8))
+    }
+    
+    map <- tmap::tmap_leaflet(map)
     map
     
   } else {

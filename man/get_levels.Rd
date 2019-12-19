@@ -4,8 +4,7 @@
 \alias{get_levels}
 \title{Get all levels}
 \usage{
-get_levels(sort = c("id", "-id", "name", "-name"), lang = c("pl",
-  "en"), ...)
+get_levels(sort = c("id", "-id", "name", "-name"), lang = c("pl", "en"), ...)
 }
 \arguments{
 \item{sort}{A type of sorting, "id" (default), "-id", "name", "-name"}

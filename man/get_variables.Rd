@@ -4,8 +4,14 @@
 \alias{get_variables}
 \title{Get variable id codes.}
 \usage{
-get_variables(subjectId, level = NULL, year = NULL, sort = c("id",
-  "-id", "subjectId", "-subjectId"), lang = c("pl", "en"), ...)
+get_variables(
+  subjectId,
+  level = NULL,
+  year = NULL,
+  sort = c("id", "-id", "subjectId", "-subjectId"),
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{subjectId}{A subject id code. If not specified returns all top level subjects.

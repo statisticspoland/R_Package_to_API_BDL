@@ -4,8 +4,11 @@
 \alias{get_aggregates}
 \title{Get all aggregates}
 \usage{
-get_aggregates(sort = c("id", "-id", "name", "-name"), lang = c("pl",
-  "en"), ...)
+get_aggregates(
+  sort = c("id", "-id", "name", "-name"),
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{sort}{A type of sorting, "id" (default), "-id", "name", "-name"}

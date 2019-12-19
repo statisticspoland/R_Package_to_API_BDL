@@ -4,8 +4,12 @@
 \alias{get_subjects}
 \title{Get subject id codes.}
 \usage{
-get_subjects(parentId = "", sort = c("id", "-id", "name", "-name"),
-  lang = c("pl", "en"), ...)
+get_subjects(
+  parentId = "",
+  sort = c("id", "-id", "name", "-name"),
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{parentId}{A parent subject id code. If not specified returns all top level subjects.

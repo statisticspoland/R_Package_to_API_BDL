@@ -4,9 +4,16 @@
 \alias{scatter_2var_plot}
 \title{Generate quick scatter correlation plot}
 \usage{
-scatter_2var_plot(data_type = c("variable", "variable.locality"), varId,
-  year = NULL, unitParentId = NULL, unitLevel = NULL,
-  aggregateId = NULL, lang = c("pl", "en"), ...)
+scatter_2var_plot(
+  data_type = c("variable", "variable.locality"),
+  varId,
+  year = NULL,
+  unitParentId = NULL,
+  unitLevel = NULL,
+  aggregateId = NULL,
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{data_type}{A type of data used for generating plot, "variable"(default), "variable.locality"}

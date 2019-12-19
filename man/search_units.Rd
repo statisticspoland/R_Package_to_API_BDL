@@ -4,8 +4,15 @@
 \alias{search_units}
 \title{Search for units}
 \usage{
-search_units(name, level = NULL, year = NULL, kind = NULL,
-  sort = c("id", "-id", "name", "-name"), lang = c("pl", "en"), ...)
+search_units(
+  name,
+  level = NULL,
+  year = NULL,
+  kind = NULL,
+  sort = c("id", "-id", "name", "-name"),
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{name}{A phrase to search.}

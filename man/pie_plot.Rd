@@ -4,9 +4,16 @@
 \alias{pie_plot}
 \title{Generate quick pie plot}
 \usage{
-pie_plot(data_type = c("variable", "variable.locality"), varId, year,
-  unitParentId = NULL, unitLevel = NULL, aggregateId = NULL,
-  lang = c("pl", "en"), ...)
+pie_plot(
+  data_type = c("variable", "variable.locality"),
+  varId,
+  year,
+  unitParentId = NULL,
+  unitLevel = NULL,
+  aggregateId = NULL,
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{data_type}{A type of data used for generating plot, "variable"(default), "variable","variable.locality"}

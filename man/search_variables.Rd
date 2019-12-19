@@ -4,9 +4,15 @@
 \alias{search_variables}
 \title{Search for variable codes}
 \usage{
-search_variables(name, subjectId = NULL, level = NULL, year = NULL,
-  sort = c("id", "-id", "subjectId", "-subjectId"), lang = c("pl",
-  "en"), ...)
+search_variables(
+  name,
+  subjectId = NULL,
+  level = NULL,
+  year = NULL,
+  sort = c("id", "-id", "subjectId", "-subjectId"),
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{name}{A phrase to search.}

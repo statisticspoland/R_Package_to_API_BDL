@@ -4,8 +4,17 @@
 \alias{generate_map}
 \title{Generate quick map}
 \usage{
-generate_map(varId, year, unitLevel = 2, unitParentId = NULL,
-  aggregateId = NULL, lang = c("pl", "en"), ...)
+generate_map(
+  varId,
+  year,
+  unitLevel = 2,
+  unitParentId = NULL,
+  aggregateId = NULL,
+  palette = "Blues",
+  borderLevel = NULL,
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{varId}{A single variable Id.
@@ -19,6 +28,12 @@ Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variab
 \code{\link{get_units}} to find unit id code.}
 
 \item{aggregateId}{An aggregate id. Use \code{\link{get_aggregates}} for more info.}
+
+\item{palette}{A palette name or a vector of colors. See tmaptools::palette_explorer() for the named palettes.
+Use a "-" as prefix to reverse the palette.}
+
+\item{borderLevel}{Adds contours of units on specified level - number from 1 to 6. 
+Use \code{\link{get_levels}} to find more info.}
 
 \item{lang}{A language of returned data, "pl" (default), "en"}
 

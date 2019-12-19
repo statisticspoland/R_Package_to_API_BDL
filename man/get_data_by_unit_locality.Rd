@@ -4,8 +4,14 @@
 \alias{get_data_by_unit_locality}
 \title{Get data by unit locality Id from BDL API}
 \usage{
-get_data_by_unit_locality(unitId, varId, year = NULL, type = c("code",
-  "label"), lang = c("pl", "en"), ...)
+get_data_by_unit_locality(
+  unitId,
+  varId,
+  year = NULL,
+  type = c("code", "label"),
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{unitId}{A 12 character NUTS unit locality id with 7 characters locality individual id, 

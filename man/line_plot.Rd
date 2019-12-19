@@ -4,10 +4,17 @@
 \alias{line_plot}
 \title{Generate quick line plot}
 \usage{
-line_plot(data_type = c("unit", "unit.locality", "variable",
-  "variable.locality"), unitId = NULL, varId = NULL, year = NULL,
-  aggregateId = NULL, lang = NULL, unitParentId = NULL,
-  unitLevel = NULL, ...)
+line_plot(
+  data_type = c("unit", "unit.locality", "variable", "variable.locality"),
+  unitId = NULL,
+  varId = NULL,
+  year = NULL,
+  aggregateId = NULL,
+  lang = NULL,
+  unitParentId = NULL,
+  unitLevel = NULL,
+  ...
+)
 }
 \arguments{
 \item{data_type}{A type of data used for generating plot, "unit"(default), "unit.locality","variable","variable.locality"}

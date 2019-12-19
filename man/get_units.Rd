@@ -4,8 +4,13 @@
 \alias{get_units}
 \title{Get unit NUTS codes.}
 \usage{
-get_units(parentId = "", level = NULL, sort = c("id", "-id", "name",
-  "-name"), lang = c("pl", "en"), ...)
+get_units(
+  parentId = "",
+  level = NULL,
+  sort = c("id", "-id", "name", "-name"),
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{parentId}{A 12 character NUTS id code of parent unit.

@@ -4,8 +4,12 @@
 \alias{get_unit_localities}
 \title{Get unit locality codes.}
 \usage{
-get_unit_localities(parentId, sort = c("id", "-id", "name", "-name"),
-  lang = c("pl", "en"), ...)
+get_unit_localities(
+  parentId,
+  sort = c("id", "-id", "name", "-name"),
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{parentId}{A 12 character NUTS id code of parent unit.

@@ -4,8 +4,13 @@
 \alias{search_unit_localities}
 \title{Search for unit localities}
 \usage{
-search_unit_localities(name, year = NULL, sort = c("id", "-id", "name",
-  "-name"), lang = c("pl", "en"), ...)
+search_unit_localities(
+  name,
+  year = NULL,
+  sort = c("id", "-id", "name", "-name"),
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{name}{A phrase to search.}

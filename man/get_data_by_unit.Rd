@@ -4,8 +4,15 @@
 \alias{get_data_by_unit}
 \title{Get data by unit Id's from BDL API}
 \usage{
-get_data_by_unit(unitId, varId, year = NULL, type = c("code", "label"),
-  aggregateId = NULL, lang = c("pl", "en"), ...)
+get_data_by_unit(
+  unitId,
+  varId,
+  year = NULL,
+  type = c("code", "label"),
+  aggregateId = NULL,
+  lang = c("pl", "en"),
+  ...
+)
 }
 \arguments{
 \item{unitId}{A single 12 character NUTS id code or vector of  multiple unit id 
