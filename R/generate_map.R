@@ -29,6 +29,7 @@
 #' @param aggregateId An aggregate id. Use \code{\link{get_aggregates}} for more info.
 #' @param palette A palette name or a vector of colors. See tmaptools::palette_explorer() for the named palettes.
 #'  Use a "-" as prefix to reverse the palette.
+#' @param n Preferred number of classes. Default is 10.
 #' @param borderLevel Adds contours of units on specified level - number from 1 to 6. 
 #' Use \code{\link{get_levels}} to find more info.
 #' @param lang  A language of returned data, "pl" (default), "en"
@@ -44,7 +45,8 @@
 #' \donttest{
 #'  generate_map(varId = "60559", year = "2017")
 #'  }
-generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggregateId = NULL, palette = "Blues", borderLevel = NULL, lang = c("pl","en"), ...) {
+generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggregateId = NULL, palette = "Blues", 
+                         n = 10, borderLevel = NULL, lang = c("pl","en"), ...) {
   if(!exists("bdl.maps") || !is.list(bdl.maps)){
     stop(paste0("This function requires external map data \"bdl.maps\" loaded to global environment. \n\n",
                 "You can get data here: \n",
@@ -139,7 +141,7 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       label <- paste0(get_var_label(varId, lang = lang)," - ",year)
       
     map <- tmap::tm_shape(shape) +
-        tmap::tm_polygons(col = "val", id = "val", style ="cont", palette = palette, 
+        tmap::tm_polygons(col = "val", id = "val", style ="cont", palette = palette, n = n, 
                           # contrast = c(-0.1, 1),
                           title = get_measure_label(varId = varId), 
                           popup.vars = c(" " = "name")) +
