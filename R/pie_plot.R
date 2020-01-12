@@ -55,9 +55,20 @@ pie_plot <- function(data_type = c("variable","variable.locality"),
   
   title <- get_var_label(varId, lang = lang)
   
+  if(!is.null(aggregateId) && data_type == "variable"){
+    dir <- "aggregates"
+    filters <- list(lang = lang)
+    
+    agg_lab <- get_request(dir, id = aggregateId, filters, ...)
+    title <- paste0(title, " \nAggregat: ", agg_lab$name)
+  }
+  
   plot <- ggpubr::ggpie(df, "val", fill = "name", label = "val", 
                         color = "black", title = title, palette = randomcoloR::distinctColorPalette(nrow(df)))
   plot <- plot + ggplot2::aes("", val, fill = "name", label = val)
+  
+  
+  
   plot <- ggpubr::ggpar(plot, legend = "right", legend.title = "", ticks = F)
   
   if(nrow(df) > 20) {

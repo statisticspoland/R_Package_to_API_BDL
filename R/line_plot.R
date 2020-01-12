@@ -94,9 +94,18 @@ line_plot <- function(data_type = c("unit","unit.locality","variable","variable.
   } else {
     stop("Wrong data_type parameter.")
   }
-  # if(nrow(df) > 20) {
-  #   plot <- ggpubr::ggpar(plot, legend = "none")
-  # }
+  
+  title <- plot$plot_env$title
+  if(!is.null(aggregateId) && (data_type == "variable" || data_type == "unit")){
+    dir <- "aggregates"
+    filters <- list(lang = lang)
+    
+    agg_lab <- get_request(dir, id = aggregateId, filters, ...)
+    title <- paste0(plot$plot_env$title, ", Aggregat: ", agg_lab$name)
+  }
+  
+  plot <- ggpubr::ggpar(plot, xlab = F, ylab = F, legend.title = "", title = title)
+  
   plot <- plot + ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90, vjust = 0.5))
   print(plot)
 }
