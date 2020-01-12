@@ -36,7 +36,7 @@ get_attr_label <- function(attrId, lang = "pl") {
     attr_label <- "Brak danych"
   }
   if(attrId == 1){
-    attr_label <- "Dane pobrane pomyślnie."
+    attr_label <- "Dane pobrane pomyslnie."
   }
   attr_label
 }
