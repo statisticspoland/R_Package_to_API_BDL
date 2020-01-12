@@ -4,6 +4,13 @@
 
 * Fixed no lang parameter pass in visualisation functions
 
+* Added new parameters to generate_map()
+
+* Various fixes to plot functions
+
+* Updated DESCRIPTION
+
+* Added new function get_panel_data() thanks to @IwoA
 
 # bdl 1.0.0
 
