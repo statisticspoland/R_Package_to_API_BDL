@@ -11,6 +11,7 @@ generate_map(
   unitParentId = NULL,
   aggregateId = NULL,
   palette = "Blues",
+  n = 10,
   borderLevel = NULL,
   lang = c("pl", "en"),
   ...
@@ -31,6 +32,8 @@ Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variab
 
 \item{palette}{A palette name or a vector of colors. See tmaptools::palette_explorer() for the named palettes.
 Use a "-" as prefix to reverse the palette.}
+
+\item{n}{Preferred number of classes. Default is 10.}
 
 \item{borderLevel}{Adds contours of units on specified level - number from 1 to 6. 
 Use \code{\link{get_levels}} to find more info.}

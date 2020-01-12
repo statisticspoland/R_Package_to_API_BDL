@@ -40,13 +40,15 @@ Data to retrieve from
 }
 \examples{
  \donttest{
-   get_panel_data(unitId = "023200000000", varId =  "3643")
-   get_panel_datat(unitId = "023200000000", varId =  c("3643", "2137", "148190"))
-   get_panel_data(unitId = c("023200000000", "020800000000"), 
-                          varId =  c("3643", "2137", "148190"))
+   get_panel_data(unitId = "030210101000", varId =  "60270")
+   
+   get_panel_data(unitId = "030210101000", varId =  c("60270", "461668"))
+   
+   get_panel_data(unitId = c("030210101000", "030210105000", "030210106000"), 
+                          varId =  c("60270", "461668"), year = c(2013:2016))
                           
-   get_panel_data(unitId = c("023200000000", "020800000000"), 
-                          varId =  c("3643", "2137", "148190"), ggplot = TRUE)
+   get_panel_data(unitId = c("030210101000", "030210105000", "030210106000"), 
+                          varId =  c("60270", "461668"), ggplot = TRUE)
 }
 }
 \keyword{database}
