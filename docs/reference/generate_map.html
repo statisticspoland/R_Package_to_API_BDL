@@ -120,8 +120,18 @@
     <p>Generate given NUTS level map with data from given variable</p>
     </div>
 
-    <pre class="usage"><span class='fu'>generate_map</span>(<span class='no'>varId</span>, <span class='no'>year</span>, <span class='kw'>unitLevel</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>unitParentId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>aggregateId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>lang</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"pl"</span>, <span class='st'>"en"</span>), <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>generate_map</span>(
+  <span class='no'>varId</span>,
+  <span class='no'>year</span>,
+  <span class='kw'>unitLevel</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='kw'>unitParentId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>aggregateId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>palette</span> <span class='kw'>=</span> <span class='st'>"Blues"</span>,
+  <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>10</span>,
+  <span class='kw'>borderLevel</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>lang</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"pl"</span>, <span class='st'>"en"</span>),
+  <span class='no'>...</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -147,6 +157,20 @@ Use <code><a href='search_variables.html'>search_variables</a></code> or <code><
     <tr>
       <th>aggregateId</th>
       <td><p>An aggregate id. Use <code><a href='get_aggregates.html'>get_aggregates</a></code> for more info.</p></td>
+    </tr>
+    <tr>
+      <th>palette</th>
+      <td><p>A palette name or a vector of colors. See tmaptools::palette_explorer() for the named palettes.
+Use a "-" as prefix to reverse the palette.</p></td>
+    </tr>
+    <tr>
+      <th>n</th>
+      <td><p>Preferred number of classes. Default is 10.</p></td>
+    </tr>
+    <tr>
+      <th>borderLevel</th>
+      <td><p>Adds contours of units on specified level - number from 1 to 6. 
+Use <code><a href='get_levels.html'>get_levels</a></code> to find more info.</p></td>
     </tr>
     <tr>
       <th>lang</th>

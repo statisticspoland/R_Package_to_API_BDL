@@ -120,10 +120,17 @@
     <p>Generate line plot for one unit/multiple variables or variable/multiple units</p>
     </div>
 
-    <pre class="usage"><span class='fu'>line_plot</span>(<span class='kw'>data_type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"unit"</span>, <span class='st'>"unit.locality"</span>, <span class='st'>"variable"</span>,
-  <span class='st'>"variable.locality"</span>), <span class='kw'>unitId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>varId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>aggregateId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>lang</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>unitParentId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>unitLevel</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>line_plot</span>(
+  <span class='kw'>data_type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"unit"</span>, <span class='st'>"unit.locality"</span>, <span class='st'>"variable"</span>, <span class='st'>"variable.locality"</span>),
+  <span class='kw'>unitId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>varId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>aggregateId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>lang</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>unitParentId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>unitLevel</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='no'>...</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
