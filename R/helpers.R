@@ -32,6 +32,12 @@ get_measure_label <- function(varId, lang = "pl") {
 get_attr_label <- function(attrId, lang = "pl") {
   attr_suffix <- attribute_info(attrId)
   attr_label <- toString(attr_suffix$description)
+  if(attrId == 0){
+    attr_label <- "Brak danych"
+  }
+  if(attrId == 1){
+    attr_label <- "Dane pobrane pomyślnie."
+  }
   attr_label
 }
 #' @keywords internal
