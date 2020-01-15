@@ -67,6 +67,8 @@ get_panel_data <- function(unitId, varId, year = NULL, ggplot = FALSE, ...) {
     
     if (ggplot == TRUE) {
       df <- tidyr::pivot_longer(df, cols = colnames(df[,3:ncol(df)]), names_to = "variables", values_to = "values")
+      df$year <- paste0(df$year, "-01-01")
+      df$year <- as.Date(df$year)
     }
     
   df <- tibble::as_tibble(df)
