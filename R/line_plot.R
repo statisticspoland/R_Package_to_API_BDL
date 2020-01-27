@@ -73,7 +73,7 @@ line_plot <- function(data_type = c("unit","unit.locality","variable","variable.
       df <- get_data_by_variable(varId = varId, unitParentId = unitParentId, unitLevel = unitLevel, 
                                  year = year, aggregateId = aggregateId, lang = lang, ...)
       title <- get_var_label(varId, lang = lang)
-      plot <- ggpubr::ggline(df, x ="year", y ="val", color = "name", group ="name", title = ifelse(is.null(unitParentId), title, paste0(title, " - Jednostka nadrzędna: ", toString(unitParentId))))
+      plot <- ggpubr::ggline(df, x ="year", y ="val", color = "name", group ="name", title = ifelse(is.null(unitParentId), title, paste0(title, " - Jednostka nadrzedna: ", toString(unitParentId))))
       
     } else {
       stop("You can line plot only 1 variable with multiple units.")
@@ -85,7 +85,7 @@ line_plot <- function(data_type = c("unit","unit.locality","variable","variable.
       
       df <- get_data_by_variable_locality(varId = varId, unitParentId = unitParentId, year = year, lang = lang, ...)
       title <- get_var_label(varId, lang = lang)
-      plot <- ggpubr::ggline(df, x ="year", y ="val", color = "name", group ="name", title = ifelse(is.null(unitParentId), title, paste0(title, " - Jednostka nadrzędna: ", toString(unitParentId))))
+      plot <- ggpubr::ggline(df, x ="year", y ="val", color = "name", group ="name", title = ifelse(is.null(unitParentId), title, paste0(title, " - Jednostka nadrzedna: ", toString(unitParentId))))
       
     } else {
     stop("You can line plot only 1 variable with multiple units.")
