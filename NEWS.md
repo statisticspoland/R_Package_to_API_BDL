@@ -1,4 +1,4 @@
-# bdl 1.0.0.9000
+# bdl 1.0.1
 
 * Improved variable label function to be more informative
 
@@ -11,6 +11,7 @@
 * Updated DESCRIPTION
 
 * Added new function get_panel_data() thanks to @IwoA
+
 
 # bdl 1.0.0
 
