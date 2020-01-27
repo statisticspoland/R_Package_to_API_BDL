@@ -69,7 +69,7 @@ pie_plot <- function(data_type = c("variable","variable.locality"),
   
   
   
-  plot <- ggpubr::ggpar(plot, legend = "right", legend.title = "", ticks = F)
+  plot <- ggpubr::ggpar(plot, legend = "right", legend.title = toString(year), ticks = F)
   
   if(nrow(df) > 20) {
     plot <- ggpubr::ggpar(plot, legend = "none", tickslab = F)

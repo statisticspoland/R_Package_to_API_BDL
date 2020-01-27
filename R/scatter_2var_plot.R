@@ -80,7 +80,7 @@ scatter_2var_plot <- function(data_type = c("variable", "variable.locality"),
     title <- paste0("Aggregat: ", agg_lab$name)
   }
   
-  plot <- ggpubr::ggpar(plot, legend.title = "", title = title)
+  plot <- ggpubr::ggpar(plot, legend.title = paste0(min(df$year), "-", max(df$year)), title = title)
   
   print(plot)
 }

@@ -1,4 +1,4 @@
-# bdl 1.0.0
+# bdl 1.0.1
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/statisticspoland/R_Package_to_API_BDL.svg?branch=master)](https://travis-ci.org/statisticspoland/R_Package_to_API_BDL)
@@ -39,12 +39,9 @@ remotes::install_github("statisticspoland/R_Package_to_API_BDL", upgrade = "alwa
 remotes::install_github("statisticspoland/R_Package_to_API_BDL")
 ```
 
-To use the `generate_map()` function, you have to download and load map data to the global environment.
-Map data can be downloaded here at [https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData](https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData)
-
 If installation through **remotes** do not work, try installing the package manually by 
-downloading the source package at [https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl_1.0.0.zip](https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl_1.0.0.zip) and executing
+downloading the source package at [https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.1/bdl_1.0.1.zip](https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.1/bdl_1.0.1.zip) and executing
 
 ```r
-install.packages("path_to_file/bdl_1.0.0.zip", repos = NULL, type = "source")
+install.packages("path_to_file/bdl_1.0.1.zip", repos = NULL, type = "source")
 ```
