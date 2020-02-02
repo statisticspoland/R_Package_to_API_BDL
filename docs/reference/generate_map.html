@@ -189,12 +189,12 @@ a proxy parameters, see details.</p></td>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Generate quickly map for given NUTS level, using BDL data. Default level is 2.</p>  
-<p>Maps available for year: 2010-2018</p>  
+<p>Maps available for year: 2010-2020</p>  
 <p>Provide unit parent id to narrow the map for specific regions.</p>  
 <p>Generating lower (levels 5 and 6) level maps can take some time.</p>  
 <p>This function requires external map data "bdl.maps" loaded to global environment. 
   You can get data here:
-  <a href='https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData'>Map 
+  <a href='https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.1'>Map 
   download</a>.
   Download data and double-click to load it to environment.</p>
 <p>To use a proxy to connect, a <code><a href='https://httr.r-lib.org/reference/use_proxy.html'>use_proxy</a></code> can be
@@ -203,10 +203,9 @@ a proxy parameters, see details.</p></td>
   config = httr::use_proxy(url, port, username, password))</a></code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
- <span class='fu'>generate_map</span>(<span class='kw'>varId</span> <span class='kw'>=</span> <span class='st'>"60559"</span>, <span class='kw'>year</span> <span class='kw'>=</span> <span class='st'>"2017"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: nie można otworzyć skompresowanego pliku 'C:/Users/Krzysztof/Documents/bdl.maps.2017.RData', prawdopodobny powód 'No such file or directory'</span></div><div class='output co'>#&gt; <span class='warning'>Warning: cannot open URL 'https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.1/bdl.maps.2017.RData': HTTP status was '404 Not Found'</span></div><div class='output co'>#&gt; Error in download.file(paste0("https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.1/",  : 
-#&gt;   nie można otworzyć adresu URL 'https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.1/bdl.maps.2017.RData'</div><div class='output co'>#&gt; <span class='error'>Error in generate_map(varId = "60559", year = "2017"): </span></div><div class='input'> # }
-</div></pre>
+    <pre class="examples"><span class='co'># \donttest{</span>
+ <span class='fu'>generate_map</span>(<span class='kw'>varId</span> <span class='kw'>=</span> <span class='st'>"60559"</span>, <span class='kw'>year</span> <span class='kw'>=</span> <span class='st'>"2017"</span>)
+ <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

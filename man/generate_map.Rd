@@ -52,7 +52,7 @@ Generate given NUTS level map with data from given variable
 \details{
 Generate quickly map for given NUTS level, using BDL data. Default level is 2.
   
-  Maps available for year: 2010-2018
+  Maps available for year: 2010-2020
   
   Provide unit parent id to narrow the map for specific regions.
   
@@ -60,7 +60,7 @@ Generate quickly map for given NUTS level, using BDL data. Default level is 2.
   
   This function requires external map data "bdl.maps" loaded to global environment. 
   You can get data here:
-  \href{https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.0/bdl.maps.RData}{Map 
+  \href{https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.1}{Map 
   download}.
   Download data and double-click to load it to environment.
 

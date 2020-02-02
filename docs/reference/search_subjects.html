@@ -160,15 +160,10 @@ a proxy parameters, see details.</p></td>
   config = httr::use_proxy(url, port, username, password))</a></code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> <span class='co'># \donttest{</span>
-    <span class='fu'>search_subjects</span>(<span class='st'>"samochody"</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 4 x 6</span><span>
-#&gt;   id    parentId name                             hasVariables children  levels 
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                            </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;list&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;list&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'>1</span><span> P1746 G239     Samochody osobowe wg dopuszczal~ FALSE        </span><span style='color: #555555;'>&lt;list [0</span><span>~ </span><span style='color: #555555;'>&lt;int [</span><span>~
-#&gt; </span><span style='color: #555555;'>2</span><span> P1747 G239     Samochody osobowe wg pojemności~ FALSE        </span><span style='color: #555555;'>&lt;list [0</span><span>~ </span><span style='color: #555555;'>&lt;int [</span><span>~
-#&gt; </span><span style='color: #555555;'>3</span><span> P1748 G239     Samochody ciężarowe wg grup ład~ FALSE        </span><span style='color: #555555;'>&lt;list [0</span><span>~ </span><span style='color: #555555;'>&lt;int [</span><span>~
-#&gt; </span><span style='color: #555555;'>4</span><span> P1883 G285     Ciągniki, samochody i maszyny r~ FALSE        </span><span style='color: #555555;'>&lt;list [0</span><span>~ </span><span style='color: #555555;'>&lt;int [</span><span>~</div><div class='input'>    <span class='fu'>search_subjects</span>(<span class='st'>"cars"</span>, <span class='kw'>lang</span>  <span class='kw'>=</span> <span class='st'>"en"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in page_download(dir, id = "", filters, ...): Filters returned empty set.</span></div><div class='input'># }
-</div></span></pre>
+    <pre class="examples"> <span class='co'># \donttest{</span>
+    <span class='fu'>search_subjects</span>(<span class='st'>"samochody"</span>)
+    <span class='fu'>search_subjects</span>(<span class='st'>"cars"</span>, <span class='kw'>lang</span>  <span class='kw'>=</span> <span class='st'>"en"</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

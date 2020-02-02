@@ -36,10 +36,18 @@ get_attr_label <- function(attrId, lang = "pl") {
     attr_label <- "Brak danych"
   }
   if(attrId == 1){
-    attr_label <- "Dane pobrane pomyslnie."
+    attr_label <- "Dane pobrane pomy\u015blnie."
   }
   attr_label
 }
 #' @keywords internal
 nchar_length <- function(x) {`if`(any(is.na(x)), 0, nchar(x)) }
 
+#' @keywords internal
+add_attribute_labels <- function(x, lang = "pl") {
+  attributes <- unique(x$attrId)
+  attribute_labels <- lapply(attributes, get_attr_label, lang = lang)
+  names(attribute_labels) <- attributes
+  df <- dplyr::mutate(x, attributeDescription = as.character(attribute_labels[as.character(x$attrId)]))
+  df
+}

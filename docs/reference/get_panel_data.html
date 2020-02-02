@@ -166,76 +166,17 @@ a proxy parameters, see details.</p></td>
   config = httr::use_proxy(url, port, username, password))</a></code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> <span class='co'># \donttest{</span>
-   <span class='fu'>get_panel_data</span>(<span class='kw'>unitId</span> <span class='kw'>=</span> <span class='st'>"030210101000"</span>, <span class='kw'>varId</span> <span class='kw'>=</span>  <span class='st'>"60270"</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 15 x 3</span><span>
-#&gt;    unit         year  `60270`
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> 030210101000 2004     25.3
-#&gt; </span><span style='color: #555555;'> 2</span><span> 030210101000 2005     22.4
-#&gt; </span><span style='color: #555555;'> 3</span><span> 030210101000 2006     17.7
-#&gt; </span><span style='color: #555555;'> 4</span><span> 030210101000 2007     13.4
-#&gt; </span><span style='color: #555555;'> 5</span><span> 030210101000 2008     11.3
-#&gt; </span><span style='color: #555555;'> 6</span><span> 030210101000 2009     15.8
-#&gt; </span><span style='color: #555555;'> 7</span><span> 030210101000 2010     14.9
-#&gt; </span><span style='color: #555555;'> 8</span><span> 030210101000 2011     12.2
-#&gt; </span><span style='color: #555555;'> 9</span><span> 030210101000 2012     13.9
-#&gt; </span><span style='color: #555555;'>10</span><span> 030210101000 2013     12.6
-#&gt; </span><span style='color: #555555;'>11</span><span> 030210101000 2014      8.9
-#&gt; </span><span style='color: #555555;'>12</span><span> 030210101000 2015      7.6
-#&gt; </span><span style='color: #555555;'>13</span><span> 030210101000 2016      5.7
-#&gt; </span><span style='color: #555555;'>14</span><span> 030210101000 2017      4.2
-#&gt; </span><span style='color: #555555;'>15</span><span> 030210101000 2018      3.8</div><div class='input'>
-   <span class='fu'>get_panel_data</span>(<span class='kw'>unitId</span> <span class='kw'>=</span> <span class='st'>"030210101000"</span>, <span class='kw'>varId</span> <span class='kw'>=</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"60270"</span>, <span class='st'>"461668"</span>))</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 16 x 4</span><span>
-#&gt;    unit         year  `60270` `461668`
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> 030210101000 2004     25.3     </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 2</span><span> 030210101000 2005     22.4     </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 3</span><span> 030210101000 2006     17.7     </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 4</span><span> 030210101000 2007     13.4     </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 5</span><span> 030210101000 2008     11.3     </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 6</span><span> 030210101000 2009     15.8     </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 7</span><span> 030210101000 2010     14.9     </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 8</span><span> 030210101000 2011     12.2     </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 9</span><span> 030210101000 2012     13.9     </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'>10</span><span> 030210101000 2013     12.6      2.6
-#&gt; </span><span style='color: #555555;'>11</span><span> 030210101000 2014      8.9      2.1
-#&gt; </span><span style='color: #555555;'>12</span><span> 030210101000 2015      7.6      1.9
-#&gt; </span><span style='color: #555555;'>13</span><span> 030210101000 2016      5.7      1.5
-#&gt; </span><span style='color: #555555;'>14</span><span> 030210101000 2017      4.2      1.3
-#&gt; </span><span style='color: #555555;'>15</span><span> 030210101000 2018      3.8      1.1
-#&gt; </span><span style='color: #555555;'>16</span><span> 030210101000 2019     </span><span style='color: #BB0000;'>NA</span><span>        0.9</div><div class='input'>
+    <pre class="examples"> <span class='co'># \donttest{</span>
+   <span class='fu'>get_panel_data</span>(<span class='kw'>unitId</span> <span class='kw'>=</span> <span class='st'>"030210101000"</span>, <span class='kw'>varId</span> <span class='kw'>=</span>  <span class='st'>"60270"</span>)
+
+   <span class='fu'>get_panel_data</span>(<span class='kw'>unitId</span> <span class='kw'>=</span> <span class='st'>"030210101000"</span>, <span class='kw'>varId</span> <span class='kw'>=</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"60270"</span>, <span class='st'>"461668"</span>))
+
    <span class='fu'>get_panel_data</span>(<span class='kw'>unitId</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"030210101000"</span>, <span class='st'>"030210105000"</span>, <span class='st'>"030210106000"</span>),
-                          <span class='kw'>varId</span> <span class='kw'>=</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"60270"</span>, <span class='st'>"461668"</span>), <span class='kw'>year</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2013</span>:<span class='fl'>2016</span>))</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 12 x 4</span><span>
-#&gt;    unit         year  `60270` `461668`
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> 030210101000 2013     12.6      2.6
-#&gt; </span><span style='color: #555555;'> 2</span><span> 030210101000 2014      8.9      2.1
-#&gt; </span><span style='color: #555555;'> 3</span><span> 030210101000 2015      7.6      1.9
-#&gt; </span><span style='color: #555555;'> 4</span><span> 030210101000 2016      5.7      1.5
-#&gt; </span><span style='color: #555555;'> 5</span><span> 030210105000 2013     24.3      3.6
-#&gt; </span><span style='color: #555555;'> 6</span><span> 030210105000 2014     18.6      3.3
-#&gt; </span><span style='color: #555555;'> 7</span><span> 030210105000 2015     17.3      3.7
-#&gt; </span><span style='color: #555555;'> 8</span><span> 030210105000 2016     15.8      2.9
-#&gt; </span><span style='color: #555555;'> 9</span><span> 030210106000 2013     19.8      2.3
-#&gt; </span><span style='color: #555555;'>10</span><span> 030210106000 2014     15.7      1.9
-#&gt; </span><span style='color: #555555;'>11</span><span> 030210106000 2015     12.9      1.6
-#&gt; </span><span style='color: #555555;'>12</span><span> 030210106000 2016     11.4      1.3</div><div class='input'>
+                          <span class='kw'>varId</span> <span class='kw'>=</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"60270"</span>, <span class='st'>"461668"</span>), <span class='kw'>year</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2013</span>:<span class='fl'>2016</span>))
+
    <span class='fu'>get_panel_data</span>(<span class='kw'>unitId</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"030210101000"</span>, <span class='st'>"030210105000"</span>, <span class='st'>"030210106000"</span>),
-                          <span class='kw'>varId</span> <span class='kw'>=</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"60270"</span>, <span class='st'>"461668"</span>), <span class='kw'>ggplot</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 96 x 4</span><span>
-#&gt;    unit         year       variables values
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> 030210101000 2004-01-01 60270       25.3
-#&gt; </span><span style='color: #555555;'> 2</span><span> 030210101000 2004-01-01 461668      </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 3</span><span> 030210101000 2005-01-01 60270       22.4
-#&gt; </span><span style='color: #555555;'> 4</span><span> 030210101000 2005-01-01 461668      </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 5</span><span> 030210101000 2006-01-01 60270       17.7
-#&gt; </span><span style='color: #555555;'> 6</span><span> 030210101000 2006-01-01 461668      </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 7</span><span> 030210101000 2007-01-01 60270       13.4
-#&gt; </span><span style='color: #555555;'> 8</span><span> 030210101000 2007-01-01 461668      </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'> 9</span><span> 030210101000 2008-01-01 60270       11.3
-#&gt; </span><span style='color: #555555;'>10</span><span> 030210101000 2008-01-01 461668      </span><span style='color: #BB0000;'>NA</span><span>  
-#&gt; </span><span style='color: #555555;'># ... with 86 more rows</span><span></div><div class='input'># }
-</div></span></pre>
+                          <span class='kw'>varId</span> <span class='kw'>=</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"60270"</span>, <span class='st'>"461668"</span>), <span class='kw'>ggplot</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

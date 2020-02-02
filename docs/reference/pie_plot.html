@@ -127,6 +127,7 @@
   <span class='kw'>unitParentId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>unitLevel</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>aggregateId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>label</span> <span class='kw'>=</span> <span class='no'>T</span>,
   <span class='kw'>lang</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"pl"</span>, <span class='st'>"en"</span>),
   <span class='no'>...</span>
 )</pre>
@@ -163,6 +164,10 @@ If <code>NULL</code> (default) no level filters apply. Use <code><a href='get_le
       <td><p>An aggregate id. Use <code><a href='get_aggregates.html'>get_aggregates</a></code> for more info.</p></td>
     </tr>
     <tr>
+      <th>label</th>
+      <td><p>Logical; if TRUE (default) adds labels.</p></td>
+    </tr>
+    <tr>
       <th>lang</th>
       <td><p>A language of returned data, "pl" (default), "en"</p></td>
     </tr>
@@ -187,10 +192,9 @@ a proxy parameters, see details.</p></td>
   config = httr::use_proxy(url, port, username, password))</a></code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-   <span class='fu'>pie_plot</span>(<span class='kw'>data_type</span> <span class='kw'>=</span><span class='st'>"variable"</span> ,<span class='st'>"1"</span>, <span class='st'>"2018"</span>,<span class='kw'>unitParentId</span><span class='kw'>=</span><span class='st'>"042214300000"</span>, <span class='kw'>unitLevel</span> <span class='kw'>=</span> <span class='st'>"6"</span>)</div><div class='img'><img src='pie_plot-1.png' alt='' width='700' height='433' /></div><div class='input'># }
-   
-</div></pre>
+    <pre class="examples"><span class='co'># \donttest{</span>
+   <span class='fu'>pie_plot</span>(<span class='kw'>data_type</span> <span class='kw'>=</span><span class='st'>"variable"</span> ,<span class='st'>"1"</span>, <span class='st'>"2018"</span>,<span class='kw'>unitParentId</span><span class='kw'>=</span><span class='st'>"042214300000"</span>, <span class='kw'>unitLevel</span> <span class='kw'>=</span> <span class='st'>"6"</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

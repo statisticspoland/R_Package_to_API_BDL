@@ -163,14 +163,15 @@ a proxy parameters, see details.</p></td>
   config = httr::use_proxy(url, port, username, password))</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> <span class='co'># \donttest{</span>
+    <pre class="examples"> <span class='co'># \donttest{</span>
    <span class='no'>json</span> <span class='kw'>&lt;-</span> <span class='fu'>get_request</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"data/By-Variable"</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"3643"</span>)
    <span class='no'>json</span> <span class='kw'>&lt;-</span> <span class='fu'>get_request</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"data/By-Unit"</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"023200000000"</span>,
                        <span class='kw'>filters</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>year</span>  <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2000"</span>,<span class='st'>"2010"</span>),
-                       <span class='kw'>varId</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2137"</span>,<span class='st'>"148190"</span>)))</div><div class='output co'>#&gt; <span class='error'>Error in get_request(dir = "data/By-Unit", id = "023200000000", filters = list(year = c("2000",     "2010"), varId = c("2137", "148190"))): Failure to get data. Probably invalid id. Status code: 400.</span></div><div class='input'>   <span class='no'>json</span> <span class='kw'>&lt;-</span> <span class='fu'>get_request</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"data/By-Variable"</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"3643"</span>,
+                       <span class='kw'>varId</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2137"</span>,<span class='st'>"148190"</span>)))
+   <span class='no'>json</span> <span class='kw'>&lt;-</span> <span class='fu'>get_request</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"data/By-Variable"</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"3643"</span>,
                        <span class='kw'>filters</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2000"</span>,<span class='st'>"2010"</span>),
                        <span class='kw'>lang</span> <span class='kw'>=</span> <span class='st'>"en"</span>))
-<span class='co'># }</span></div></pre>
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

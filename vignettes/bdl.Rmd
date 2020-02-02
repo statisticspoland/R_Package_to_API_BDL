@@ -214,18 +214,17 @@ Or multiple variables for `get_data_by_variable()`:
 get_data_by_variable(varId =c("3643","420"), unitParentId = "010000000000")
 ```
 
-This type of downloading is removing some of the columns from the original "single" data download.
 This mode works for the locality version as well.
 
 More consistent method of downloading multiple variables for multiple units is provided by `get_panel_data()` function:
 
-```{r}
+```{r , eval=FALSE}
 get_panel_data(unitId = c("030210101000", "030210105000", "030210106000"), varId =  c("60270", "461668"), year = c(2015:2016))
 ```
 
 It offers also parameter `ggplot = TRUE` which produces output in the long form suitable for plotting with ggplot package:
 
-```{r}
+```{r , eval=FALSE}
 library(ggplot2)
 df <- get_panel_data(unitId = c("030210101000", "030210105000", "030210106000"), varId =  c("60270", "461668"), year = c(2015:2018), ggplot = TRUE)
 ggplot(df,aes(x=year, y= values, color = unit)) + geom_line(aes(linetype = variables)) + scale_color_discrete(labels = c("A", "B", "C")) + scale_linetype_discrete(labels = c("X", "Y"))

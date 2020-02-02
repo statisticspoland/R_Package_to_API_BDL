@@ -68,6 +68,7 @@ get_data_by_unit_locality <- function(unitId, varId, year = NULL,
    
    filters <- list(year = year, "var-Id" = varId, lang = lang)
    df <- page_download(dir, unitId, filters, ...)
+   df <- add_attribute_labels(df, lang)
    
  } else {
    unitId <- as.list(unitId)
@@ -76,23 +77,35 @@ get_data_by_unit_locality <- function(unitId, varId, year = NULL,
       temp <- get_data_by_unit_locality(x, varId = varId, year = year, lang = lang)
       colname <- paste0("val_", x, sep = "")
       names(temp)[names(temp) == "val"] <- colname
+      
+      temp <- add_attribute_labels(temp, lang)
+      
+      # temp <- dplyr::select(temp,-dplyr::one_of(c("measureUnitId")))
+      
+      colname <- paste0("lastUpdate_", x, sep = "")
+      names(temp)[names(temp) == "lastUpdate"] <- colname
+      
+      colname <- paste0("attrId_", x, sep = "")
+      names(temp)[names(temp) == "attrId"] <- colname
+      
+      if(type == "label"){
+         colname <- paste0("attributeDescription_", x, sep = "")
+         names(temp)[names(temp) == "attributeDescription"] <- colname
+      }else{
+         temp <- dplyr::select(temp,-dplyr::one_of(c("attributeDescription")))
+      }
+      
       temp
    }
    
    df <- lapply(unitId, helper)
    
-   helper = function(x) dplyr::select(x,-dplyr::one_of(c("attrId","measureUnitId","lastUpdate")))
-   df <- lapply(df, helper)
-   
    df <- purrr::reduce(df, dplyr::left_join)
  }
  
- 
- 
- 
  if (type == "label") {
    variables <- unique(df$id)
-   attributes <- unique(df$attrId)
+
    
    variable_labels <- lapply(variables, get_var_label, lang = lang)
    names(variable_labels) <- variables
@@ -100,21 +113,9 @@ get_data_by_unit_locality <- function(unitId, varId, year = NULL,
    measure_labels <- lapply(variables, get_measure_label, lang = lang)
    names(measure_labels) <- variables
    
-   attribute_labels <- lapply(attributes, get_attr_label, lang = lang)
-   names(attribute_labels) <- attributes
-   
-   if(length(unitId) == 1){
-     df <- df %>%
-       dplyr::mutate(variableName = as.character(variable_labels[as.character(df$id)])) %>%
-       dplyr::mutate(measureName = as.character(measure_labels[as.character(df$id)]))  %>%
-       dplyr::mutate(attributeDescription = as.character(attribute_labels[as.character(df$attrId)]))
-   } else if (length(unitId) > 1) {
-     df <- df %>%
-       dplyr::mutate(variableName = as.character(variable_labels[as.character(df$id)])) %>%
-       dplyr::mutate(measureName = as.character(measure_labels[as.character(df$id)]))  
-   }
-   
-   
+   df <- df %>%
+    dplyr::mutate(variableName = as.character(variable_labels[as.character(df$id)])) %>%
+    dplyr::mutate(measureName = as.character(measure_labels[as.character(df$id)]))  
  }
  
  df <- tibble::as_tibble(df)

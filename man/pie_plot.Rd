@@ -11,6 +11,7 @@ pie_plot(
   unitParentId = NULL,
   unitLevel = NULL,
   aggregateId = NULL,
+  label = T,
   lang = c("pl", "en"),
   ...
 )
@@ -31,6 +32,8 @@ pie_plot(
 If \code{NULL} (default) no level filters apply. Use \code{\link{get_levels}} to find more info.}
 
 \item{aggregateId}{An aggregate id. Use \code{\link{get_aggregates}} for more info.}
+
+\item{label}{Logical; if TRUE (default) adds labels.}
 
 \item{lang}{A language of returned data, "pl" (default), "en"}
 

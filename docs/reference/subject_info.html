@@ -152,79 +152,9 @@ a proxy parameters, see details.</p></td>
   config = httr::use_proxy(url, port, username, password))</a></code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> <span class='co'># \donttest{</span>
-   <span class='fu'>subject_info</span>(<span class='st'>"G7"</span>)</div><div class='output co'>#&gt; $id
-#&gt; [1] "G7"
-#&gt; 
-#&gt; $parentId
-#&gt; [1] "K3"
-#&gt; 
-#&gt; $name
-#&gt; [1] "STAN LUDNOŚCI"
-#&gt; 
-#&gt; $hasVariables
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $children
-#&gt;  [1] "P1336" "P1341" "P1342" "P2137" "P2425" "P2426" "P2427" "P2462" "P2463"
-#&gt; [10] "P2577" "P2730" "P2914" "P3361" "P3429" "P3447" "P3472" "P3813" "P3814"
-#&gt; 
-#&gt; $years
-#&gt;  [1] 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009
-#&gt; [16] 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019
-#&gt; 
-#&gt; $availability
-#&gt;    year     levels quarterly
-#&gt; 1  1995       3, 6         R
-#&gt; 2  1996       3, 6         R
-#&gt; 3  1997       3, 6         R
-#&gt; 4  1998       3, 6         R
-#&gt; 5  1999       3, 6         R
-#&gt; 6  2000       3, 6         R
-#&gt; 7  2001       3, 6         R
-#&gt; 8  2002       3, 6         R
-#&gt; 9  2003       3, 6         R
-#&gt; 10 2004       3, 6         R
-#&gt; 11 2005          5         K
-#&gt; 12 2005       3, 6         R
-#&gt; 13 2006          5         K
-#&gt; 14 2006       3, 6         R
-#&gt; 15 2007          5         K
-#&gt; 16 2007    3, 4, 6         R
-#&gt; 17 2008          5         K
-#&gt; 18 2008    3, 4, 6         R
-#&gt; 19 2009          5         K
-#&gt; 20 2009    3, 4, 6         R
-#&gt; 21 2010          5         K
-#&gt; 22 2010    3, 4, 6         R
-#&gt; 23 2011          5         K
-#&gt; 24 2011    3, 4, 6         R
-#&gt; 25 2012          5         K
-#&gt; 26 2012       4, 6         R
-#&gt; 27 2013       3, 5         K
-#&gt; 28 2013       4, 6         R
-#&gt; 29 2014       3, 5         K
-#&gt; 30 2014       4, 6         R
-#&gt; 31 2015       3, 5         K
-#&gt; 32 2015    3, 4, 6         R
-#&gt; 33 2016       3, 6         K
-#&gt; 34 2016    3, 4, 6         R
-#&gt; 35 2017       3, 6         K
-#&gt; 36 2017    3, 4, 6         R
-#&gt; 37 2018       3, 6         K
-#&gt; 38 2018 3, 4, 5, 6         R
-#&gt; 39 2019       3, 6         K
-#&gt; 
-#&gt; $dimensions
-#&gt; list()
-#&gt; 
-#&gt; $lastUpdate
-#&gt; [1] "2019-12-03T09:27:18.71"
-#&gt; 
-#&gt; $description
-#&gt; [1] "Dane o liczbie i strukturze ludności dla okresów międzyspisowych są sporządzane poprzez przyjęcie wyników spisu powszechnego za bazę wyjściową dla gminy, a następnie naliczanie danych metodą bilansową według następującego schematu: stan ludności na początek okresu (roku, kwartału) w gminie + urodzenia żywe - zgony + zameldowania na pobyt stały (z innych gmin i z zagranicy) - wymeldowania z pobytu stałego do innych gmin i za granicę) +(-) przesunięcia ludności z tytułu zmian administracyjnych = stan ludności na końcu okresu (roku, kwartału) w gminie. &lt;br /&gt;Bilans ludności sporządzany jest według wyżej przedstawionej metody do roku 2009 dla dwóch kategorii przebywania ludności: 1) faktycznie zamieszkałej, 2) zameldowanej na pobyt stały. Różnicę między tymi kategoriami zamieszkania stanowi saldo (+/-) ludności zameldowanej na pobyt czasowy ponad 3 miesiące (do 2005 r. - ponad 2 miesiące). Od roku 2010 bilans ludności sporządzany jest dla jednej kategorii ludności (dawniej nazywanej \"faktycznie zamieszkałej\"). &lt;br /&gt;Uwaga: Wyniki spisu ludności z 2002 roku wykazały liczbę ludności Polski o ok. 392 tys. mniejszą w stosunku do prowadzonych wówczas bilansów ludności. W celu zniwelowania tej różnicy dane o ludności za lata 1989-1999 zostały ponownie opracowane przy uwzględnieniu wyników spisu z 2002 roku. Szacunkiem objęto wyłącznie dane ogólnopolskie w podziale na tereny miejskie i wiejskie (według płci i grup wieku) oraz współczynniki demograficzne - dane te stały się oficjalną informacją o liczbie i strukturze ludności dla tych lat (dane dla województw i gmin nie zostały przeszacowane). Zatem, prezentowane w BDL dane (dla gmin i sumarycznie dla województw i Polski ogółem) za lata 1995-1998 oraz wg stanu na 30 VI 1999 roku - stanowiąc bilans opracowany na podstawie wyników NSP-1988 - mają znaczenie jedynie historyczne. &lt;br /&gt;Dane o ludności stałej (według stałego miejsca zamieszkania) od 30 VI 1999 r. do 31 XII 2009 r. zostały opracowane na podstawie wyników NSP-2002 (ludność stała była wykorzystywana wyłącznie na potrzeby obliczeń wskaźników demograficznych). Od 1999 do 2009 roku (według podziału administracyjnego w dniu 31 XII) - bilans liczby i struktury ludności był opracowywany na podstawie wyników NSP-2002.&lt;br /&gt;Od 2010 roku bazą wyjściową bilansu stanu i struktury ludności są wyniki NSP 2011. Ponieważ nie jest już opracowywany bilans ludności zameldowanej na pobyt stały, uległa zmianie metodologia liczenia wszystkich współczynników demograficznych, poszczególne fakty demograficzne i z zakresu migracji zostały odniesione do ludności (dawniej nazywanej \"faktycznie zamieszkałą\"). Dane bilansowe dla ludności stałej i faktycznej oraz współczynniki za rok 2010, których bazą wyjściową były dane NSP 2002 mają wartość jedynie historyczną i są dostępne dla zainteresowanych w &lt;a href=\"https://bdl.stat.gov.pl/BDL/archiwum\"target=\"_blank\"/&gt;archiwum&lt;/a&gt;.&lt;br /&gt;&lt;br/&gt;Dane bilansowe ludności za rok 2010 opracowane zostały według podziału administracyjnego obowiązującego w dniu 1 I 2011 r., jednak ze względu na specyfikę Banku Danych Lokalnych zostały przeliczone zgodnie z obowiązującym w dniu 1 I 2010 roku podziałem administracyjnym kraju (bez zmian, które nie wpływają na identyfikatory i nazwę jednostek podziału terytorialnego kraju) wynika z tego różnica w stosunku do danych publikowanych w opracowaniach GUS. Dla porównania informacja wg podziału administracyjnego obowiązującego w dniu 1 stycznia 2011 r. o pięciu gminach (wiejskich w 2010 r. i miejsko-wiejskich w 2011 r.) za rok 2010 jest dostępna  w tym zestawieniu - &lt;a href=\"http://bdl.stat.gov.pl/bdl/doc/Ludnosc2010.xls\"&gt;pobierz plik&lt;/a&gt;.&lt;br/&gt;"
-#&gt; </div><div class='input'># }
-</div></pre>
+    <pre class="examples"> <span class='co'># \donttest{</span>
+   <span class='fu'>subject_info</span>(<span class='st'>"G7"</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

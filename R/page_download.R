@@ -33,5 +33,15 @@ page_download <- function(dir, id, filters, ...) {
     df <- df %>%
       dplyr::select(-dplyr::one_of(c("values")))
   }
+  
+  if ("hasDescription" %in% colnames(df)) {
+    df <- df %>%
+      dplyr::rename( "unitHasChanged" = "hasDescription")
+    
+    if(TRUE %in% df$unitHasChanged){
+      warning("Unit metadata has changed during searched year interval. Check description using `unit_info()` or `unit_locality_info()` for localities.", call. = F)
+    }
+  }
+  
   df
 }

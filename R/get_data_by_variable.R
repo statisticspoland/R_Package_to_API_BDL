@@ -33,7 +33,7 @@
 #'    get_data_by_variable("420", year = "2000", unitLevel = 6)
 #'    
 #'    # Multi variable download
-#'    get_data_by_variable(varId =c("3643","420"), unitParentId = "010000000000")
+#'    get_data_by_variable(varId =c("415","420"), unitParentId = "030210423000")
 #' }
 #' @keywords utilities database
 get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
@@ -56,12 +56,23 @@ get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
                     "unit-Level" = unitLevel, "aggregate-Id" = aggregateId, lang = lang)
     
     df <- page_download(dir, varId, filters, ...)
+    df <- add_attribute_labels(df, lang)
+    
   } else {
     varId <- as.list(varId)
     
     helper <- function(x) {
-      temp <- get_data_by_variable(x, unitParentId = unitParentId, unitLevel = unitLevel, 
-                                   year = year, aggregateId = aggregateId, lang = lang)
+      temp <- get_data_by_variable(x, unitParentId = unitParentId, year = year, unitLevel = unitLevel, 
+                                   aggregateId = aggregateId, lang = lang)
+      
+      temp <- add_attribute_labels(temp, lang)
+      
+      colname <- paste0("attrId_", x, sep = "")
+      names(temp)[names(temp) == "attrId"] <- colname
+      
+      colname <- paste0("attributeDescription_", x, sep = "")
+      names(temp)[names(temp) == "attributeDescription"] <- colname
+      
       colname <- paste0("val_", x, sep = "")
       names(temp)[names(temp) == "val"] <- colname
       temp
@@ -69,10 +80,6 @@ get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
     
     df <- lapply(varId, helper)
     
-    helper = function(x) dplyr::select(x,-dplyr::one_of(c("attrId")))
-    df <- lapply(df, helper)
-    
-
     df <- purrr::reduce(df, dplyr::left_join)
   }
   

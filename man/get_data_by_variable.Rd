@@ -58,7 +58,7 @@ Data to retrieve from
    get_data_by_variable("420", year = "2000", unitLevel = 6)
    
    # Multi variable download
-   get_data_by_variable(varId =c("3643","420"), unitParentId = "010000000000")
+   get_data_by_variable(varId =c("415","420"), unitParentId = "030210423000")
 }
 }
 \keyword{database}
