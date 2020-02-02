@@ -48,6 +48,8 @@ test_df <- test_df %>%
   head(1)
 test_df$id <- as.character(test_df$id)
 
+df <- add_attribute_labels(df)
+
 test_that("Error codes", {
   expect_error(get_data_by_unit(unitId = "12345678901234", varId = "420"),
                                 "Unit id should be length of 12.")
@@ -100,7 +102,7 @@ repeat{
   }
 }
 class(df) <- c("bdl", class(df))
-
+df <- add_attribute_labels(df)
 
 test_df <- get_data_by_variable("420", year = "2000", unitLevel = "0")
 test_df <- test_df %>%
@@ -116,6 +118,7 @@ test_that("Error codes", {
 test_that("Proper labels", {
   expect_match(test_df$name, "POLSKA")
 })
+
 
 test_that("Proper data", {
   expect_equal(get_data_by_variable("60559", unitParentId = "010000000000", year = "2006"),df)
@@ -150,7 +153,7 @@ repeat{
   }
 }
 class(df) <- c("bdl", class(df))
-
+df <- add_attribute_labels(df)
 
 test_df <- get_data_by_variable_locality("270672","030200000000")
 test_df <- test_df %>%
@@ -200,6 +203,7 @@ repeat{
   }
 }
 class(df) <- c("bdl", class(df))
+df <- add_attribute_labels(df)
 
 test_df <- get_data_by_unit_locality(unitId = "030210564011-0986283", varId =  "270672", type = "label")
 test_df <- test_df %>%
