@@ -104,7 +104,8 @@ get_data_by_unit <- function(unitId, varId, year = NULL,
 
     df <- df %>%
       dplyr::mutate(variableName = as.character(variable_labels[as.character(df$id)])) %>%
-      dplyr::mutate(measureName = as.character(measure_labels[as.character(df$id)]))
+      dplyr::mutate(measureName = as.character(measure_labels[as.character(df$id)])) %>%
+      select(one_of("id", "year"), starts_with("val"), "variableName", starts_with("measure"), starts_with("attr"),everything())
   }
 
   df$id <- as.character(df$id)

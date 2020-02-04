@@ -44,8 +44,10 @@ line_plot <- function(data_type = c("unit","unit.locality","variable","variable.
     if (length(unitId) == 1) {
       
       df <- get_data_by_unit(unitId = unitId, varId = varId, year = year, type = "label", aggregateId = aggregateId, lang = lang, ...)
+      df$combined <- paste0(df$variableName, " [", df$measureName, "]")
+      
       title <- unit_info(unitId, lang = lang)
-      plot <- ggpubr::ggline(df, x = "year", y = "val", color = "variableName", group ="variableName", title = title$name)
+      plot <- ggpubr::ggline(df, x = "year", y = "val", color = "combined", group ="combined", title = title$name)
       
     } else {
       stop("You can line plot only 1 unit with multiple variables.")
@@ -57,10 +59,10 @@ line_plot <- function(data_type = c("unit","unit.locality","variable","variable.
       
       df <- get_data_by_unit_locality(unitId = unitId, varId = varId, year = year, type = "label", lang = lang, ...)
       
-     
+      df$combined <- paste0(df$variableName, " [", df$measureName, "]")
       
       title <- unit_locality_info(unitId, lang = lang)
-      plot <- ggpubr::ggline(df, x = "year", y = "val", color = "variableName", group ="variableName", title = title$name)
+      plot <- ggpubr::ggline(df, x = "year", y = "val", color = "combined", group ="combined", title = title$name)
 
 
     } else {
@@ -73,6 +75,7 @@ line_plot <- function(data_type = c("unit","unit.locality","variable","variable.
       df <- get_data_by_variable(varId = varId, unitParentId = unitParentId, unitLevel = unitLevel, 
                                  year = year, aggregateId = aggregateId, lang = lang, ...)
       title <- get_var_label(varId, lang = lang)
+      title <- paste0(title, " [", get_measure_label(varId, lang = lang),"]")
       plot <- ggpubr::ggline(df, x ="year", y ="val", color = "name", group ="name", title = ifelse(is.null(unitParentId), title, paste0(title, " - Jednostka nadrz\u0119dna: ", toString(unitParentId))))
       
     } else {
@@ -85,6 +88,7 @@ line_plot <- function(data_type = c("unit","unit.locality","variable","variable.
       
       df <- get_data_by_variable_locality(varId = varId, unitParentId = unitParentId, year = year, lang = lang, ...)
       title <- get_var_label(varId, lang = lang)
+      title <- paste0(title, " [", get_measure_label(varId, lang = lang), "]")
       plot <- ggpubr::ggline(df, x ="year", y ="val", color = "name", group ="name", title = ifelse(is.null(unitParentId), title, paste0(title, " - Jednostka nadrz\u0119dna: ", toString(unitParentId))))
       
     } else {

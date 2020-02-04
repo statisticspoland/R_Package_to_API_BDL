@@ -80,7 +80,8 @@ get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
     
     df <- lapply(varId, helper)
     
-    df <- purrr::reduce(df, dplyr::left_join)
+    df <- purrr::reduce(df, dplyr::left_join) %>%
+      select(one_of("id", "name", "year"), starts_with("val"), everything())
   }
   
 
