@@ -29,7 +29,10 @@
 #' @param aggregateId An aggregate id. Use \code{\link{get_aggregates}} for more info.
 #' @param palette A palette name or a vector of colors. See tmaptools::palette_explorer() for the named palettes.
 #'  Use a "-" as prefix to reverse the palette.
+#' @param style Method to process the color scale. Options available are "sd", "equal", "pretty", 
+#' "quantile", "kmeans", "hclust", "bclust", "fisher", "jenks", and "log10_pretty".
 #' @param n Preferred number of classes. Default is 10.
+#' @param names Logical that determines whether the unit names are shown.
 #' @param borderLevel Adds contours of units on specified level - number from 1 to 6. 
 #' Use \code{\link{get_levels}} to find more info.
 #' @param lang  A language of returned data, "pl" (default), "en"
@@ -46,7 +49,7 @@
 #'  generate_map(varId = "60559", year = "2017")
 #'  }
 generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggregateId = NULL, palette = "Blues", 
-                         n = 10, borderLevel = NULL, lang = c("pl","en"), ...) {
+                         style = NULL, n = 10, names = FALSE, borderLevel = NULL, lang = c("pl","en"), ...) {
   if (length(varId) == 1 && length(year) == 1 && (year >= 2010 && year <=2020)) {
     if(is.null(unitLevel) || !(unitLevel >= 1 && unitLevel <=6)){
       stop("Wrong unitLevel selected.")
@@ -101,14 +104,30 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
     if(!inherits(shape, "sf")) class(shape) <- c("sf")
     
     label <- paste0(get_var_label(varId, lang = lang)," - ",year)
-      
-    map <- tmap::tm_shape(shape) +
-           tmap::tm_polygons(col = "val", id = "val", 
-                          style ="cont", palette = palette, n = n, 
+    
+    if(is.null(style)){
+      map <- tmap::tm_shape(shape) +
+        tmap::tm_polygons(col = "val", id = "val",
+                          palette = palette, n = n,
                           # contrast = c(-0.1, 1),
                           title = get_measure_label(varId = varId), 
-                          popup.vars = c(" " = "name")) +
-      tmap::tm_layout(title = label)
+                          popup.vars = c(" " = "name", " " = "attributeDescription"),
+                          legend.reverse = T, legend.format = list(text.separator = "-")) +
+        tmap::tm_layout(title = label)
+    } else {
+      map <- tmap::tm_shape(shape) +
+        tmap::tm_polygons(col = "val", id = "val",
+                          palette = palette, n = n,
+                          style = style,
+                          title = get_measure_label(varId = varId), 
+                          popup.vars = c(" " = "name", " " = "attributeDescription"),
+                          legend.reverse = T, legend.format = list(text.separator = "-")) +
+        tmap::tm_layout(title = label)
+    }
+      
+    if(names){
+      map <- map + tmap::tm_text(text = "name", size = "AREA") + tmap::tm_view(text.size.variable = TRUE)
+    }
     
     border_shape <- NULL
     
@@ -129,6 +148,7 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
     }
     
     map <- tmap::tmap_leaflet(map)
+   
     map
     
   } else {
