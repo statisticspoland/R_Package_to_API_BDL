@@ -127,7 +127,9 @@
   <span class='kw'>unitParentId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>aggregateId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>palette</span> <span class='kw'>=</span> <span class='st'>"Blues"</span>,
+  <span class='kw'>style</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>10</span>,
+  <span class='kw'>names</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>borderLevel</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>lang</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"pl"</span>, <span class='st'>"en"</span>),
   <span class='no'>...</span>
@@ -164,8 +166,17 @@ Use <code><a href='search_variables.html'>search_variables</a></code> or <code><
 Use a "-" as prefix to reverse the palette.</p></td>
     </tr>
     <tr>
+      <th>style</th>
+      <td><p>Method to process the color scale. Options available are "sd", "equal", "pretty", 
+"quantile", "kmeans", "hclust", "bclust", "fisher", "jenks", and "log10_pretty".</p></td>
+    </tr>
+    <tr>
       <th>n</th>
       <td><p>Preferred number of classes. Default is 10.</p></td>
+    </tr>
+    <tr>
+      <th>names</th>
+      <td><p>Logical that determines whether the unit names are shown.</p></td>
     </tr>
     <tr>
       <th>borderLevel</th>

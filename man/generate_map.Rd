@@ -11,7 +11,9 @@ generate_map(
   unitParentId = NULL,
   aggregateId = NULL,
   palette = "Blues",
+  style = NULL,
   n = 10,
+  names = FALSE,
   borderLevel = NULL,
   lang = c("pl", "en"),
   ...
@@ -33,7 +35,12 @@ Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variab
 \item{palette}{A palette name or a vector of colors. See tmaptools::palette_explorer() for the named palettes.
 Use a "-" as prefix to reverse the palette.}
 
+\item{style}{Method to process the color scale. Options available are "sd", "equal", "pretty", 
+"quantile", "kmeans", "hclust", "bclust", "fisher", "jenks", and "log10_pretty".}
+
 \item{n}{Preferred number of classes. Default is 10.}
+
+\item{names}{Logical that determines whether the unit names are shown.}
 
 \item{borderLevel}{Adds contours of units on specified level - number from 1 to 6. 
 Use \code{\link{get_levels}} to find more info.}
