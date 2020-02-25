@@ -57,7 +57,12 @@ get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
     varId <- as.list(varId)
     
     helper <- function(x) {
-      temp <- get_data_by_variable_locality(x, unitParentId = unitParentId, year = year, lang = lang)
+      temp <- try(get_data_by_variable_locality(x, unitParentId = unitParentId, year = year, lang = lang), silent = T)
+      if(is.error(temp)){
+        warning(paste("Filters returned empty data for variable", x, "and it will be skipped."), call. = F)
+        return(NULL)
+      }
+      
       temp <- add_attribute_labels(temp, lang)
       
       colname <- paste0("attrId_", x, sep = "")
@@ -72,7 +77,7 @@ get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
     }
     
     df <- lapply(varId, helper)
-    
+    df <- df[lengths(df) != 0]
     df <- purrr::reduce(df, dplyr::left_join) %>%
       select(one_of("id", "name", "year"), starts_with("val"), everything())
   }

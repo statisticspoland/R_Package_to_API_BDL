@@ -45,3 +45,6 @@ add_attribute_labels <- function(x, lang = "pl") {
   df <- dplyr::mutate(x, attributeDescription = as.character(attribute_labels[as.character(x$attrId)]))
   df
 }
+
+#' @keywords internal
+is.error <- function(x) inherits(x, "try-error")

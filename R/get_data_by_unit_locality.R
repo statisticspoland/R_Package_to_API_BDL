@@ -74,7 +74,12 @@ get_data_by_unit_locality <- function(unitId, varId, year = NULL,
    unitId <- as.list(unitId)
    
    helper <- function(x) {
-      temp <- get_data_by_unit_locality(x, varId = varId, year = year, lang = lang)
+      temp <- try(get_data_by_unit_locality(x, varId = varId, year = year, lang = lang), silent = T)
+      if(is.error(temp)){
+         warning(paste("Filters returned empty data for unit", x, "and it will be skipped."), call. = F)
+         return(NULL)
+      }
+      
       colname <- paste0("val_", x, sep = "")
       names(temp)[names(temp) == "val"] <- colname
       
@@ -99,8 +104,11 @@ get_data_by_unit_locality <- function(unitId, varId, year = NULL,
    }
    
    df <- lapply(unitId, helper)
-   
+   df <- df[lengths(df) != 0]
    df <- purrr::reduce(df, dplyr::left_join)
+   df <- df %>% select(one_of("id", "year"), starts_with("val"), 
+                       starts_with("measure"), starts_with("attr"),everything())
+
  }
  
  if (type == "label") {
@@ -116,7 +124,8 @@ get_data_by_unit_locality <- function(unitId, varId, year = NULL,
    df <- df %>%
     dplyr::mutate(variableName = as.character(variable_labels[as.character(df$id)])) %>%
     dplyr::mutate(measureName = as.character(measure_labels[as.character(df$id)])) %>%
-    select(one_of("id", "year"), starts_with("val"), "variableName", starts_with("measure"), starts_with("attr"),everything())
+    select(one_of("id", "year"), starts_with("val"), "variableName", starts_with("measure"), 
+           starts_with("attr"),everything())
  }
  
  df <- tibble::as_tibble(df)

@@ -54,15 +54,19 @@ scatter_2var_plot <- function(data_type = c("variable", "variable.locality"),
   } else {
     stop("You can scatter plot only 2 variables.")
   }
-  df <- tidyr::drop_na(df)
+  
   x_name <- paste0("val_", varId[1])
   x_label <- get_var_label(varId[1], lang = lang)
 
   
   y_name <- paste0("val_", varId[2])
   y_label <- get_var_label(varId[2], lang = lang)
+  
+  if(!all(c(x_name, y_name) %in% names(df))){
+    stop("One of variables returned empty data.")
+  }
 
-
+  df <- tidyr::drop_na(df)
   plot <- ggpubr::ggscatter(df, x = x_name, y = y_name, xlab = x_label, ylab = y_label,
             color = "name", size = 3, # Points color, shape and size
             add = "reg.line",  # Add regressin line

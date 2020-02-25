@@ -12,6 +12,11 @@
 
 * Added new function get_panel_data() thanks to @IwoA
 
+* Improved multi variable/unit downloading
+
+* Added new maps for 2019 and 2020
+
+* Redisgned map downloading system
 
 # bdl 1.0.0
 

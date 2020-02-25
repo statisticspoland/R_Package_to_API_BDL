@@ -61,7 +61,6 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
                                unitLevel = unitLevel, aggregateId = aggregateId, lang = lang, ...)
     df <- dplyr::select(df, -"name")
     
-    is.error <- function(x) inherits(x, "try-error")
     
     home <- Sys.getenv("HOME")
     file_name <- paste0("bdl.maps.", year, ".RData")
