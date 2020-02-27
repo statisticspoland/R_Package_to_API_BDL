@@ -15,7 +15,7 @@ Interface to Local Data Bank ('Bank Danych Lokalnych' - 'bdl') API
 \describe{
 \item{`bdl.api_private_key`}{String with BDL API key which you can get
 \url{https://bdl.stat.gov.pl/api/v1/client?theme=Default} 
-Example: \code{options(bdl.api_private_key = "3sd1dea1-f89d-488c-c441-08d64fbd20e9")}}
+Example: \code{options(bdl.api_private_key = "11111111-2222-3333-4444-555555555555")}}
 
 }
 }

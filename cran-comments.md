@@ -1,13 +1,7 @@
 ## Resubmission
-This is a resubmission. In this version I have:
-* Updated DESCRIPTION accordingly
-* Documentation and example improvements
-* Added new function get_panel_data()
-* Improved multi variable/unit downloading
-* Added new parameters to generate_map()
-* Added new maps for 2019 and 2020
-* Redisgned map downloading system
-* Improved labeling functions
+This is a resubmission.
+* All network issues has been resolved
+* Replaced old links
 
 ## Test environments
 * win-builder: R-devel, R-release
