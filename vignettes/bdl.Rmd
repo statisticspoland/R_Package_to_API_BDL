@@ -43,7 +43,7 @@ When searching for unit id, we can use two methods:
 - Tree listing by `get_units()`
 
 Units consist of 6 levels:
-```{r  }
+```{r , eval=FALSE }
 get_levels()
 ```
 
