@@ -78,10 +78,11 @@ get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
     
     df <- lapply(varId, helper)
     df <- df[lengths(df) != 0]
-    df <- purrr::reduce(df, dplyr::left_join) %>%
-      select(one_of("id", "name", "year"), starts_with("val"), everything())
+    df <- purrr::reduce(df, dplyr::left_join) 
   }
   
+  df <- df %>%
+    select(one_of("id", "name", "year"), starts_with("val"), everything())
   
   df <- tibble::as_tibble(df)
   class(df) <- c("bdl", class(df))
