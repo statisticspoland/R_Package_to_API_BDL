@@ -30,7 +30,7 @@ get_measure_label <- function(varId, lang = "pl") {
 }
 #' @keywords internal
 get_attr_label <- function(attrId, lang = "pl") {
-  attr_suffix <- attribute_info(attrId)
+  attr_suffix <- attribute_info(attrId, lang = lang)
   attr_label <- toString(attr_suffix$description)
   attr_label
 }
