@@ -87,6 +87,11 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       }
     }
     
+    if(91 %in% df$attrId){
+      df[df$attrId == 91, ]$val <- NA
+    }
+    
+    
     selected_map <- get(object_name)
     if(toString(unitLevel) == "1") selected_map <- selected_map$level1
     if(toString(unitLevel) == "2") selected_map <- selected_map$level2
@@ -97,12 +102,15 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
     
     
     shape <- dplyr::inner_join(selected_map, df, by = "id") 
+    
 
     shape <- lwgeom::st_make_valid(shape)
 
     if(!inherits(shape, "sf")) class(shape) <- c("sf")
     
     label <- paste0(get_var_label(varId, lang = lang)," - ",year)
+    
+
     
     if(is.null(style)){
       map <- tmap::tm_shape(shape) +
@@ -111,7 +119,7 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
                           # contrast = c(-0.1, 1),
                           title = get_measure_label(varId = varId), 
                           popup.vars = c(" " = "name", " " = "attributeDescription"),
-                          legend.reverse = T, legend.format = list(text.separator = "-")) +
+                          legend.reverse = T, legend.format = list(text.separator = "-"), textNA = ifelse(lang == "pl", "Brak danych", "Missing")) +
         tmap::tm_layout(title = label)
     } else {
       map <- tmap::tm_shape(shape) +
@@ -120,7 +128,7 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
                           style = style,
                           title = get_measure_label(varId = varId), 
                           popup.vars = c(" " = "name", " " = "attributeDescription"),
-                          legend.reverse = T, legend.format = list(text.separator = "-")) +
+                          legend.reverse = T, legend.format = list(text.separator = "-"),textNA = ifelse(lang == "pl", "Brak danych", "Missing")) +
         tmap::tm_layout(title = label)
     }
       
