@@ -102,7 +102,11 @@ get_data_by_unit_locality <- function(unitId, varId, year = NULL,
    
    df <- lapply(unitId, helper)
    df <- df[lengths(df) != 0]
-   df <- purrr::reduce(df, dplyr::left_join)
+   if(length(df) > 0){
+      df <- purrr::reduce(df, dplyr::left_join)
+   } else {
+      stop("Filters returned empty set for every unit you provided.")
+   }
   
 
  }

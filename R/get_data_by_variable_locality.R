@@ -78,7 +78,12 @@ get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
     
     df <- lapply(varId, helper)
     df <- df[lengths(df) != 0]
-    df <- purrr::reduce(df, dplyr::left_join) 
+    if(length(df) > 0){
+      df <- purrr::reduce(df, dplyr::left_join) 
+    } else {
+      stop("Filters returned empty set for every variable you provided.")
+    }
+    
   }
   
   df <- df %>%

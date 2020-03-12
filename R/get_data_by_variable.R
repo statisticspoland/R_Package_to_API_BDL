@@ -83,8 +83,15 @@ get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
     
     df <- lapply(varId, helper)
     df <- df[lengths(df) != 0]
-    df <- purrr::reduce(df, dplyr::left_join) %>%
-      select(one_of("id", "name", "year"), starts_with("val"), everything())
+    
+    if(length(df) > 0){
+      df <- purrr::reduce(df, dplyr::left_join) %>%
+        select(one_of("id", "name", "year"), starts_with("val"), everything())
+    } else {
+      stop("Filters returned empty set for every variable you provided.")
+    }
+    
+
   }
   
 
