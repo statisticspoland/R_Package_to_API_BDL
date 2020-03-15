@@ -12,6 +12,7 @@ addons:
   homebrew:
     packages:
     - udunits
+    - v8
 jobs:
   include:
   - r: devel
