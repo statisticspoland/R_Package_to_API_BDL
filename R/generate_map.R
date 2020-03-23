@@ -154,7 +154,13 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
         tmap::tm_borders(lwd = 1.8))
     }
     
-    map <- tmap::tmap_leaflet(map)
+    dots <- list(...)
+    in_shiny <- F
+    if(!is.null(dots$in.shiny) && length(dots$in.shiny) == 1 && dots$in.shiny == T){
+      in_shiny <- T
+    }
+
+    map <- tmap::tmap_leaflet(map, in.shiny = in_shiny)
    
     map
     
