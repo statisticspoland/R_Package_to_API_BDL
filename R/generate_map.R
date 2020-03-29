@@ -114,21 +114,25 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
     
     if(is.null(style)){
       map <- tmap::tm_shape(shape) +
-        tmap::tm_polygons(col = "val", id = "val",
-                          palette = palette, n = n,
-                          # contrast = c(-0.1, 1),
-                          title = get_measure_label(varId = varId), 
+        tmap::tm_polygons(col = "val", 
+                          id = "val",
+                          palette = palette, 
+                          n = n,
                           popup.vars = c(" " = "name", " " = "attributeDescription"),
-                          legend.reverse = T, legend.format = list(text.separator = "-"), textNA = ifelse(lang == "pl", "Brak danych", "Missing")) +
+                          legend.reverse = T, legend.format = list(text.separator = "-", 
+                                                                   big.mark = " "), 
+                          textNA = ifelse(lang == "pl", "Brak danych", "Missing")) +
         tmap::tm_layout(title = label)
     } else {
       map <- tmap::tm_shape(shape) +
-        tmap::tm_polygons(col = "val", id = "val",
-                          palette = palette, n = n,
+        tmap::tm_polygons(col = "val", 
+                          id = "val",
+                          palette = palette, 
+                          n = n,
                           style = style,
-                          title = get_measure_label(varId = varId), 
                           popup.vars = c(" " = "name", " " = "attributeDescription"),
-                          legend.reverse = T, legend.format = list(text.separator = "-"),textNA = ifelse(lang == "pl", "Brak danych", "Missing")) +
+                          legend.reverse = T, legend.format = list(text.separator = "-", big.mark = " "),
+                          textNA = ifelse(lang == "pl", "Brak danych", "Missing")) +
         tmap::tm_layout(title = label)
     }
       
