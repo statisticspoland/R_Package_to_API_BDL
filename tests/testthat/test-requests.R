@@ -64,7 +64,7 @@ test_that("Error codes", {
 })
 
 test_that("Proper labels", {
-  expect_match(toString(test_df$variableName), "Gospodarka wodna - Gospodarka wodna:uzdatnianie wody - wydajność na dobę")
+  expect_match(toString(test_df$variableName), "Gospodarka wodna - Gospodarka wodna: uzdatnianie wody - wydajność na dobę")
   expect_match(toString(test_df$measureName), "m3")
 })
 
@@ -101,8 +101,11 @@ repeat{
     break
   }
 }
-class(df) <- c("bdl", class(df))
+
 df <- add_attribute_labels(df)
+df <- add_measure_columns("60559", df)
+class(df) <- c("bdl", class(df))
+
 
 test_df <- get_data_by_variable("420", year = "2000", unitLevel = "0")
 test_df <- test_df %>%
@@ -152,8 +155,10 @@ repeat{
     break
   }
 }
-class(df) <- c("bdl", class(df))
 df <- add_attribute_labels(df)
+df <- add_measure_columns("420", df)
+class(df) <- c("bdl", class(df))
+
 
 test_df <- get_data_by_variable_locality("270672","030200000000")
 test_df <- test_df %>%
@@ -202,8 +207,11 @@ repeat{
     break
   }
 }
-class(df) <- c("bdl", class(df))
+
 df <- add_attribute_labels(df)
+
+class(df) <- c("bdl", class(df))
+
 
 test_df <- get_data_by_unit_locality(unitId = "030210564011-0986283", varId =  "270672", type = "label")
 test_df <- test_df %>%
@@ -228,17 +236,12 @@ test_that("Error codes", {
 })
 
 test_that("Proper labels", {
-  expect_match(toString(test_df$variableName), "Licea ogólnokształcące specjalne dla młodzieży - Typy szkół:licea ogólnokształcące specjalne dla młodzieży, Wykaz:uczniowie - mężczyźni, Gestor:prowadzone przez samorząd powiatowy - miasta na prawach powiatu")
+  expect_match(toString(test_df$variableName), "Licea ogólnokształcące specjalne dla młodzieży - Typy szkół: licea ogólnokształcące specjalne dla młodzieży, Wykaz: uczniowie - mężczyźni, Gestor: prowadzone przez samorząd powiatowy - miasta na prawach powiatu")
   expect_match(toString(test_df$measureName), "osoba")
 })
 
 test_that("Proper data", {
   expect_equal(get_data_by_unit_locality(unitId = "011212001011-0981682", varId =  "148190"), df)
-  # expect_equal(get_data_by_unit_locality(unitId = "011212001011-0981682",
-  #   varId =  "148190",
-  #   key = key), df)
-  expect_equal(get_data_by_unit_locality(unitId = "011212001011-0981682",
-    varId =  "148190"), df)
 })
 
 
