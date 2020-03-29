@@ -104,7 +104,6 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
     shape <- dplyr::inner_join(selected_map, df, by = "id") 
     
 
-    shape <- lwgeom::st_make_valid(shape)
 
     if(!inherits(shape, "sf")) class(shape) <- c("sf")
     
@@ -153,7 +152,6 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       
 
     if(!is.null(borderLevel) & !is.null(border_shape)){
-      border_shape <- lwgeom::st_make_valid(border_shape)
       map <- map + (tmap::tm_shape(border_shape) +
         tmap::tm_borders(lwd = 1.8))
     }
