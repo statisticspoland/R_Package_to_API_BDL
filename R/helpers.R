@@ -47,4 +47,11 @@ add_attribute_labels <- function(x, lang = "pl") {
 }
 
 #' @keywords internal
+add_measure_columns <- function(varId, df, lang = "pl") {
+  measure_info <- variable_info(varId, lang = lang)
+  df <- df %>% dplyr::mutate(measureUnitId = as.character(measure_info$measureUnitId), measureName = as.character(measure_info$measureUnitName))
+  df
+}
+
+#' @keywords internal
 is.error <- function(x) inherits(x, "try-error")
