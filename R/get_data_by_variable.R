@@ -57,6 +57,7 @@ get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
     
     df <- page_download(dir, varId, filters, ...)
     df <- add_attribute_labels(df, lang)
+    df <- add_measure_columns(varId, df, lang)
     
   } else {
     varId <- as.list(varId)
@@ -68,10 +69,16 @@ get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
         warning(paste("Filters returned empty data for variable", x, "and it will be skipped."), call. = F)
         return(NULL)
       }
-      temp <- add_attribute_labels(temp, lang)
+      # temp <- add_attribute_labels(temp, lang)
       
       colname <- paste0("attrId_", x, sep = "")
       names(temp)[names(temp) == "attrId"] <- colname
+      
+      colname <- paste0("measureUnitId_", x, sep = "")
+      names(temp)[names(temp) == "measureUnitId"] <- colname
+      
+      colname <- paste0("measureName_", x, sep = "")
+      names(temp)[names(temp) == "measureName"] <- colname
       
       colname <- paste0("attributeDescription_", x, sep = "")
       names(temp)[names(temp) == "attributeDescription"] <- colname
@@ -86,8 +93,8 @@ get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
     
     if(length(df) > 0){
       df <- df %>% 
-        purrr::reduce(dplyr::full_join, by = c("id", "name", "year")) %>%
-        select(one_of("id", "name", "year"), starts_with("val"), everything())
+        purrr::reduce(dplyr::full_join, by = c("id", "name", "year"))
+        
     } else {
       stop("Filters returned empty set for every variable you provided.")
     }
@@ -96,7 +103,7 @@ get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
   }
   
 
-  
+  df <- dplyr::select(df, dplyr::one_of("id", "name", "year"), dplyr::starts_with("val"), dplyr::starts_with("measure"), dplyr::everything())
   df <- tibble::as_tibble(df)
   class(df) <- c("bdl", class(df))
   df

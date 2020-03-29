@@ -52,6 +52,7 @@ get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
     
     df <- page_download(dir, varId, filters, ...)
     df <- add_attribute_labels(df, lang)
+    df <- add_measure_columns(varId, df, lang)
     
   } else {
     varId <- as.list(varId)
@@ -70,6 +71,12 @@ get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
       
       colname <- paste0("attributeDescription_", x, sep = "")
       names(temp)[names(temp) == "attributeDescription"] <- colname
+      
+      colname <- paste0("measureUnitId_", x, sep = "")
+      names(temp)[names(temp) == "measureUnitId"] <- colname
+      
+      colname <- paste0("measureName_", x, sep = "")
+      names(temp)[names(temp) == "measureName"] <- colname
 
       colname <- paste0("val_", x, sep = "")
       names(temp)[names(temp) == "val"] <- colname
@@ -87,7 +94,7 @@ get_data_by_variable_locality <- function(varId, unitParentId, year = NULL,
   }
   
   df <- df %>%
-    select(one_of("id", "name", "year"), starts_with("val"), everything())
+    select(one_of("id", "name", "year"), starts_with("val"),starts_with("measure"), everything())
   
   df <- tibble::as_tibble(df)
   class(df) <- c("bdl", class(df))
