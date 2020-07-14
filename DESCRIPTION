@@ -1,9 +1,10 @@
 Package: bdl
 Type: Package
 Title: Interface and Tools for 'BDL' API
-Version: 1.0.1
-Authors@R: c(person("Krzysztof", "Kania", email = "K.Kania@stat.gov.pl",
+Version: 1.0.2
+Authors@R: c(person("Artur", "Sławomirski", email = "A.Slawomirski@stat.gov.pl",
                   role = c("aut", "cre")),
+             person("Krzysztof", "Kania", role = c("aut")),
              person(given = "Statistics Poland",
                   role = c("cph", "fnd")))
 Description: Interface to Local Data Bank ('Bank Danych Lokalnych' - 'bdl') API 

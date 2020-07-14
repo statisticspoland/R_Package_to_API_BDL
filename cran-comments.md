@@ -1,7 +1,14 @@
-## Resubmission
-This is a resubmission.
-* All network issues has been resolved
-* Replaced old links
+## Maintainer change
+
+This update is due to maintainer change, as previous
+developer left the company.
+
+Changes made to this version:
+* Bugfixes
+* Improved labeling functions
+* Improved styling
+* Imroved mapping functions
+* Removed unnecessary dependencies
 
 ## Test environments
 * win-builder: R-devel, R-release

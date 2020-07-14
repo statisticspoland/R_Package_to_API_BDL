@@ -67,7 +67,7 @@ Generate quickly map for given NUTS level, using BDL data. Default level is 2.
   
   This function requires external map data "bdl.maps" loaded to global environment. 
   You can get data here:
-  \href{https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.1}{Map 
+  \href{https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.2}{Map 
   download}.
   Download data and double-click to load it to environment.
 

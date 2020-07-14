@@ -29,7 +29,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Krzysztof Kania \email{K.Kania@stat.gov.pl}
+\strong{Maintainer}: Artur Sławomirski \email{A.Slawomirski@stat.gov.pl}
+
+Authors:
+\itemize{
+  \item Krzysztof Kania
+}
 
 Other contributors:
 \itemize{

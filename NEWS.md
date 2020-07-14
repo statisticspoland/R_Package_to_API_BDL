@@ -1,3 +1,15 @@
+# bdl 1.0.2
+
+* Bugfixes
+
+* Improved labeling functions
+
+* Improved styling
+
+* Imroved mapping functions
+
+* Removed unnecessary dependencies
+
 # bdl 1.0.1
 
 * Improved variable label function to be more informative
