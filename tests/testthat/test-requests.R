@@ -49,6 +49,9 @@ test_df <- test_df %>%
 test_df$id <- as.character(test_df$id)
 
 df <- add_attribute_labels(df)
+df <- df %>% dplyr::select(dplyr::one_of("id", "year"), dplyr::starts_with("val"), 
+                     dplyr::starts_with("measure"), dplyr::starts_with("attr"), dplyr::everything())
+class(df) <- c("bdl", class(df))
 
 test_that("Error codes", {
   expect_error(get_data_by_unit(unitId = "12345678901234", varId = "420"),
@@ -104,6 +107,8 @@ repeat{
 
 df <- add_attribute_labels(df)
 df <- add_measure_columns("60559", df)
+df <- dplyr::select(df, dplyr::one_of("id", "name", "year"), dplyr::starts_with("val"), dplyr::starts_with("measure"), dplyr::everything())
+df <- tibble::as_tibble(df)
 class(df) <- c("bdl", class(df))
 
 
@@ -157,6 +162,10 @@ repeat{
 }
 df <- add_attribute_labels(df)
 df <- add_measure_columns("420", df)
+df <- df %>%
+  select(one_of("id", "name", "year"), starts_with("val"),starts_with("measure"), everything())
+
+df <- tibble::as_tibble(df)
 class(df) <- c("bdl", class(df))
 
 
@@ -209,7 +218,8 @@ repeat{
 }
 
 df <- add_attribute_labels(df)
-
+df <- df %>% select(one_of("id", "year"), starts_with("val"), 
+                    starts_with("measure"), starts_with("attr"),everything())
 class(df) <- c("bdl", class(df))
 
 
