@@ -28,16 +28,15 @@
 #'    json <- get_request(dir = "data/By-Variable", id = "3643")
 #'    json <- get_request(dir = "data/By-Unit", id = "023200000000",
 #'                        filters = list(year  = c("2000","2010"),
-#'                        varId = c("2137","148190")))
+#'                        "var-Id" = c("2137","148190")))
 #'    json <- get_request(dir = "data/By-Variable", id = "3643",
 #'                        filters = list(year = c("2000","2010"),
-#'                        lang = "en"))
+#'                        "unit-Level" = 2, lang = "en"))
 #' }
 #' @keywords utilities database
 get_request <- function(dir, id, filters = NULL, ...) {
   url <- build_url(dir = dir, id = id, filters = filters)
   key <- getOption("bdl.api_private_key")
-
   if (!is.null(key) && nchar_length(key) != 0) {
       h <- c(key)
     names(h) <- "X-ClientId"

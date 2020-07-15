@@ -36,7 +36,7 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
 \examples{
  \donttest{
     search_subjects("samochody")
-    search_subjects("cars", lang  = "en")
+    search_subjects("car", lang  = "en")
 }
 }
 \keyword{seach}

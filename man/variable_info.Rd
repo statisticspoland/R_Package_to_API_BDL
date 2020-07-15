@@ -29,7 +29,7 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
 }
 \examples{
  \donttest{
-   ariable_info("420")
+   variable_info("420")
 }
 }
 \keyword{info}
