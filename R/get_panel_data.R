@@ -66,7 +66,11 @@ get_panel_data <- function(unitId, varId, year = NULL, ggplot = FALSE, ...) {
     df <- purrr::reduce(df, rbind)
     
     if (ggplot == TRUE) {
-      df <- tidyr::pivot_longer(df, cols = colnames(df[,3:ncol(df)]), names_to = "variables", values_to = "values")
+      tdf <- dplyr::select(df,-dplyr::one_of(c("unit", "year", "attributeDescription")))
+      variable_col_names <- colnames(tdf)
+      
+      
+      df <- tidyr::pivot_longer(df, cols = variable_col_names, names_to = "variables", values_to = "values")
       df$year <- paste0(df$year, "-01-01")
       df$year <- as.Date(df$year)
     }
