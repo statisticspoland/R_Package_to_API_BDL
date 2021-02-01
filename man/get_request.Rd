@@ -38,7 +38,7 @@ Data to retrieve from
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \donttest{
+ \dontrun{
    json <- get_request(dir = "data/By-Variable", id = "3643")
    json <- get_request(dir = "data/By-Unit", id = "023200000000",
                        filters = list(year  = c("2000","2010"),

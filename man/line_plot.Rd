@@ -59,7 +59,7 @@ Generate quickly `ggplot2` plot, using BDL data.
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
-\donttest{
+\dontrun{
   line_plot(data_type = "unit", unitId = "000000000000", varId = c("415","420"))
 }
 }

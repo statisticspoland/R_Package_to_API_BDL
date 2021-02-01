@@ -31,7 +31,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'    scatter_2var_plot(data_type = "variable" ,c("415", "60559"), unitLevel = "2")
 #'  }
 scatter_2var_plot <- function(data_type = c("variable", "variable.locality"), 

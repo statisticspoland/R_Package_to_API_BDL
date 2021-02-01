@@ -49,7 +49,7 @@ Data to retrieve from
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \donttest{
+ \dontrun{
    get_data_by_unit_locality(unitId = "030210106062-0189782", varId =  "415", type = "label")
    
    # Multi variable download

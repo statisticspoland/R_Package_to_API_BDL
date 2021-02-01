@@ -39,7 +39,7 @@ Data to retrieve from
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \donttest{
+ \dontrun{
    get_panel_data(unitId = "030210101000", varId =  "60270")
    
    get_panel_data(unitId = "030210101000", varId =  c("60270", "461668"))

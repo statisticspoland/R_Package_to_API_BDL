@@ -77,7 +77,7 @@ Generate quickly map for given NUTS level, using BDL data. Default level is 2.
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
-\donttest{
+\dontrun{
  generate_map(varId = "60559", year = "2017")
  }
 }

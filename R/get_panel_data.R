@@ -24,7 +24,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \donttest{
+#'  \dontrun{
 #'    get_panel_data(unitId = "030210101000", varId =  "60270")
 #'    
 #'    get_panel_data(unitId = "030210101000", varId =  c("60270", "461668"))
