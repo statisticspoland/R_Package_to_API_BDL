@@ -16,7 +16,7 @@
 #' @return A named list.
 #' @export
 #' @examples
-#'  \donttest{
+#'  \dontrun{
 #'    unit_info("030210106062")
 #' }
 #' @keywords info units

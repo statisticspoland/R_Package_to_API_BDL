@@ -26,7 +26,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \donttest{
+#'  \dontrun{
 #'    get_data_by_unit_locality(unitId = "030210106062-0189782", varId =  "415", type = "label")
 #'    
 #'    # Multi variable download

@@ -15,7 +15,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \donttest{
+#'  \dontrun{
 #'    get_levels()
 #' }
 #' @keywords utilities levels

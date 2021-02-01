@@ -51,7 +51,7 @@ Data to retrieve from
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \donttest{
+ \dontrun{
    get_data_by_unit(unitId = "023200000000", varId =  "3643")
    get_data_by_unit(unitId = "023200000000", varId =  c("3643", "2137", "148190"),
                           type = "label")

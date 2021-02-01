@@ -16,7 +16,7 @@
 #' @return A named list.
 #' @export
 #' @examples
-#'  \donttest{
+#'  \dontrun{
 #'    subject_info("G7")
 #' }
 #' @keywords info subjects

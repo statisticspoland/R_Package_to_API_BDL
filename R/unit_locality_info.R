@@ -16,7 +16,7 @@
 #' @return A named list.
 #' @export
 #' @examples
-#'  \donttest{
+#'  \dontrun{
 #'    unit_locality_info("030210106062-0189782")
 #' }
 #' @keywords info units localities

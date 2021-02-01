@@ -30,7 +30,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'    pie_plot(data_type ="variable" ,"1", "2018",unitParentId="042214300000", unitLevel = "6")
 #' }
 #'    

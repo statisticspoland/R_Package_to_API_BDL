@@ -20,7 +20,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \donttest{
+#'  \dontrun{
 #'    search_units("wro")
 #'    search_units("pol", type = "5")
 #' }

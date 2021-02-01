@@ -4,7 +4,7 @@
 #' @param object bdl data frame to summarise
 #' @param ... other arguments ignored (for compatibility with generic)
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' df <- get_data_by_variable(varId = "3643")
 #' summary(df)
 #' }

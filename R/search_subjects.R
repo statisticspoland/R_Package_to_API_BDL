@@ -16,7 +16,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \donttest{
+#'  \dontrun{
 #'     search_subjects("samochody")
 #'     search_subjects("car", lang  = "en")
 #' }
