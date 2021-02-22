@@ -27,9 +27,7 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \dontrun{
-   get_levels()
-}
+   # get_levels()
 }
 \keyword{levels}
 \keyword{utilities}

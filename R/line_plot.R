@@ -31,9 +31,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   line_plot(data_type = "unit", unitId = "000000000000", varId = c("415","420"))
-#' }
+#'   # line_plot(data_type = "unit", unitId = "000000000000", varId = c("415","420"))
 line_plot <- function(data_type = c("unit","unit.locality","variable","variable.locality"), 
                       unitId = NULL, varId = NULL, year = NULL, aggregateId = NULL, lang = NULL, 
                       unitParentId = NULL, unitLevel = NULL, ...) {

@@ -21,10 +21,8 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
-#'     get_units(level = 2)
-#'     get_units("010000000000")
-#' }
+#'     # get_units(level = 2)
+#'     # get_units("010000000000")
 #' @keywords utilities search units
 get_units <- function(parentId = "", level = NULL, sort = c("id","-id","name", "-name"),
                       lang = c("pl","en"), ...) {

@@ -21,9 +21,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
-#'     get_variables("P2425")
-#' }
+#'     # get_variables("P2425")
 #' @keywords utilities search variables
 get_variables <- function(subjectId, level = NULL, year = NULL, sort = c("id","-id","subjectId", "-subjectId"),
                           lang = c("pl","en"), ...) {

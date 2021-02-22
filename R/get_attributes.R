@@ -15,9 +15,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
-#'    get_attributes()
-#' }
+#'    # get_attributes()
 #' @keywords utilities levels
 get_attributes <- function( sort = c("id","-id","Display", "-Display"),
                         lang = c("pl","en"), ...) {

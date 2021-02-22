@@ -15,9 +15,7 @@
 #' @return A named list.
 #' @export
 #' @examples
-#'  \dontrun{
-#'    attribute <- attribute_info("1")
-#' }
+#'    # attribute_info("1")
 #' @keywords info variables
 attribute_info <- function(attrId, lang = c("pl","en"), ...) {
 

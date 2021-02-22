@@ -38,15 +38,11 @@ Data to retrieve from
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \dontrun{
-   json <- get_request(dir = "data/By-Variable", id = "3643")
-   json <- get_request(dir = "data/By-Unit", id = "023200000000",
-                       filters = list(year  = c("2000","2010"),
-                       "var-Id" = c("2137","148190")))
-   json <- get_request(dir = "data/By-Variable", id = "3643",
-                       filters = list(year = c("2000","2010"),
-                       "unit-Level" = 2, lang = "en"))
-}
+   # get_request(dir = "data/By-Variable", id = "3643")
+   # get_request(dir = "data/By-Unit", id = "023200000000", filters = list(year  = c("2000","2010"), 
+   #             var-Id" = c("2137","148190")))
+   # get_request(dir = "data/By-Variable", id = "3643", filters = list(year = c("2000","2010"), 
+   #             unit-Level" = 2, lang = "en"))
 }
 \keyword{database}
 \keyword{utilities}

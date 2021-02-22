@@ -15,9 +15,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
-#'    get_aggregates()
-#' }
+#'    # get_aggregates()
 #' @keywords utilities levels
 get_aggregates <- function(sort = c("id","-id","name", "-name"),
                         lang = c("pl","en"), ...) {
