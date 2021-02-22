@@ -16,10 +16,8 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
-#'     search_subjects("samochody")
-#'     search_subjects("car", lang  = "en")
-#' }
+#'     # search_subjects("samochody")
+#'     # search_subjects("car", lang  = "en")
 #' @keywords utilities seach subjects
 search_subjects <- function(name, sort = c("id","-id","name", "-name"), lang = c("pl","en"), ...) {
   if(is.null(name) || nchar_length(name) <= 0){

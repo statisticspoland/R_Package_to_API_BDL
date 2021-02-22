@@ -26,13 +26,11 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
-#'    get_data_by_unit_locality(unitId = "030210106062-0189782", varId =  "415", type = "label")
+#'    # get_data_by_unit_locality(unitId = "030210106062-0189782", varId =  "415", type = "label")
 #'    
 #'    # Multi variable download
-#'    get_data_by_unit_locality(unitId = c("030210106062-0189782", "030210106062-0189753"), 
-#'                              varId = "415")
-#' }
+#'    # get_data_by_unit_locality(unitId = c("030210106062-0189782", "030210106062-0189753"), 
+#'    #                           varId = "415")
 #' @keywords utilities database
 get_data_by_unit_locality <- function(unitId, varId, year = NULL,
                              type = c("code", "label"), lang = c("pl","en"), ...) {

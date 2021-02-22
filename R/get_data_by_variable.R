@@ -28,13 +28,11 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
-#'    get_data_by_variable(varId = "3643", unitParentId = "030200000000")
-#'    get_data_by_variable("420", year = "2000", unitLevel = 6)
+#'    # get_data_by_variable(varId = "3643", unitParentId = "030200000000")
+#'    # get_data_by_variable("420", year = "2000", unitLevel = 6)
 #'    
 #'    # Multi variable download
-#'    get_data_by_variable(varId =c("415","420"), unitParentId = "030210423000")
-#' }
+#'    # get_data_by_variable(varId =c("415","420"), unitParentId = "030210423000")
 #' @keywords utilities database
 get_data_by_variable <- function(varId, unitParentId = NULL, unitLevel = NULL,
                                 year = NULL, aggregateId = NULL, lang = c("pl","en"), 

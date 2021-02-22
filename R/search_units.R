@@ -20,10 +20,8 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
-#'    search_units("wro")
-#'    search_units("pol", type = "5")
-#' }
+#'    # search_units("wro")
+#'    # search_units("pol", type = "5")
 #' @keywords utilities search units
 search_units <- function(name, level = NULL, year = NULL, kind = NULL,
                         sort = c("id","-id","name", "-name"), lang = c("pl","en"), ...) {

@@ -39,17 +39,15 @@ Data to retrieve from
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \dontrun{
-   get_panel_data(unitId = "030210101000", varId =  "60270")
+   # get_panel_data(unitId = "030210101000", varId =  "60270")
    
-   get_panel_data(unitId = "030210101000", varId =  c("60270", "461668"))
+   # get_panel_data(unitId = "030210101000", varId =  c("60270", "461668"))
    
-   get_panel_data(unitId = c("030210101000", "030210105000", "030210106000"), 
-                          varId =  c("60270", "461668"), year = c(2013:2016))
+   # get_panel_data(unitId = c("030210101000", "030210105000", "030210106000"), 
+   #                varId =  c("60270", "461668"), year = c(2013:2016))
                           
-   get_panel_data(unitId = c("030210101000", "030210105000", "030210106000"), 
-                          varId =  c("60270", "461668"), ggplot = TRUE)
-}
+   # get_panel_data(unitId = c("030210101000", "030210105000", "030210106000"), 
+   #                varId =  c("60270", "461668"), ggplot = TRUE)
 }
 \keyword{database}
 \keyword{utilities}

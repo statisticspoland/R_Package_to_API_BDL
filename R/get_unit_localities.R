@@ -17,9 +17,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
-#'     get_unit_localities("030210106062")
-#' }
+#'     # get_unit_localities("030210106062")
 #' @keywords utilities search units localities
 get_unit_localities <- function(parentId, sort = c("id","-id","name", "-name"),
                                 lang = c("pl","en"), ...) {

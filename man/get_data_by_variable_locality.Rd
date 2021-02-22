@@ -46,13 +46,11 @@ Data to retrieve from
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \dontrun{
-   get_data_by_variable_locality(varId = "415", unitParentId = "011212006063")
-   get_data_by_variable_locality("420", year = "2008", unitParentId = "070000000000")
+   # get_data_by_variable_locality(varId = "415", unitParentId = "011212006063")
+   # get_data_by_variable_locality("420", year = "2008", unitParentId = "070000000000")
    
    # Multi variable download
-   get_data_by_variable_locality(varId =c("415","430"), unitParentId = "011212006063")
-}
+   # get_data_by_variable_locality(varId =c("415","430"), unitParentId = "011212006063")
 }
 \keyword{database}
 \keyword{utilities}

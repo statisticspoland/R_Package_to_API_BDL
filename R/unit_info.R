@@ -16,9 +16,7 @@
 #' @return A named list.
 #' @export
 #' @examples
-#'  \dontrun{
-#'    unit_info("030210106062")
-#' }
+#'    # unit_info("030210106062")
 #' @keywords info units
 unit_info <- function(unitId, lang = c("pl","en"), ...) {
 

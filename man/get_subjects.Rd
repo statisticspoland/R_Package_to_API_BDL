@@ -39,11 +39,9 @@ To get all top level subjects skip the \code{parentId} parameter or list
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \dontrun{
-   get_subjects()
-   get_subjects("K3")
-   get_subjects("G7")
-}
+   # get_subjects()
+   # get_subjects("K3")
+   # get_subjects("G7")
 }
 \keyword{search}
 \keyword{subjects}

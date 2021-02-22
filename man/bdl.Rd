@@ -29,7 +29,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Artur Sławomirski \email{A.Slawomirski@stat.gov.pl}
+\strong{Maintainer}: Marzena Szpadel \email{M.Szpadel@stat.gov.pl}
 
 Authors:
 \itemize{

@@ -44,9 +44,7 @@ Variables for specified subject optionally filtered by \code{level} and \code{ye
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \dontrun{
-    get_variables("P2425")
-}
+    # get_variables("P2425")
 }
 \keyword{search}
 \keyword{utilities}

@@ -17,9 +17,7 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
-#'    search_unit_localities("wro")
-#' }
+#'    # search_unit_localities("wro")
 #' @keywords utilities search units localities
 search_unit_localities <- function(name, year = NULL, sort = c("id","-id","name", "-name"),
                                   lang = c("pl","en"), ...) {

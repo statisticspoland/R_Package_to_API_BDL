@@ -20,11 +20,9 @@
 #' @return A dataset as a tibble.
 #' @export
 #' @examples
-#'  \dontrun{
-#'    get_subjects()
-#'    get_subjects("K3")
-#'    get_subjects("G7")
-#' }
+#'    # get_subjects()
+#'    # get_subjects("K3")
+#'    # get_subjects("G7")
 #' @keywords utilities search subjects
 get_subjects <- function(parentId = "", sort = c("id","-id","name", "-name"),
                         lang = c("pl","en"), ...) {

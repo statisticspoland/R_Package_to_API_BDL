@@ -28,9 +28,7 @@ To use a proxy to connect, a \code{\link[httr]{use_proxy}} can be
   config = httr::use_proxy(url, port, username, password))}.
 }
 \examples{
- \dontrun{
-   unit_locality_info("030210106062-0189782")
-}
+   # unit_locality_info("030210106062-0189782")
 }
 \keyword{info}
 \keyword{localities}

@@ -45,9 +45,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'  generate_map(varId = "60559", year = "2017")
-#'  }
+#'  # generate_map(varId = "60559", year = "2017")
 generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggregateId = NULL, palette = "Blues", 
                          style = NULL, n = 10, names = FALSE, borderLevel = NULL, lang = c("pl","en"), ...) {
   if (length(varId) == 1 && length(year) == 1 && (year >= 2010 && year <=2020)) {

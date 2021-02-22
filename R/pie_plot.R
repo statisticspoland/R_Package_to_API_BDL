@@ -30,10 +30,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'    pie_plot(data_type ="variable" ,"1", "2018",unitParentId="042214300000", unitLevel = "6")
-#' }
-#'    
+#'    # pie_plot(data_type ="variable" ,"1", "2018",unitParentId="042214300000", unitLevel = "6")
 pie_plot <- function(data_type = c("variable","variable.locality"), 
                      varId, year, unitParentId = NULL, unitLevel = NULL, 
                      aggregateId = NULL, label = T, lang = c("pl","en"), ...) {
