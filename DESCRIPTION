@@ -1,8 +1,8 @@
 Package: bdl
 Type: Package
 Title: Interface and Tools for 'BDL' API
-Version: 1.0.2
-Authors@R: c(person("Artur", "Sławomirski", email = "A.Slawomirski@stat.gov.pl",
+Version: 1.0.3
+Authors@R: c(person("Marzena", "Szpadel", email = "M.Szpadel@stat.gov.pl",
                   role = c("aut", "cre")),
              person("Krzysztof", "Kania", role = c("aut")),
              person(given = "Statistics Poland",

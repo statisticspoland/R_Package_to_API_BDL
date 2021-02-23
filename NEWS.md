@@ -1,3 +1,7 @@
+# bdl 1.0.3
+
+* Bugfixes
+
 # bdl 1.0.2
 
 * Bugfixes
