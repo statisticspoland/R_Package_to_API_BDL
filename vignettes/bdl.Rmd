@@ -27,7 +27,7 @@ plotting using data from the data bank.
 
 Working with `bdl` is based on id codes. Most of the data downloading functions require specifying one or vector of multiple unit or variable ids as a string.
 
-It is recommended to use a private API key which u can get [here](https://bdl.stat.gov.pl/api/v1/client).
+It is recommended to use a private API key which u can get [here](https://api.stat.gov.pl/Home/BdlApi?lang=en).
 To apply it use: `options(bdl.api_private_key ="your_key")`
 
 Also, every function returns data in Polish by default. If you would like to get data in English, just add `lang = "en"` to any function.
