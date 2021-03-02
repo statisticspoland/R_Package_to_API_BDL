@@ -20,7 +20,7 @@ oldpar <- par()
 options(tibble.print_min = 4L, tibble.print_max = 4L)
 ```
 
-The `bdl` package is an interface to Local Data Bank(Bank Danych Lokalnych - bdl) [API](https://bdl.stat.gov.pl/api/v1/home) with a set of useful tools like quick 
+The `bdl` package is an interface to Local Data Bank(Bank Danych Lokalnych - bdl) [API](https://api.stat.gov.pl/Home/BdlApi?lang=en) with a set of useful tools like quick 
 plotting using data from the data bank.
 
 ## Intro
