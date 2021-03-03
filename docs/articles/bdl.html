@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bdl</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3</span>
       </span>
     </div>
 
@@ -76,7 +76,7 @@
       <h1 data-toc-skip>Downloading and using data from bdl</h1>
                         <h4 class="author">Krzysztof Kania</h4>
             
-            <h4 class="date">2021-02-22</h4>
+            <h4 class="date">2021-03-02</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/statisticspoland/R_Package_to_API_BDL/blob/master/vignettes/bdl.Rmd"><code>vignettes/bdl.Rmd</code></a></small>
       <div class="hidden name"><code>bdl.Rmd</code></div>
@@ -85,12 +85,12 @@
 
     
     
-<p>The <code>bdl</code> package is an interface to Local Data Bank(Bank Danych Lokalnych - bdl) <a href="https://bdl.stat.gov.pl/api/v1/home">API</a> with a set of useful tools like quick plotting using data from the data bank.</p>
+<p>The <code>bdl</code> package is an interface to Local Data Bank(Bank Danych Lokalnych - bdl) <a href="https://api.stat.gov.pl/Home/BdlApi?lang=en">API</a> with a set of useful tools like quick plotting using data from the data bank.</p>
 <div id="intro" class="section level2">
 <h2 class="hasAnchor">
 <a href="#intro" class="anchor"></a>Intro</h2>
 <p>Working with <code>bdl</code> is based on id codes. Most of the data downloading functions require specifying one or vector of multiple unit or variable ids as a string.</p>
-<p>It is recommended to use a private API key which u can get <a href="https://bdl.stat.gov.pl/api/v1/client">here</a>. To apply it use: <code><a href="https://rdrr.io/r/base/options.html">options(bdl.api_private_key ="your_key")</a></code></p>
+<p>It is recommended to use a private API key which u can get <a href="https://api.stat.gov.pl/Home/BdlApi?lang=en">here</a>. To apply it use: <code><a href="https://rdrr.io/r/base/options.html">options(bdl.api_private_key ="your_key")</a></code></p>
 <p>Also, every function returns data in Polish by default. If you would like to get data in English, just add <code>lang = "en"</code> to any function.</p>
 <p>Any metadata information (unit levels, aggregates, NUTS code explanation, etc.) can be found <a href="https://bdl.stat.gov.pl/BDL/metadane">here</a>.</p>
 </div>
@@ -229,7 +229,7 @@
 <div id="map-generation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#map-generation" class="anchor"></a>Map generation</h3>
-<p>The <code>bdl</code> package comes with the <code>bdl.maps</code> dataset containing spatial maps for each Poland’s level. <code><a href="../reference/generate_map.html">generate_map()</a></code> use them to generate maps filled with the bdl data. Use <code>unitLevel</code> to change the type of map. When the lower level is chosen, the map generation can be more time consuming as it has more spatial data to process. This function will download and load maps automatically. In case of any errors you can download them manually <a href="https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.2">here</a>.</p>
+<p>The <code>bdl</code> package comes with the <code>bdl.maps</code> dataset containing spatial maps for each Poland’s level. <code><a href="../reference/generate_map.html">generate_map()</a></code> use them to generate maps filled with the bdl data. Use <code>unitLevel</code> to change the type of map. When the lower level is chosen, the map generation can be more time consuming as it has more spatial data to process. This function will download and load maps automatically. In case of any errors you can download them manually <a href="https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.3">here</a>.</p>
 <p>Download data file and double-click to load it to environment.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/generate_map.html">generate_map</a></span><span class="op">(</span>varId <span class="op">=</span> <span class="st">"60559"</span>, year <span class="op">=</span> <span class="st">"2017"</span>, unitLevel <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></code></pre></div>
