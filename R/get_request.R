@@ -32,7 +32,7 @@
 #' @keywords utilities database
 get_request <- function(dir, id, filters = NULL, ...) {
   url <- build_url(dir = dir, id = id, filters = filters)
-  key <- getOption("bdl.api_private_key")
+  key <- get_api_key()
   if (!is.null(key) && nchar_length(key) != 0) {
       h <- c(key)
     names(h) <- "X-ClientId"
@@ -86,4 +86,21 @@ build_url <- function (dir, id, filters) {
   class(url_list) <- "url"
   url <- httr::build_url(url_list)
   url
+}
+
+
+get_api_key <- function() {
+  if(!is.null(getOption("bdl.api_private_key"))) {
+    getOption("bdl.api_private_key")
+  } else {
+    if(Sys.getenv("BDL_API_KEY") != "") {
+      Sys.getenv("BDL_API_KEY")
+    } else {
+      stop(
+        "No BDL API key found!\n", 
+        "Use environment variable `BDL_API_KEY` or option `bdl.api_private_key`", 
+        call. = FALSE
+      )
+    }
+  }
 }
