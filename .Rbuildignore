@@ -7,3 +7,4 @@
 ^bdl\.maps\.Rdata$
 ^cran-comments\.md$
 ^CRAN-RELEASE$
+^\.github$

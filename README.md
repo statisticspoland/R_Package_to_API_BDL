@@ -1,8 +1,8 @@
 # bdl 1.0.3
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/statisticspoland/R_Package_to_API_BDL.svg?branch=master)](https://travis-ci.org/statisticspoland/R_Package_to_API_BDL)
 [![CRAN status](https://www.r-pkg.org/badges/version/bdl)](https://CRAN.R-project.org/package=bdl)
+[![R-CMD-check](https://github.com/statisticspoland/R_Package_to_API_BDL/workflows/R-CMD-check/badge.svg)](https://github.com/statisticspoland/R_Package_to_API_BDL/actions)
 <!-- badges: end -->
 
 ## Overview
