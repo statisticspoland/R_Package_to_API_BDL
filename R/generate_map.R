@@ -70,9 +70,15 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       file_exist <- try(suppressWarnings(load(map_file)), silent = T)
 
       if(is.error(file_exist)){
-        download <- try(download.file(paste0("https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.3/", file_name), map_file, "auto"))
+        download <- try(
+          download.file(
+            paste0("https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.3/", file_name), 
+            map_file, 
+            "auto"
+          )
+        )
         if(is.error(download)){
-          stop()
+          stop("There was an error when downloading map files. Please check your internet connection or try again later.")
         }else{
           file_exist2 <- try(suppressWarnings(load(map_file)), silent = T)
           if(!exists(object_name)){
