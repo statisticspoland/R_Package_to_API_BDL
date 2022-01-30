@@ -23,7 +23,7 @@ generate_map(
 \item{varId}{A single variable Id.
 Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variable id code.}
 
-\item{year}{A single year from 2010-2018 range.}
+\item{year}{A single year from 2010-2021 range.}
 
 \item{unitLevel}{A map and data NUTS level - number from 1 to 6. Use \code{\link{get_levels}} to find more info.}
 
