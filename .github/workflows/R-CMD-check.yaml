@@ -11,9 +11,13 @@ name: R-CMD-check
 jobs:
   R-CMD-check:
     runs-on: ${{ matrix.os }}
+    
+    name: ${{ matrix.os }} (${{ matrix.r }})
+    
     strategy:
       matrix:
         os: [windows-2022, ubuntu-20.04, macos-11]
+        r: ['release', "devel"]
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       R_KEEP_PKG_SOURCE: yes
@@ -39,5 +43,5 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@main
         with:
-          name: ${{ runner.os }}-r${{ matrix.config.r }}-results
+          name: ${{ runner.os }}-r${{ matrix.r }}-results
           path: check
