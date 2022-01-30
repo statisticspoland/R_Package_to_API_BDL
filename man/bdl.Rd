@@ -23,7 +23,7 @@ Example: \code{options(bdl.api_private_key = "11111111-2222-3333-4444-5555555555
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/statisticspoland/R_Package_to_API_BDL}
+  \item \url{https://statisticspoland.github.io/R_Package_to_API_BDL/}
   \item Report bugs at \url{https://github.com/statisticspoland/R_Package_to_API_BDL/issues}
 }
 

@@ -1,34 +1,42 @@
 #' @keywords internal
 page_download <- function(dir, id, filters, ...) {
-  df <- tibble::tibble()
-  repeat {
-    json <- get_request(dir, id, filters, ...)
-
+  parse_json <- function(json) {
     if (is.list(json$results) && length(json$results) == 0) {
       stop("Filters returned empty set.")
     }
-
+    
     df_t <- tibble::as_tibble(json$results)
-
+    
     if ("values" %in% colnames(df_t)) {
-      df_t <- df_t %>%
-        # tidyr::unnest(df_t$values)
+      df_t <- df_t %>% 
         tidyr::unnest(`values`)
     }
-
-    df <- dplyr::bind_rows(df, df_t)
-
-    if (is.null(filters$page)) {
-      filters$page <- 1
-    } else {
-      filters$page <- filters$page + 1
-    }
-    Sys.sleep(0.65)
-    if (is.null(json$links) || json$links$self == json$links$last) {
-      break
-    }
-    
+    df_t
   }
+
+  first_page_json <- get_request(dir, id, filters, ...)
+  
+  pages <- if (!is.null(first_page_json$totalRecords)) {
+    floor(first_page_json$totalRecords / 100)
+  } else {
+    0
+  }
+
+  
+  df <- parse_json(first_page_json)
+
+  pb <- progress::progress_bar$new(format = "[:bar] :current/:total (:percent)", total = pages)
+  pb$tick(0)
+  
+  for (page_counter in seq_len(pages)) {
+    Sys.sleep(0.7)
+    filters$page <- page_counter
+    json <- get_request(dir, id, filters, ...)
+    df_t <- parse_json(json)
+    pb$tick()
+    df <- dplyr::bind_rows(df, df_t)
+  }
+
   if ("values" %in% colnames(df)) {
     df <- df %>%
       dplyr::select(-dplyr::one_of(c("values")))

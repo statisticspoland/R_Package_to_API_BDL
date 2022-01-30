@@ -193,7 +193,7 @@ scatter_2var_plot(data_type ="variable" ,c("60559","415"), unitLevel = "2")
 ### Map generation
 
 The `bdl` package comes with the `bdl.maps` dataset containing spatial maps for each Poland's level. `generate_map()` use them to generate maps filled with the bdl data. Use `unitLevel` to change the type of map. When the lower level is chosen, the map generation can be more time consuming as it has more spatial data to process.
-This function will download and load maps automatically. In case of any errors you can download them manually [here](https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.3).
+This function will download and load maps automatically. In case of any errors you can download them manually [here](https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.4).
 
 Download data file and double-click to load it to environment.
 ```{r fig.height=5, fig.width=8, eval=FALSE}

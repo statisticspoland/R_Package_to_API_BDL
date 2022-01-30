@@ -1,7 +1,7 @@
 Package: bdl
 Type: Package
 Title: Interface and Tools for 'BDL' API
-Version: 1.0.3
+Version: 1.0.4
 Authors@R: c(person("Marzena", "Szpadel", email = "M.Szpadel@stat.gov.pl",
                   role = c("aut", "cre")),
              person("Krzysztof", "Kania", role = c("aut")),
@@ -14,13 +14,13 @@ License: GPL-3
 Depends: R (>= 3.5.0)
 Imports: methods, magrittr, tibble, jsonlite, httr, 
         dplyr, tidyr, utils, stats, ggplot2, ggpubr, 
-        randomcoloR, purrr, sf, tmaptools, tmap
+        randomcoloR, purrr, sf, tmaptools, tmap, progress
 Encoding: UTF-8
 LazyData: true
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 NeedsCompilation: no
 Repository: CRAN
-RoxygenNote: 7.1.1
-URL: https://github.com/statisticspoland/R_Package_to_API_BDL
+RoxygenNote: 7.1.2
+URL: https://statisticspoland.github.io/R_Package_to_API_BDL/
 BugReports: https://github.com/statisticspoland/R_Package_to_API_BDL/issues

@@ -1,3 +1,11 @@
+# bdl 1.0.4
+
+* Now multi-page queries show progress bar
+
+* `generate_map` now supports 2021 data
+
+* Bugfixes
+
 # bdl 1.0.3
 
 * Bugfixes
