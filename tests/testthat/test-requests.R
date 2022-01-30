@@ -15,11 +15,6 @@ test_that("Proper url build", {
 })
 
 context("Get request")
-dir <- "data/By-Variable"
-vid <- "3643"
-
-filters <- list(year = c("2000", "2010"))
-request_by_variable <- get_request(dir = dir, id = vid, filters = filters)
 
 test_that("Code errors", {
   expect_error(get_request("foo","bar"),
