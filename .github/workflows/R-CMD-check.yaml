@@ -10,7 +10,10 @@ name: R-CMD-check
 
 jobs:
   R-CMD-check:
-    runs-on: [windows-2022, ubuntu-20.04, macos-11]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-2022, ubuntu-20.04, macos-11]
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       R_KEEP_PKG_SOURCE: yes
