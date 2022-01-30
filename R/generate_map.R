@@ -11,7 +11,7 @@
 #'   
 #'   This function requires external map data "bdl.maps" loaded to global environment. 
 #'   You can get data here:
-#'   \href{https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.3}{Map 
+#'   \href{https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.4}{Map 
 #'   download}.
 #'   Download data and double-click to load it to environment.
 #' 
@@ -72,7 +72,7 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       if(is.error(file_exist)){
         download <- try(
           download.file(
-            paste0("https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.3/", file_name), 
+            paste0("https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.4/", file_name), 
             map_file, 
             "auto"
           )
@@ -84,7 +84,7 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
           if(!exists(object_name)){
             stop( paste0("Loading map files has failed. Try to Restart your R session or remove any \n",
                          "bdl.maps.xxxx.RData files and download them manually from: \n",
-                         "https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.3\n",
+                         "https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.4\n",
                          "and put them into your Home direcotry: ", home))
           }
         }
