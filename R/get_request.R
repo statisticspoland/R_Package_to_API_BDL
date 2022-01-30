@@ -32,6 +32,7 @@
 #' @keywords utilities database
 get_request <- function(dir, id, filters = NULL, ...) {
   url <- build_url(dir = dir, id = id, filters = filters)
+
   key <- getOption("bdl.api_private_key")
   if (!is.null(key) && nchar_length(key) != 0) {
       h <- c(key)

@@ -14,7 +14,7 @@ License: GPL-3
 Depends: R (>= 3.5.0)
 Imports: methods, magrittr, tibble, jsonlite, httr, 
         dplyr, tidyr, utils, stats, ggplot2, ggpubr, 
-        randomcoloR, purrr, sf, tmaptools, tmap
+        randomcoloR, purrr, sf, tmaptools, tmap, progress
 Encoding: UTF-8
 LazyData: true
 Suggests: knitr, rmarkdown, testthat
