@@ -23,7 +23,7 @@ generate_map(
 \item{varId}{A single variable Id.
 Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variable id code.}
 
-\item{year}{A single year from 2010-2021 range.}
+\item{year}{A single year from 2010-2023 range.}
 
 \item{unitLevel}{A map and data NUTS level - number from 1 to 6. Use \code{\link{get_levels}} to find more info.}
 
@@ -67,7 +67,7 @@ Generate quickly map for given NUTS level, using BDL data. Default level is 2.
   
   This function requires external map data "bdl.maps" loaded to global environment. 
   You can get data here:
-  \href{https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.4}{Map 
+  \href{https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.5}{Map 
   download}.
   Download data and double-click to load it to environment.
 

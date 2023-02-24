@@ -11,7 +11,7 @@
 #'   
 #'   This function requires external map data "bdl.maps" loaded to global environment. 
 #'   You can get data here:
-#'   \href{https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.4}{Map 
+#'   \href{https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.5}{Map 
 #'   download}.
 #'   Download data and double-click to load it to environment.
 #' 
@@ -22,7 +22,7 @@
 #'   
 #' @param varId A single variable Id.
 #'   Use \code{\link{search_variables}} or \code{\link{get_variables}} to find variable id code.
-#' @param year A single year from 2010-2021 range.
+#' @param year A single year from 2010-2023 range.
 #' @param unitLevel A map and data NUTS level - number from 1 to 6. Use \code{\link{get_levels}} to find more info.
 #' @param unitParentId A 12 character NUTS id code of interested unit. Use \code{\link{search_units}} or
 #'   \code{\link{get_units}} to find unit id code.
@@ -48,7 +48,7 @@
 #'  # generate_map(varId = "60559", year = "2017")
 generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggregateId = NULL, palette = "Blues", 
                          style = NULL, n = 10, names = FALSE, borderLevel = NULL, lang = c("pl","en"), ...) {
-  if (length(varId) == 1 && length(year) == 1 && (year >= 2010 && year <= 2021)) {
+  if (length(varId) == 1 && length(year) == 1 && (year >= 2010 && year <= 2023)) {
     if(is.null(unitLevel) || !(unitLevel >= 1 && unitLevel <=6)){
       stop("Wrong unitLevel selected.")
     }
@@ -72,7 +72,7 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
       if(is.error(file_exist)){
         download <- try(
           download.file(
-            paste0("https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.4/", file_name), 
+            paste0("https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.5/", file_name), 
             map_file, 
             "auto"
           )
@@ -84,7 +84,7 @@ generate_map <- function(varId, year, unitLevel = 2, unitParentId = NULL, aggreg
           if(!exists(object_name)){
             stop( paste0("Loading map files has failed. Try to Restart your R session or remove any \n",
                          "bdl.maps.xxxx.RData files and download them manually from: \n",
-                         "https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.4\n",
+                         "https://github.com/statisticspoland/R_Package_to_API_BDL/releases/tag/1.0.5\n",
                          "and put them into your Home direcotry: ", home))
           }
         }

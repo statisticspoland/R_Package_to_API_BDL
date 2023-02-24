@@ -1,4 +1,4 @@
-# bdl 1.0.4
+# bdl 1.0.5
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/bdl)](https://CRAN.R-project.org/package=bdl)
@@ -40,7 +40,7 @@ remotes::install_github("statisticspoland/R_Package_to_API_BDL")
 ```
 
 If installation through **remotes** do not work, try installing the package manually by 
-downloading the source package at [https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.4/bdl_1.0.4.zip](https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.4/bdl_1.0.4.zip) and executing
+downloading the source package at [https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.5/bdl_1.0.5.zip](https://github.com/statisticspoland/R_Package_to_API_BDL/releases/download/1.0.4/bdl_1.0.5.zip) and executing
 
 ```r
 install.packages("path_to_file/bdl_1.0.4.zip", repos = NULL, type = "source")
