@@ -20,6 +20,6 @@ Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 NeedsCompilation: no
 Repository: CRAN
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.2
 URL: https://statisticspoland.github.io/R_Package_to_API_BDL/
 BugReports: https://github.com/statisticspoland/R_Package_to_API_BDL/issues

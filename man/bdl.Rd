@@ -6,9 +6,7 @@
 \alias{bdl-package}
 \title{bdl: Interface and Tools for 'BDL' API}
 \description{
-Interface to Local Data Bank ('Bank Danych Lokalnych' - 'bdl') API 
-    <https://api.stat.gov.pl/Home/BdlApi?lang=en> with set of useful tools like 
-    quick plotting and map generating using data from bank.
+Interface to Local Data Bank ('Bank Danych Lokalnych' - 'bdl') API \url{https://api.stat.gov.pl/Home/BdlApi?lang=en} with set of useful tools like quick plotting and map generating using data from bank.
 }
 \section{Package options}{
 
