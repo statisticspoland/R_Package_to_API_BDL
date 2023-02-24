@@ -1,6 +1,6 @@
 # bdl 1.0.5
 
-* `generate_map()` now supports 2022-2024 data
+* `generate_map()` now supports 2022-2023 data
 
 # bdl 1.0.4
 
