@@ -27,11 +27,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Marzena Szpadel \email{M.Szpadel@stat.gov.pl}
+\strong{Maintainer}: Krzysztof Kania \email{contact@krzysztofkania.com}
 
 Authors:
 \itemize{
-  \item Krzysztof Kania
+  \item Marzena Szpadel \email{M.Szpadel@stat.gov.pl}
 }
 
 Other contributors:
