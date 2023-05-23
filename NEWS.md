@@ -1,3 +1,7 @@
+# bdl 1.0.5.9001
+
+* Fix pagination count error
+
 # bdl 1.0.5
 
 * `generate_map()` now supports 2022-2023 data
