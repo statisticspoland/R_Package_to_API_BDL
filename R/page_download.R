@@ -15,9 +15,14 @@ page_download <- function(dir, id, filters, ...) {
   }
 
   first_page_json <- get_request(dir, id, filters, ...)
-  
-  pages <- if (!is.null(first_page_json$totalRecords)) {
-    floor(first_page_json$totalRecords / 100)
+  total_records <- first_page_json$totalRecords
+  pages <- if (!is.null(total_records)) {
+    pg_tmp <- floor(first_page_json$totalRecords / 100)
+    if (total_records %% 100 == 0) {
+      pg_tmp - 1
+    } else {
+      pg_tmp
+    }
   } else {
     0
   }
